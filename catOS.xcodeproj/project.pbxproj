@@ -11,15 +11,20 @@
 		8FD3E5832B0A1B3F0042C3C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3E5822B0A1B3F0042C3C5 /* ContentView.swift */; };
 		8FD3E5852B0A1B400042C3C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD3E5842B0A1B400042C3C5 /* Assets.xcassets */; };
 		8FD3E5892B0A1B400042C3C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD3E5882B0A1B400042C3C5 /* Preview Assets.xcassets */; };
+		8FD3E5922B0A1C630042C3C5 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3E5912B0A1C630042C3C5 /* ApiManager.swift */; };
+		8FD3E5942B0A1E920042C3C5 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3E5932B0A1E920042C3C5 /* ApiRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F48C0342B13DAA700B84C2B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8FD3E57D2B0A1B3F0042C3C5 /* catOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = catOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD3E5802B0A1B3F0042C3C5 /* catOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catOSApp.swift; sourceTree = "<group>"; };
 		8FD3E5822B0A1B3F0042C3C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8FD3E5842B0A1B400042C3C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FD3E5862B0A1B400042C3C5 /* catOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = catOS.entitlements; sourceTree = "<group>"; };
 		8FD3E5882B0A1B400042C3C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8FD3E5912B0A1C630042C3C5 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		8FD3E5932B0A1E920042C3C5 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +57,13 @@
 		8FD3E57F2B0A1B3F0042C3C5 /* catOS */ = {
 			isa = PBXGroup;
 			children = (
+				8FD3E58F2B0A1C400042C3C5 /* Classes */,
 				8FD3E5802B0A1B3F0042C3C5 /* catOSApp.swift */,
 				8FD3E5822B0A1B3F0042C3C5 /* ContentView.swift */,
 				8FD3E5842B0A1B400042C3C5 /* Assets.xcassets */,
 				8FD3E5862B0A1B400042C3C5 /* catOS.entitlements */,
 				8FD3E5872B0A1B400042C3C5 /* Preview Content */,
+				8F48C0342B13DAA700B84C2B /* MyPlayground.playground */,
 			);
 			path = catOS;
 			sourceTree = "<group>";
@@ -67,6 +74,23 @@
 				8FD3E5882B0A1B400042C3C5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8FD3E58F2B0A1C400042C3C5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8FD3E5902B0A1C4C0042C3C5 /* Managers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8FD3E5902B0A1C4C0042C3C5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8FD3E5912B0A1C630042C3C5 /* ApiManager.swift */,
+				8FD3E5932B0A1E920042C3C5 /* ApiRouter.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +164,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FD3E5832B0A1B3F0042C3C5 /* ContentView.swift in Sources */,
+				8FD3E5942B0A1E920042C3C5 /* ApiRouter.swift in Sources */,
+				8FD3E5922B0A1C630042C3C5 /* ApiManager.swift in Sources */,
 				8FD3E5812B0A1B3F0042C3C5 /* catOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
