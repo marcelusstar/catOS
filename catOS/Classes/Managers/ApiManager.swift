@@ -6,6 +6,19 @@
 
 import Foundation
 
+struct RandomImage: Codable {
+    let id: String
+    let url: String
+    let width: Int
+    let height: Int
+    
+    init() {
+        self.id = ""
+        self.url = ""
+        self.width = 0
+        self.height = 0
+    }
+}
 
 
 class ApiManager {
@@ -32,6 +45,9 @@ class ApiManager {
             
             if response.statusCode >= 200 && response.statusCode <= 299 {
                 print("Request successful \(data)")
+                if let jsonString = String(data: data, encoding: .utf8) {
+                            print(jsonString)
+                         }
             }
             else {
                 print("Request error, code: \(response.statusCode)")
@@ -40,4 +56,17 @@ class ApiManager {
         }.resume()
     }
     
+    func doAsyncAwaitRequest<T: Decodable>(apiRouter: ApiRouter) async throws -> T {
+        let session = URLSession.shared
+        let url = URL(string: apiRouter.path)!
+        var request: URLRequest = URLRequest(url: url)
+        request.httpMethod = apiRouter.method.rawValue
+        request.allHTTPHeaderFields = apiRouter.headers
+        
+        let (data, response) = try await session.data(for: request)
+        
+        let result = try JSONDecoder().decode(T.self, from: data)
+        
+        return result
+    }
 }
