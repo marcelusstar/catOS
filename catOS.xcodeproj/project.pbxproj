@@ -18,7 +18,7 @@
 		8FD3E5832B0A1B3F0042C3C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3E5822B0A1B3F0042C3C5 /* ContentView.swift */; };
 		8FD3E5852B0A1B400042C3C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD3E5842B0A1B400042C3C5 /* Assets.xcassets */; };
 		8FD3E5892B0A1B400042C3C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD3E5882B0A1B400042C3C5 /* Preview Assets.xcassets */; };
-		8FD3E5922B0A1C630042C3C5 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3E5912B0A1C630042C3C5 /* ApiManager.swift */; };
+		8FD3E5922B0A1C630042C3C5 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3E5912B0A1C630042C3C5 /* RequestManager.swift */; };
 		8FD3E5942B0A1E920042C3C5 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3E5932B0A1E920042C3C5 /* ApiRouter.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,7 @@
 		8FD3E5842B0A1B400042C3C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FD3E5862B0A1B400042C3C5 /* catOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = catOS.entitlements; sourceTree = "<group>"; };
 		8FD3E5882B0A1B400042C3C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8FD3E5912B0A1C630042C3C5 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		8FD3E5912B0A1C630042C3C5 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		8FD3E5932B0A1E920042C3C5 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,7 +55,7 @@
 		716B1ADB2B68175E007CC300 /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				8FD3E5912B0A1C630042C3C5 /* ApiManager.swift */,
+				8FD3E5912B0A1C630042C3C5 /* RequestManager.swift */,
 				8FD3E5932B0A1E920042C3C5 /* ApiRouter.swift */,
 			);
 			path = Api;
@@ -214,7 +214,7 @@
 				716B1AD62B68049A007CC300 /* WeightEntity.swift in Sources */,
 				8FD3E5942B0A1E920042C3C5 /* ApiRouter.swift in Sources */,
 				716B1ADA2B680D7E007CC300 /* FeedImage.swift in Sources */,
-				8FD3E5922B0A1C630042C3C5 /* ApiManager.swift in Sources */,
+				8FD3E5922B0A1C630042C3C5 /* RequestManager.swift in Sources */,
 				718F9DF52B616B0E0089CB8A /* Breed.swift in Sources */,
 				8FD3E5812B0A1B3F0042C3C5 /* catOSApp.swift in Sources */,
 				718F9DF72B616B300089CB8A /* Weight.swift in Sources */,
