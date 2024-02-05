@@ -47,12 +47,15 @@ class ApiManager {
         var request: URLRequest = URLRequest(url: url)
         request.httpMethod = apiRouter.method.rawValue
         request.allHTTPHeaderFields = apiRouter.headers
+        if apiRouter.method == .post {
+            request.httpBody = apiRouter.body
+        }
         
         let (data, response) = try await session.data(for: request)
         
         if let stringData = String(data: data, encoding: .utf8) {
                     // Use the stringData as needed
-                    print(stringData)
+                    //print(stringData)
                 } else {
                     print("Unable to convert data to string using UTF-8 encoding.")
                 }

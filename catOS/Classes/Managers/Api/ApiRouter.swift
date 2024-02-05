@@ -18,7 +18,7 @@ enum ApiRouter {
     case randomImage    // Imagen random
     case getBreeds
     case getBreed(String)
-    case voteImage      // Votar una imagen (like o dislike)
+    case voteImage(String, String, Int)      // Votar una imagen (like o dislike)
     /*
     case feedImages     // Imagenes random para el feed
     case generalVotes   // Obtener todas las imagenes votadas. Se podría filtrar por mas votadas por fecha y pais
@@ -38,17 +38,20 @@ enum ApiRouter {
     var baseUrl: String { "https://api.thecatapi.com/v1" }
     
     var path: String {
-        switch self {
+        
+        var url = switch self {
             
         case .randomImage:
-            "\(baseUrl)/images/search"
+            "images/search"
         case .getBreeds:
-            "\(baseUrl)/breeds?limit=100"
+            "breeds?limit=100"
         case .getBreed(let id):
-            "\(baseUrl)/breeds/\(id)"
+            "breeds/\(id)"
         case .voteImage:
-            "\(baseUrl)/votes"
+            "votes"
         }
+        
+        return"\(baseUrl)/\(url)"
     }
 
     var method: HTTPMethod {
@@ -66,20 +69,41 @@ enum ApiRouter {
         var commonHeaders: [String: String] = [:]
         
         commonHeaders["cache-control"] = "no-cache"
-        commonHeaders["Accept"] = "application/json"
-        commonHeaders["Content-type"] = "application/x-www-form-urlencoded, charset=utf8"
+
         
         switch self {
             
         case .voteImage:
             commonHeaders["x-api-key"] = "XXXXXXXX"
+            commonHeaders["Content-type"] = "application/json; charset=utf8"
             
         default:
-            return commonHeaders
+            commonHeaders["Content-type"] = "application/x-www-form-urlencoded, charset=utf8"
+            
         }
         
         return commonHeaders
     }
     
+    var body: Data? {
+        
+        let data: [String: Any] = switch self {
+            
+            case .voteImage(let userId, let imageId, let points):
+                    ["sub_id": userId,
+                    "image_id": imageId,
+                    "value": points]
+                
+            default:
+                ["": ""]
+        }
+        
+
+        
+        return try? JSONSerialization.data(
+            withJSONObject: data,
+            options: []
+        )
+    }
     
 }
