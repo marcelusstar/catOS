@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71502EB62B7553B9006DF80B /* ApiTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71502EB52B7553B9006DF80B /* ApiTransformer.swift */; };
+		71502EB92B755418006DF80B /* ApiWeightMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71502EB82B755418006DF80B /* ApiWeightMapper.swift */; };
+		71502EBB2B755493006DF80B /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71502EBA2B755493006DF80B /* Mapper.swift */; };
+		71502EBD2B75566D006DF80B /* ApiBreedMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71502EBC2B75566D006DF80B /* ApiBreedMapper.swift */; };
 		716B1AD62B68049A007CC300 /* WeightEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B1AD52B68049A007CC300 /* WeightEntity.swift */; };
 		716B1AD82B680587007CC300 /* FeedImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B1AD72B680587007CC300 /* FeedImageEntity.swift */; };
 		716B1ADA2B680D7E007CC300 /* FeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B1AD92B680D7E007CC300 /* FeedImage.swift */; };
@@ -14,6 +18,7 @@
 		718F9DF52B616B0E0089CB8A /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718F9DF42B616B0E0089CB8A /* Breed.swift */; };
 		718F9DF72B616B300089CB8A /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718F9DF62B616B300089CB8A /* Weight.swift */; };
 		718F9DFA2B6183050089CB8A /* BreedEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718F9DF92B6183050089CB8A /* BreedEntity.swift */; };
+		71A878362B714BEC003059CD /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A878352B714BEC003059CD /* ApiManager.swift */; };
 		8FD3E5812B0A1B3F0042C3C5 /* catOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3E5802B0A1B3F0042C3C5 /* catOSApp.swift */; };
 		8FD3E5832B0A1B3F0042C3C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3E5822B0A1B3F0042C3C5 /* ContentView.swift */; };
 		8FD3E5852B0A1B400042C3C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD3E5842B0A1B400042C3C5 /* Assets.xcassets */; };
@@ -23,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71502EB52B7553B9006DF80B /* ApiTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTransformer.swift; sourceTree = "<group>"; };
+		71502EB82B755418006DF80B /* ApiWeightMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiWeightMapper.swift; sourceTree = "<group>"; };
+		71502EBA2B755493006DF80B /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		71502EBC2B75566D006DF80B /* ApiBreedMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiBreedMapper.swift; sourceTree = "<group>"; };
 		716B1AD52B68049A007CC300 /* WeightEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightEntity.swift; sourceTree = "<group>"; };
 		716B1AD72B680587007CC300 /* FeedImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageEntity.swift; sourceTree = "<group>"; };
 		716B1AD92B680D7E007CC300 /* FeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImage.swift; sourceTree = "<group>"; };
@@ -30,6 +39,7 @@
 		718F9DF42B616B0E0089CB8A /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
 		718F9DF62B616B300089CB8A /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
 		718F9DF92B6183050089CB8A /* BreedEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedEntity.swift; sourceTree = "<group>"; };
+		71A878352B714BEC003059CD /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		8F48C0342B13DAA700B84C2B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8FD3E57D2B0A1B3F0042C3C5 /* catOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = catOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD3E5802B0A1B3F0042C3C5 /* catOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catOSApp.swift; sourceTree = "<group>"; };
@@ -52,11 +62,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71502EB72B7553CA006DF80B /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				71502EB52B7553B9006DF80B /* ApiTransformer.swift */,
+				71502EB82B755418006DF80B /* ApiWeightMapper.swift */,
+				71502EBA2B755493006DF80B /* Mapper.swift */,
+				71502EBC2B75566D006DF80B /* ApiBreedMapper.swift */,
+			);
+			path = Transformers;
+			sourceTree = "<group>";
+		};
 		716B1ADB2B68175E007CC300 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				71502EB72B7553CA006DF80B /* Transformers */,
 				8FD3E5912B0A1C630042C3C5 /* RequestManager.swift */,
 				8FD3E5932B0A1E920042C3C5 /* ApiRouter.swift */,
+				71A878352B714BEC003059CD /* ApiManager.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -208,15 +231,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71502EBD2B75566D006DF80B /* ApiBreedMapper.swift in Sources */,
 				716B1AD82B680587007CC300 /* FeedImageEntity.swift in Sources */,
 				8FD3E5832B0A1B3F0042C3C5 /* ContentView.swift in Sources */,
 				718F9DFA2B6183050089CB8A /* BreedEntity.swift in Sources */,
+				71502EB62B7553B9006DF80B /* ApiTransformer.swift in Sources */,
+				71502EBB2B755493006DF80B /* Mapper.swift in Sources */,
 				716B1AD62B68049A007CC300 /* WeightEntity.swift in Sources */,
+				71A878362B714BEC003059CD /* ApiManager.swift in Sources */,
 				8FD3E5942B0A1E920042C3C5 /* ApiRouter.swift in Sources */,
 				716B1ADA2B680D7E007CC300 /* FeedImage.swift in Sources */,
 				8FD3E5922B0A1C630042C3C5 /* RequestManager.swift in Sources */,
 				718F9DF52B616B0E0089CB8A /* Breed.swift in Sources */,
 				8FD3E5812B0A1B3F0042C3C5 /* catOSApp.swift in Sources */,
+				71502EB92B755418006DF80B /* ApiWeightMapper.swift in Sources */,
 				718F9DF72B616B300089CB8A /* Weight.swift in Sources */,
 				716B1ADD2B68183E007CC300 /* VoteResultEntity.swift in Sources */,
 			);
