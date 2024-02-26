@@ -11,5 +11,5 @@ protocol Mapper {
     associatedtype E
     associatedtype M
 
-    func map(_ entity: E) -> M
+    func mapValues(_ entity: E) -> M
 }

@@ -16,9 +16,14 @@ class ApiTransformer {
     }()
     
     let apiBreedMapper: ApiBreedMapper = ApiBreedMapper()
+    let apiFeedImageMapper: ApiFeedImageMapper = ApiFeedImageMapper()
     
     func transformBreedEntity(entity: BreedEntity) -> Breed {
-        apiBreedMapper.map(entity)
+        apiBreedMapper.mapValues(entity)
+    }
+    
+    func transformFeedImageEntity(entity: FeedImageEntity) -> FeedImage {
+        apiFeedImageMapper.mapValues(entity)
     }
     
 }

@@ -11,6 +11,7 @@ struct FeedImageEntity: Codable {
     
     let id: String
     let breeds: [BreedEntity]?
+    let categories: [CategoryEntity]?
     let height: Int?
     let width: Int?
     let url: String?

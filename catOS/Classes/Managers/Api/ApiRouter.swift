@@ -19,8 +19,9 @@ enum ApiRouter {
     case getBreeds
     case getBreed(String)
     case voteImage(String, String, Int)      // Votar una imagen (like o dislike)
+    case feedImages(Int)     // Imagenes random para el feed
     /*
-    case feedImages     // Imagenes random para el feed
+
     case generalVotes   // Obtener todas las imagenes votadas. Se podría filtrar por mas votadas por fecha y pais
     case uploadImage    // Subir una imagen
     case deleteImage    // Borrar una imagen (propia del usuario)
@@ -49,6 +50,8 @@ enum ApiRouter {
             "breeds/\(id)"
         case .voteImage:
             "votes"
+        case .feedImages(let page):
+            "images/search?format=json&order=RANDOM&page=\(page)&limit=10"
         }
         
         return"\(baseUrl)/\(url)"
@@ -57,7 +60,7 @@ enum ApiRouter {
     var method: HTTPMethod {
         switch self {
             
-        case .randomImage, .getBreeds, .getBreed(_):
+        case .randomImage, .getBreeds, .getBreed(_), .feedImages(_):
             return HTTPMethod.get
         case .voteImage:
             return HTTPMethod.post
@@ -73,7 +76,7 @@ enum ApiRouter {
         
         switch self {
             
-        case .voteImage:
+        case .voteImage, .feedImages(_):
             commonHeaders["x-api-key"] = "XXXXXXXX"
             commonHeaders["Content-type"] = "application/json; charset=utf8"
             

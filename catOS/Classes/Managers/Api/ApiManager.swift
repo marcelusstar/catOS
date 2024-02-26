@@ -14,6 +14,19 @@ class ApiManager {
         let instance = ApiManager()
         return instance
     }()
+    
+    func getFeedImages(page: Int) async -> [FeedImage] {
+        do {
+            let feedImagesEntities: [FeedImageEntity] = try await RequestManager.shared.doAsyncAwaitRequest(apiRouter: ApiRouter.feedImages(page))
+            
+            return feedImagesEntities.map {
+                ApiTransformer.shared.transformFeedImageEntity(entity: $0)
+            }
+            
+        } catch {
+            return [FeedImage]()
+        }
+    }
  
     func getBreeds() async -> [Breed] {
         do {

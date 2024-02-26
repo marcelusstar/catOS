@@ -11,6 +11,7 @@ struct FeedImage {
     
     let id: String
     let breeds: [Breed]
+    let categories: [Category]
     let height: Int
     let width: Int
     let url: String

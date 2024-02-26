@@ -55,7 +55,7 @@ class RequestManager {
         
         if let stringData = String(data: data, encoding: .utf8) {
                     // Use the stringData as needed
-                    //print(stringData)
+                    print(stringData)
                 } else {
                     print("Unable to convert data to string using UTF-8 encoding.")
                 }
