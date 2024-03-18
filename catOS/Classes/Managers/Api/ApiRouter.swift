@@ -73,11 +73,15 @@ enum ApiRouter {
         
         commonHeaders["cache-control"] = "no-cache"
 
+        let plistPath = Bundle.main.path(forResource: "Info", ofType: "plist") ?? ""
+        let plistData = NSDictionary(contentsOfFile: plistPath)
+        // Add the api key in Config.xcconfig or replace the default value
+        let apiKey: String? = (plistData?["API_KEY"] as? String) ?? "YOUR_OWN_API_KEY_IF_NOT_FOUND"
         
         switch self {
             
         case .voteImage, .feedImages(_):
-            commonHeaders["x-api-key"] = "XXXXXXXX"
+            commonHeaders["x-api-key"] = apiKey
             commonHeaders["Content-type"] = "application/json; charset=utf8"
             
         default:
