@@ -90,3 +90,6 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# File where sensitive information is stored, like api keys.
+Config.xcconfig
