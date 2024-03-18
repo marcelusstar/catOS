@@ -8,6 +8,8 @@
 import Foundation
 
 class ApiBreedMapper: Mapper {
+    
+    static let shared: ApiBreedMapper = ApiBreedMapper()
 
     let apiWeightMapper: ApiWeightMapper = ApiWeightMapper()
 

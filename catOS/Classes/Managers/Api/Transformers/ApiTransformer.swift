@@ -15,7 +15,7 @@ class ApiTransformer {
         return instance
     }()
     
-    let apiBreedMapper: ApiBreedMapper = ApiBreedMapper()
+    let apiBreedMapper: ApiBreedMapper = ApiBreedMapper.shared
     let apiFeedImageMapper: ApiFeedImageMapper = ApiFeedImageMapper()
     
     func transformBreedEntity(entity: BreedEntity) -> Breed {
