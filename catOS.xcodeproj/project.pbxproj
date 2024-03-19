@@ -11,10 +11,13 @@
 		712BD9332B7E977600DCF07B /* ApiCategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BD9322B7E977600DCF07B /* ApiCategoryMapper.swift */; };
 		712BD9352B7E97B500DCF07B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BD9342B7E97B500DCF07B /* Category.swift */; };
 		712BD9372B7E98BE00DCF07B /* ApiFeedImageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BD9362B7E98BE00DCF07B /* ApiFeedImageMapper.swift */; };
+		713466E12BA8B167003BB72A /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713466E02BA8B167003BB72A /* ErrorManager.swift */; };
+		713466E42BA8BE1F003BB72A /* CatError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713466E32BA8BE1F003BB72A /* CatError.swift */; };
 		71502EB62B7553B9006DF80B /* ApiTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71502EB52B7553B9006DF80B /* ApiTransformer.swift */; };
 		71502EB92B755418006DF80B /* ApiWeightMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71502EB82B755418006DF80B /* ApiWeightMapper.swift */; };
 		71502EBB2B755493006DF80B /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71502EBA2B755493006DF80B /* Mapper.swift */; };
 		71502EBD2B75566D006DF80B /* ApiBreedMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71502EBC2B75566D006DF80B /* ApiBreedMapper.swift */; };
+		71674CB62BA9AD3F002C0027 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71674CB52BA9AD3F002C0027 /* NetworkReachability.swift */; };
 		716B1AD62B68049A007CC300 /* WeightEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B1AD52B68049A007CC300 /* WeightEntity.swift */; };
 		716B1AD82B680587007CC300 /* FeedImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B1AD72B680587007CC300 /* FeedImageEntity.swift */; };
 		716B1ADA2B680D7E007CC300 /* FeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B1AD92B680D7E007CC300 /* FeedImage.swift */; };
@@ -37,10 +40,13 @@
 		712BD9342B7E97B500DCF07B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		712BD9362B7E98BE00DCF07B /* ApiFeedImageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFeedImageMapper.swift; sourceTree = "<group>"; };
 		713466DC2BA8AB09003BB72A /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		713466E02BA8B167003BB72A /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		713466E32BA8BE1F003BB72A /* CatError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatError.swift; sourceTree = "<group>"; };
 		71502EB52B7553B9006DF80B /* ApiTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTransformer.swift; sourceTree = "<group>"; };
 		71502EB82B755418006DF80B /* ApiWeightMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiWeightMapper.swift; sourceTree = "<group>"; };
 		71502EBA2B755493006DF80B /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		71502EBC2B75566D006DF80B /* ApiBreedMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiBreedMapper.swift; sourceTree = "<group>"; };
+		71674CB52BA9AD3F002C0027 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		716B1AD52B68049A007CC300 /* WeightEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightEntity.swift; sourceTree = "<group>"; };
 		716B1AD72B680587007CC300 /* FeedImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageEntity.swift; sourceTree = "<group>"; };
 		716B1AD92B680D7E007CC300 /* FeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImage.swift; sourceTree = "<group>"; };
@@ -72,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		713466E22BA8B220003BB72A /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				713466E02BA8B167003BB72A /* ErrorManager.swift */,
+				713466E32BA8BE1F003BB72A /* CatError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		71502EB72B7553CA006DF80B /* Transformers */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +98,14 @@
 				712BD9362B7E98BE00DCF07B /* ApiFeedImageMapper.swift */,
 			);
 			path = Transformers;
+			sourceTree = "<group>";
+		};
+		71674CB42BA9AD1F002C0027 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				71674CB52BA9AD3F002C0027 /* NetworkReachability.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		716B1ADB2B68175E007CC300 /* Api */ = {
@@ -163,6 +186,7 @@
 		8FD3E58F2B0A1C400042C3C5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				71674CB42BA9AD1F002C0027 /* Utilities */,
 				718F9DF32B616B010089CB8A /* Models */,
 				8FD3E5902B0A1C4C0042C3C5 /* Managers */,
 			);
@@ -172,6 +196,7 @@
 		8FD3E5902B0A1C4C0042C3C5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				713466E22BA8B220003BB72A /* Error */,
 				716B1ADB2B68175E007CC300 /* Api */,
 			);
 			path = Managers;
@@ -247,15 +272,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71674CB62BA9AD3F002C0027 /* NetworkReachability.swift in Sources */,
 				71502EBD2B75566D006DF80B /* ApiBreedMapper.swift in Sources */,
 				716B1AD82B680587007CC300 /* FeedImageEntity.swift in Sources */,
 				712BD9352B7E97B500DCF07B /* Category.swift in Sources */,
+				713466E42BA8BE1F003BB72A /* CatError.swift in Sources */,
 				8FD3E5832B0A1B3F0042C3C5 /* ContentView.swift in Sources */,
 				718F9DFA2B6183050089CB8A /* BreedEntity.swift in Sources */,
 				71502EB62B7553B9006DF80B /* ApiTransformer.swift in Sources */,
 				71502EBB2B755493006DF80B /* Mapper.swift in Sources */,
 				716B1AD62B68049A007CC300 /* WeightEntity.swift in Sources */,
 				71A878362B714BEC003059CD /* ApiManager.swift in Sources */,
+				713466E12BA8B167003BB72A /* ErrorManager.swift in Sources */,
 				8FD3E5942B0A1E920042C3C5 /* ApiRouter.swift in Sources */,
 				716B1ADA2B680D7E007CC300 /* FeedImage.swift in Sources */,
 				8FD3E5922B0A1C630042C3C5 /* RequestManager.swift in Sources */,

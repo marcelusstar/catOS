@@ -8,47 +8,28 @@
 import Foundation
 
 
-class ApiManager {
+struct ApiManager {
     
-    static let shared: ApiManager = {
-        let instance = ApiManager()
-        return instance
-    }()
+    static let shared: ApiManager = ApiManager()
     
-    func getFeedImages(page: Int) async -> [FeedImage] {
-        do {
-            let feedImagesEntities: [FeedImageEntity] = try await RequestManager.shared.doAsyncAwaitRequest(apiRouter: ApiRouter.feedImages(page))
-            
-            return feedImagesEntities.map {
-                ApiTransformer.shared.transformFeedImageEntity(entity: $0)
-            }
-            
-        } catch {
-            return [FeedImage]()
-        }
+    func getFeedImages(page: Int) async throws -> [FeedImage] {
+
+        let feedImagesEntities: [FeedImageEntity] = try await RequestManager.shared.doAsyncAwaitRequest(apiRouter: ApiRouter.feedImages(page))
+        
+        return feedImagesEntities.map { ApiTransformer.shared.transformFeedImageEntity(entity: $0) }
     }
  
-    func getBreeds() async -> [Breed] {
-        do {
-            let breedsEntities: [BreedEntity] = try await RequestManager.shared.doAsyncAwaitRequest(apiRouter: ApiRouter.getBreeds)
+    func getBreeds() async throws -> [Breed] {
+        let breedsEntities: [BreedEntity] = try await RequestManager.shared.doAsyncAwaitRequest(apiRouter: ApiRouter.getBreeds)
             
-            return breedsEntities.map {
-                ApiTransformer.shared.transformBreedEntity(entity: $0)
-            }
-        }catch {
-            return [Breed]()
-        }
+        return breedsEntities.map { ApiTransformer.shared.transformBreedEntity(entity: $0) }
     }
     
-    func getBreed(id: String) async -> Breed? {
-        do {
-            let breedEntity: BreedEntity = try await RequestManager.shared.doAsyncAwaitRequest(apiRouter: ApiRouter.getBreed(id))
-            
-                return ApiTransformer.shared.transformBreedEntity(entity: breedEntity)
+    func getBreed(id: String) async throws -> Breed {
 
-        }catch {
-            return nil
-        }
+        let breedEntity: BreedEntity = try await RequestManager.shared.doAsyncAwaitRequest(apiRouter: ApiRouter.getBreed(id))
+
+        return ApiTransformer.shared.transformBreedEntity(entity: breedEntity)
     }
     
 }

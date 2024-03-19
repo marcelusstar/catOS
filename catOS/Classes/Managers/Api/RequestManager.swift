@@ -6,42 +6,14 @@
 
 import Foundation
 
-class RequestManager {
+struct RequestManager {
     
-    static let shared: RequestManager = {
-        let instance = RequestManager()
-        return instance
-    }()
+    static let shared: RequestManager = RequestManager()
     
-    func doRequest(apiRouter: ApiRouter) {
-        let session = URLSession.shared
-        let url = URL(string: apiRouter.path)!
-        var request: URLRequest = URLRequest(url: url)
-        request.httpMethod = apiRouter.method.rawValue
-        request.allHTTPHeaderFields = apiRouter.headers
-        session.dataTask(with: request) { (data, response, error) in
-            
-            guard let data = data,
-                    error == nil,
-                  let response = response as? HTTPURLResponse else {
-                print("Request error: \(error!)")
-                return
-            }
-            
-            if response.statusCode >= 200 && response.statusCode <= 299 {
-                print("Request successful \(data)")
-                if let jsonString = String(data: data, encoding: .utf8) {
-                            print(jsonString)
-                         }
-            }
-            else {
-                print("Request error, code: \(response.statusCode)")
-            }
-            
-        }.resume()
-    }
+    var networkReachability: NetworkReachability = NetworkReachability()
     
     func doAsyncAwaitRequest<T: Decodable>(apiRouter: ApiRouter) async throws -> T {
+        
         let session = URLSession.shared
         let url = URL(string: apiRouter.path)!
         var request: URLRequest = URLRequest(url: url)
@@ -51,18 +23,44 @@ class RequestManager {
             request.httpBody = apiRouter.body
         }
         
-        let (data, response) = try await session.data(for: request)
+        var (data, response) = (Data(), URLResponse())
+        do {
+            (data, response) = try await session.data(for: request)
+        } catch {
+            if let nsError = error as NSError?, 
+                nsError.domain == NSURLErrorDomain,
+                nsError.code == NSURLErrorNotConnectedToInternet {
+                    throw CatError.noInternet
+            }
+            
+            throw CatError.internetConnection
+        }
         
-        if let stringData = String(data: data, encoding: .utf8) {
-                    // Use the stringData as needed
-                    print(stringData)
-                } else {
-                    print("Unable to convert data to string using UTF-8 encoding.")
-                }
+        if let httpResponse = response as? HTTPURLResponse {
+            switch httpResponse.statusCode {
+            case 200...299:
+                print("Request was successful. Data received: \(String(data: data, encoding: .utf8) ?? "No data")")
+            case 400...499:
+                print("Client error: \(httpResponse.statusCode)")
+                throw CatError.badRequest
+            case 500...599:
+                print("Server error: \(httpResponse.statusCode)")
+                throw CatError.serverError
+            default:
+                print("Unexpected status code: \(httpResponse.statusCode)")
+                throw CatError.genericError
+            }
+        } else {
+            throw CatError.genericError
+        }
         
-        let result = try JSONDecoder().decode(T.self, from: data)
-        
-        return result
+        do {
+            let result = try JSONDecoder().decode(T.self, from: data)
+            return result
+        }
+        catch {
+            throw CatError.genericError
+        }
     }
 
 }
