@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		710C6FF82BCECA0E003851B1 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C6FF72BCECA0E003851B1 /* FeedViewModel.swift */; };
+		710C6FFB2BCECC9A003851B1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C6FFA2BCECC9A003851B1 /* CardView.swift */; };
 		712BD9312B7E96F900DCF07B /* CategoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BD9302B7E96F900DCF07B /* CategoryEntity.swift */; };
 		712BD9332B7E977600DCF07B /* ApiCategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BD9322B7E977600DCF07B /* ApiCategoryMapper.swift */; };
 		712BD9352B7E97B500DCF07B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BD9342B7E97B500DCF07B /* Category.swift */; };
@@ -25,6 +27,8 @@
 		718F9DF52B616B0E0089CB8A /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718F9DF42B616B0E0089CB8A /* Breed.swift */; };
 		718F9DF72B616B300089CB8A /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718F9DF62B616B300089CB8A /* Weight.swift */; };
 		718F9DFA2B6183050089CB8A /* BreedEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718F9DF92B6183050089CB8A /* BreedEntity.swift */; };
+		719A86142BD97B970028C674 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A86132BD97B970028C674 /* CardViewModel.swift */; };
+		719A86162BD9AF4F0028C674 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A86152BD9AF4F0028C674 /* FeedView.swift */; };
 		71A878362B714BEC003059CD /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A878352B714BEC003059CD /* ApiManager.swift */; };
 		8FD3E5812B0A1B3F0042C3C5 /* catOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3E5802B0A1B3F0042C3C5 /* catOSApp.swift */; };
 		8FD3E5832B0A1B3F0042C3C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3E5822B0A1B3F0042C3C5 /* ContentView.swift */; };
@@ -35,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		710C6FF72BCECA0E003851B1 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		710C6FFA2BCECC9A003851B1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		712BD9302B7E96F900DCF07B /* CategoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntity.swift; sourceTree = "<group>"; };
 		712BD9322B7E977600DCF07B /* ApiCategoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCategoryMapper.swift; sourceTree = "<group>"; };
 		712BD9342B7E97B500DCF07B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -55,6 +61,8 @@
 		718F9DF42B616B0E0089CB8A /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
 		718F9DF62B616B300089CB8A /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
 		718F9DF92B6183050089CB8A /* BreedEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedEntity.swift; sourceTree = "<group>"; };
+		719A86132BD97B970028C674 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		719A86152BD9AF4F0028C674 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		71A878352B714BEC003059CD /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		8F48C0342B13DAA700B84C2B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8FD3E57D2B0A1B3F0042C3C5 /* catOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = catOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +86,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		710C6FF62BCEC9F1003851B1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				710C6FF72BCECA0E003851B1 /* FeedViewModel.swift */,
+				719A86132BD97B970028C674 /* CardViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		710C6FF92BCECC51003851B1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				710C6FFA2BCECC9A003851B1 /* CardView.swift */,
+				719A86152BD9AF4F0028C674 /* FeedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		713466E22BA8B220003BB72A /* Error */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +212,8 @@
 		8FD3E58F2B0A1C400042C3C5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				710C6FF92BCECC51003851B1 /* Views */,
+				710C6FF62BCEC9F1003851B1 /* ViewModels */,
 				71674CB42BA9AD1F002C0027 /* Utilities */,
 				718F9DF32B616B010089CB8A /* Models */,
 				8FD3E5902B0A1C4C0042C3C5 /* Managers */,
@@ -273,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71674CB62BA9AD3F002C0027 /* NetworkReachability.swift in Sources */,
+				719A86162BD9AF4F0028C674 /* FeedView.swift in Sources */,
 				71502EBD2B75566D006DF80B /* ApiBreedMapper.swift in Sources */,
 				716B1AD82B680587007CC300 /* FeedImageEntity.swift in Sources */,
 				712BD9352B7E97B500DCF07B /* Category.swift in Sources */,
@@ -280,12 +309,15 @@
 				8FD3E5832B0A1B3F0042C3C5 /* ContentView.swift in Sources */,
 				718F9DFA2B6183050089CB8A /* BreedEntity.swift in Sources */,
 				71502EB62B7553B9006DF80B /* ApiTransformer.swift in Sources */,
+				719A86142BD97B970028C674 /* CardViewModel.swift in Sources */,
 				71502EBB2B755493006DF80B /* Mapper.swift in Sources */,
 				716B1AD62B68049A007CC300 /* WeightEntity.swift in Sources */,
 				71A878362B714BEC003059CD /* ApiManager.swift in Sources */,
 				713466E12BA8B167003BB72A /* ErrorManager.swift in Sources */,
 				8FD3E5942B0A1E920042C3C5 /* ApiRouter.swift in Sources */,
 				716B1ADA2B680D7E007CC300 /* FeedImage.swift in Sources */,
+				710C6FFB2BCECC9A003851B1 /* CardView.swift in Sources */,
+				710C6FF82BCECA0E003851B1 /* FeedViewModel.swift in Sources */,
 				8FD3E5922B0A1C630042C3C5 /* RequestManager.swift in Sources */,
 				712BD9332B7E977600DCF07B /* ApiCategoryMapper.swift in Sources */,
 				712BD9312B7E96F900DCF07B /* CategoryEntity.swift in Sources */,
