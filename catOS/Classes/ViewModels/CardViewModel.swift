@@ -7,13 +7,14 @@
 
 import Foundation
 
-@Observable
-class CardViewModel {
+class CardViewModel: ObservableObject {
     
     var feedImageData: FeedImage
+    @Published var imageUrl: String
     
-    init(feedImageData: FeedImage) {
+    init(_ feedImageData: FeedImage) {
         self.feedImageData = feedImageData
+        self.imageUrl = feedImageData.url
     }
     
 }

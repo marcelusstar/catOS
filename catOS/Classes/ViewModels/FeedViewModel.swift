@@ -7,9 +7,8 @@
 
 import Foundation
 
-@Observable
-class FeedViewModel {
-    var feedImages: [FeedImage] = []
+class FeedViewModel: ObservableObject {
+    @Published var feedImages: [FeedImage] = []
     
     init(feedImages: [FeedImage]) {
         self.feedImages = feedImages

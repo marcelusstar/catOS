@@ -11,7 +11,7 @@ import SwiftUI
 
 struct CardView: View {
     
-    var feedImage: FeedImage
+    @ObservedObject var viewModel: CardViewModel
     
     let cardGradient = Gradient(colors: [Color.black.opacity(0.3), Color.clear])
     
@@ -19,7 +19,7 @@ struct CardView: View {
         ZStack(alignment:  .topLeading, content: {
             
             GeometryReader { geo in
-                AsyncImage(url: URL(string: feedImage.url)) { image in
+                AsyncImage(url: URL(string: viewModel.imageUrl)) { image in
                     image
                         .resizable()
                         .scaledToFill()
@@ -50,6 +50,6 @@ struct CardView_Previews: PreviewProvider {
          /*"https://cdn2.thecatapi.com/images/yUhSG7Vv7.jpg"*/
          /*"https://i.giphy.com/2yLNN4wTy7Zr8JSXHB.webp"*/
         )
-        CardView(feedImage: feedImage)
+        CardView(viewModel: CardViewModel(feedImage))
     }
 }

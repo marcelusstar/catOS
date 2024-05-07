@@ -10,11 +10,11 @@ import SwiftUI
 
 struct FeedView: View {
     
-    var viewModel: FeedViewModel
+    @ObservedObject var viewModel: FeedViewModel
     
     var body: some View {
         List(viewModel.feedImages, id:\.id) { feedImage in
-            CardView(feedImage: feedImage)
+            CardView(viewModel: CardViewModel(feedImage))
         }
         .task {
             await viewModel.getFeedImages()
