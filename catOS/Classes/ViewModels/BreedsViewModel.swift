@@ -9,21 +9,27 @@ import Foundation
 
 class BreedsViewModel: ObservableObject {
     
-    @Published var totalOptions = ["Holly", "Josh", "Rhonda", "Ted"]
     @Published var searchText = ""
-    
     @Published var breeds: [Breed] = []
-    
-    
-    var filteredOptions: [String] {
-        guard !searchText.isEmpty else { return [] }
-        return totalOptions.sorted().filter { $0.lowercased().contains(searchText.lowercased()) }
+    @Published var breedsName: [String] = []
+       
+    var filteredBreeds: [String] {
+        guard !searchText.isEmpty else { return breedsName }
+        return breedsName.filter { $0.lowercased().contains(searchText.lowercased()) }
     }
     
-    @Published var suggestions = ["Holly", "Josh", "Rhonda", "Ted"]
-    var filteredSuggestions: [String] {
-        guard !searchText.isEmpty else { return totalOptions }
-        return suggestions.sorted().filter { $0.lowercased().contains(searchText.lowercased()) }
+    func getBreeds() async {
+        do {
+            breeds = try await ApiManager.shared.getBreeds()
+            breeds.sort{ $0.name < $1.name }
+            breedsName.removeAll()
+            breedsName = breeds.map { $0.name }
+        }
+        catch {
+            ErrorManager.shared.process(error as! CatError)
+        }
+        
+        
     }
     
 }

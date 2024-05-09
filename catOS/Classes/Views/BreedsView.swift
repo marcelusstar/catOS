@@ -16,35 +16,19 @@ struct BreedsView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(viewModel.filteredOptions, id: \.self) { suggestion in
+                ForEach(viewModel.filteredBreeds, id: \.self) { breedName in
                     
-                    Button {
-                        viewModel.searchText = suggestion
-                        dismissSearch()
-                        print("Click")
-                            } label: {
-                               Label(suggestion, systemImage: "bookmark")
-                            }
+                    NavigationLink(breedName) {
+                        Text("Selected: \(breedName)")
+                    }
                 }
-                
             }
+            .navigationTitle("Breeds")
         }
-        .searchable(text: $viewModel.searchText, suggestions: {
-            ForEach(viewModel.filteredSuggestions, id: \.self) { suggestion in
-               Text(suggestion)
-                 .searchCompletion(suggestion)
-                 
-             }
-            
-        })
-        .onSubmit(of: .search) {
-            print("fetch data from server to refresh with full search query")
-            // viewModel.performQuery()
-            //dismissSearch()
+        .searchable(text: $viewModel.searchText)
+        .task {
+            await viewModel.getBreeds()
         }
-        
-        FeedView(viewModel: FeedViewModel(feedImages: []))
-        
         
     }
 }
