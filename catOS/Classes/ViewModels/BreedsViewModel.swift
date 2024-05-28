@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class BreedsViewModel: ObservableObject {
     
     @Published var searchText = ""
@@ -18,7 +19,12 @@ class BreedsViewModel: ObservableObject {
         return breedsName.filter { $0.lowercased().contains(searchText.lowercased()) }
     }
     
+    @MainActor
     func getBreeds() async {
+        guard breeds.isEmpty else {
+            return
+        }
+        
         do {
             breeds = try await ApiManager.shared.getBreeds()
             breeds.sort{ $0.name < $1.name }

@@ -18,6 +18,7 @@ class FeedViewModel: ObservableObject {
         
     }
     
+    @MainActor
     func getFeedImages() async {
         do {
             feedImages = try await ApiManager.shared.getFeedImages(page: 1)
