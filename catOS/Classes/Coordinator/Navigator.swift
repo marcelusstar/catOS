@@ -48,7 +48,9 @@ class Navigator: ObservableObject {
     func build(navigationView: NavigationView, _ customParameters: Any...) -> some View {
                     
         switch navigationView {
-                
+        
+            case .tabsContainer:
+                TabsView()
             case .feed:
                 let feedViewModel: FeedViewModel = FeedViewModel()
                 FeedView(viewModel: feedViewModel)
@@ -57,6 +59,12 @@ class Navigator: ObservableObject {
                 BreedsView(viewModel: breedsViewModel)
             case .profile:
                 ProfileView()
+            case .error:
+                var message: String = "No internet connection"
+                
+                let viewModel: ErrorViewModel = ErrorViewModel(message: message)
+                ErrorView(viewModel: viewModel)
+        
         }
         
     }

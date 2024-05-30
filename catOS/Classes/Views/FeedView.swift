@@ -13,8 +13,15 @@ struct FeedView: View {
     @ObservedObject var viewModel: FeedViewModel
     
     var body: some View {
-        List(viewModel.feedImages, id:\.id) { feedImage in
-            CardView(viewModel: CardViewModel(feedImage))
+        NavigationStack {
+            List(viewModel.feedImages, id:\.id) { feedImage in
+                
+                NavigationLink("Go To Breeds") {
+                    Text("hello")
+                }
+                
+                CardView(viewModel: CardViewModel(feedImage))
+            }
         }
         .task {
             await viewModel.getFeedImages()

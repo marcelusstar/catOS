@@ -17,6 +17,7 @@ struct ErrorManager {
         
         case .noInternet:
             print("No internet connection")
+            Coordinator.shared.showError(message: "No internet connection")
         case .serverError:
             print("Server error connection")
         case .badRequest:

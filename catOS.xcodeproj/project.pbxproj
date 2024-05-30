@@ -11,6 +11,8 @@
 		710C6FFB2BCECC9A003851B1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C6FFA2BCECC9A003851B1 /* CardView.swift */; };
 		711D001F2BFE0596007FA5ED /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711D001E2BFE0596007FA5ED /* CoordinatorView.swift */; };
 		71249C1C2C063632003C1549 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71249C1B2C063632003C1549 /* TabsView.swift */; };
+		71249C1E2C072FB9003C1549 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71249C1D2C072FB9003C1549 /* ErrorView.swift */; };
+		71249C202C07310A003C1549 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71249C1F2C07310A003C1549 /* ErrorViewModel.swift */; };
 		712BD9312B7E96F900DCF07B /* CategoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BD9302B7E96F900DCF07B /* CategoryEntity.swift */; };
 		712BD9332B7E977600DCF07B /* ApiCategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BD9322B7E977600DCF07B /* ApiCategoryMapper.swift */; };
 		712BD9352B7E97B500DCF07B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BD9342B7E97B500DCF07B /* Category.swift */; };
@@ -52,6 +54,8 @@
 		710C6FFA2BCECC9A003851B1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		711D001E2BFE0596007FA5ED /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
 		71249C1B2C063632003C1549 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
+		71249C1D2C072FB9003C1549 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		71249C1F2C07310A003C1549 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		712BD9302B7E96F900DCF07B /* CategoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntity.swift; sourceTree = "<group>"; };
 		712BD9322B7E977600DCF07B /* ApiCategoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCategoryMapper.swift; sourceTree = "<group>"; };
 		712BD9342B7E97B500DCF07B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				710C6FF72BCECA0E003851B1 /* FeedViewModel.swift */,
 				719A86132BD97B970028C674 /* CardViewModel.swift */,
 				714D394C2BEAB04700BFF68A /* BreedsViewModel.swift */,
+				71249C1F2C07310A003C1549 /* ErrorViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 				71F0256F2BEFDFC700CB7112 /* ProfileView.swift */,
 				711D001E2BFE0596007FA5ED /* CoordinatorView.swift */,
 				71249C1B2C063632003C1549 /* TabsView.swift */,
+				71249C1D2C072FB9003C1549 /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			files = (
 				71674CB62BA9AD3F002C0027 /* NetworkReachability.swift in Sources */,
 				719A86162BD9AF4F0028C674 /* FeedView.swift in Sources */,
+				71249C1E2C072FB9003C1549 /* ErrorView.swift in Sources */,
 				71249C1C2C063632003C1549 /* TabsView.swift in Sources */,
 				71502EBD2B75566D006DF80B /* ApiBreedMapper.swift in Sources */,
 				716B1AD82B680587007CC300 /* FeedImageEntity.swift in Sources */,
@@ -359,6 +366,7 @@
 				8FD3E5942B0A1E920042C3C5 /* ApiRouter.swift in Sources */,
 				714D394B2BEAA88400BFF68A /* BreedsView.swift in Sources */,
 				716B1ADA2B680D7E007CC300 /* FeedImage.swift in Sources */,
+				71249C202C07310A003C1549 /* ErrorViewModel.swift in Sources */,
 				710C6FFB2BCECC9A003851B1 /* CardView.swift in Sources */,
 				710C6FF82BCECA0E003851B1 /* FeedViewModel.swift in Sources */,
 				8FD3E5922B0A1C630042C3C5 /* RequestManager.swift in Sources */,
