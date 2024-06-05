@@ -17,7 +17,7 @@ enum Tab: Hashable {
 struct TabsView: View {
     
     @State var selectedTab: Tab = .feed
-    private var coordinator: Coordinator = Coordinator.shared
+    @StateObject private var coordinator: Coordinator = Coordinator()
 
     
     var body: some View {

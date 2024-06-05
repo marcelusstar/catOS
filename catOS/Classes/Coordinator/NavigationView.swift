@@ -8,11 +8,9 @@
 import Foundation
 
 enum NavigationView: String, Identifiable {
-    case tabsContainer
     case feed
     case breeds
     case profile
-    case error
     
     var id: String {
         self.rawValue

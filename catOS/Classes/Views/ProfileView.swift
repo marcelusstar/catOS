@@ -39,10 +39,6 @@ struct ProfileView: View {
                     Text("Not implemented uploads")
                 }
                 
-                Button("Show overlay") {
-                    Coordinator.shared.showError(message: "Unknown error")
-                }
-                
             }
             .background(Color.red)
             .navigationTitle("Profile")
