@@ -16,6 +16,7 @@ struct FeedView: View {
         List(viewModel.feedImages, id:\.id) { feedImage in
             CardView(viewModel: CardViewModel(feedImage))
         }
+        .errorAlert($viewModel.error)
         .task {
             await viewModel.getFeedImages()
         }

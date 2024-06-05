@@ -13,7 +13,8 @@ class BreedsViewModel: ObservableObject {
     @Published var searchText = ""
     @Published var breeds: [Breed] = []
     @Published var breedsName: [String] = []
-       
+    @Published var error: CatError?
+    
     var filteredBreeds: [String] {
         guard !searchText.isEmpty else { return breedsName }
         return breedsName.filter { $0.lowercased().contains(searchText.lowercased()) }
@@ -32,7 +33,7 @@ class BreedsViewModel: ObservableObject {
             breedsName = breeds.map { $0.name }
         }
         catch {
-            ErrorManager.shared.process(error as! CatError)
+            self.error = error as? CatError
         }
         
         

@@ -9,6 +9,7 @@ import Foundation
 
 class FeedViewModel: ObservableObject {
     @Published var feedImages: [FeedImage] = []
+    @Published var error: CatError? = nil
     
     init(feedImages: [FeedImage]) {
         self.feedImages = feedImages
@@ -21,10 +22,14 @@ class FeedViewModel: ObservableObject {
     @MainActor
     func getFeedImages() async {
         do {
+            guard feedImages.isEmpty else {
+                return
+            }
+            
             feedImages = try await ApiManager.shared.getFeedImages(page: 1)
         }
         catch {
-            ErrorManager.shared.process(error as! CatError)
+            self.error = error as? CatError
         }
         
         

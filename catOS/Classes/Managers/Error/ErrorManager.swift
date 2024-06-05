@@ -6,27 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct ErrorManager {
+class ErrorManager: ObservableObject {
     
     static let shared: ErrorManager = ErrorManager()
     
+    @Published var error: CatError? = nil
+    
     func process(_ error: CatError) {
         
-        switch error {
-        
-        case .noInternet:
-            print("No internet connection")
-        case .serverError:
-            print("Server error connection")
-        case .badRequest:
-            print("Wrong or missins parameters for that server request")
-        case .internetConnection:
-            print("There was a problem with internet connection")
-        case .genericError:
-            print("Unknown error")
-        }
-        
+        self.error = error
     }
     
 }

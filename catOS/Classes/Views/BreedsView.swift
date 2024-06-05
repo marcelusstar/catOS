@@ -29,6 +29,7 @@ struct BreedsView: View {
         .task {
             await viewModel.getBreeds()
         }
+        .errorAlert($viewModel.error)
         
     }
 }
