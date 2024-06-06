@@ -10,7 +10,7 @@ import SwiftUI
 
 struct BreedsView: View {
 
-    @ObservedObject var viewModel: BreedsViewModel
+    @StateObject var viewModel: BreedsViewModel
     @Environment(\.dismissSearch) var dismissSearch
     
     var body: some View {
