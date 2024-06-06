@@ -26,19 +26,22 @@ struct TabsView: View {
                 .tabItem {
                     Label("Home", systemImage: "cat")
                 }
-                .id(Tab.feed)
+                .tag(Tab.feed)
             
             coordinator.buildBreeds()
                 .tabItem {
                     Label("Breeds", systemImage: "cat")
                 }
-                .id(Tab.breeds)
+                .tag(Tab.breeds)
             
             coordinator.buildProfile()
                 .tabItem {
                     Label("Profile", systemImage: "cat")
                 }
-                .id(Tab.profile)
+                .tag(Tab.profile)
+        }
+        .onChange(of: selectedTab) { newValue in
+            print(newValue)
         }
     }
 }
