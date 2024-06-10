@@ -35,7 +35,7 @@ struct CardView: View {
             
         })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .aspectRatio(0.7, contentMode: .fit)
+        //.aspectRatio(0.7, contentMode: .fit)
         .background(.white)
         .cornerRadius(10)
         .shadow(radius: 10)

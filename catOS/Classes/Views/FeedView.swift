@@ -13,8 +13,10 @@ struct FeedView: View {
     @StateObject var viewModel: FeedViewModel
     
     var body: some View {
-        List(viewModel.feedImages, id:\.id) { feedImage in
-            CardView(viewModel: CardViewModel(feedImage))
+        VStack {
+            cards
+            buttons
+                
         }
         .errorAlert($viewModel.error)
         .task {
@@ -22,6 +24,49 @@ struct FeedView: View {
         }
     }
     
+    var cards: some View {
+        ZStack {
+            ForEach(viewModel.feedImages, id: \.id) { feedImage in
+                CardView(viewModel: CardViewModel(feedImage))
+            }
+        }
+        .padding(20.0)
+        .frame(
+            maxWidth: .infinity,
+            maxHeight: .infinity)
+    }
+    
+    var buttons: some View {
+        HStack(spacing: 25.0) {
+            Spacer()
+            ButtonGradientOutline(
+                action: {
+                    
+                },
+                iconName: "hand.thumbsdown.fill",
+                colors: [Color.red])
+            
+            ButtonGradientOutline(
+                action: {
+                    
+                },
+                iconName: "heart.fill",
+                colors: [Color.purple])
+            
+            ButtonGradientOutline(
+                action: {
+                    
+                },
+                iconName: "hand.thumbsup.fill",
+                colors: [Color.green])
+            Spacer()
+        }
+        .padding(
+            EdgeInsets(top: 10.0,
+                       leading: 0.0,
+                       bottom: 30.0,
+                       trailing: 0.0))
+    }
 }
 
 
