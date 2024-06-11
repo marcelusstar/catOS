@@ -40,6 +40,10 @@ struct CardView: View {
         .cornerRadius(10)
         .shadow(radius: 10)
         .padding(8)
+        .opacity(viewModel.shouldDisappearAnimation ? 0 : 1)
+        .animation(.smooth(duration: CardViewModel.disappearanceAnimationTime), value: viewModel.shouldDisappearAnimation)
+        
+        
     }
 }
 
