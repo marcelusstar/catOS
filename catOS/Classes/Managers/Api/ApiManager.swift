@@ -32,4 +32,11 @@ struct ApiManager {
         return ApiTransformer.shared.transformBreedEntity(entity: breedEntity)
     }
     
+    func getFavorites(page: Int) async throws -> [Favorite] {
+        let subId = "soyelctangana"
+        let favoritesEntities: [FavoriteEntity] = try await RequestManager.shared.doAsyncAwaitRequest(apiRouter: .myFavs(subId, page))
+        
+        return favoritesEntities.map { ApiTransformer.shared.transformFavoriteEntity(entity: $0) }
+    }
+    
 }

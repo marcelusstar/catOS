@@ -57,6 +57,8 @@ class Navigator: ObservableObject {
                 BreedsView(viewModel: breedsViewModel)
             case .profile:
                 ProfileView()
+            case .favorites:
+                FavoritesView(viewModel: FavoritesViewModel())
         }
         
     }

@@ -20,6 +20,7 @@ enum ApiRouter {
     case getBreed(String)
     case voteImage(String, String, Int)      // Votar una imagen (like o dislike)
     case feedImages(Int)     // Imagenes random para el feed
+    case myFavs(String, Int)         // Obtener imagenes favoritas del usuario
     /*
 
     case generalVotes   // Obtener todas las imagenes votadas. Se podría filtrar por mas votadas por fecha y pais
@@ -28,7 +29,7 @@ enum ApiRouter {
     case myImages       // Obtener las imagenes que has subido
     case favImage       // Favoritear una imagen
     case unfavImage     // Desfavoritear una imagen
-    case myFavs         // Obtener imagenes favoritas del usuario
+    
     case breeds         // Obtener los datos de las razas
     case breedId        // Obtener los datos de una raza en concreto
     case searchBreeds   // Buscar una raza por su nombre
@@ -52,6 +53,8 @@ enum ApiRouter {
             "votes"
         case .feedImages(let page):
             "images/search?format=json&order=RANDOM&page=\(page)&limit=10"
+        case .myFavs(let subId, let page):
+            "favourites?limit=20&page=\(page)&order=Desc&sub_id=\(subId)"
         }
         
         return"\(baseUrl)/\(url)"
@@ -60,7 +63,7 @@ enum ApiRouter {
     var method: HTTPMethod {
         switch self {
             
-        case .randomImage, .getBreeds, .getBreed(_), .feedImages(_):
+        case .randomImage, .getBreeds, .getBreed(_), .feedImages(_), .myFavs(_, _):
             return HTTPMethod.get
         case .voteImage:
             return HTTPMethod.post
@@ -80,7 +83,7 @@ enum ApiRouter {
         
         switch self {
             
-        case .voteImage, .feedImages(_):
+        case .voteImage, .feedImages(_), .myFavs(_, _):
             commonHeaders["x-api-key"] = apiKey
             commonHeaders["Content-type"] = "application/json; charset=utf8"
             

@@ -17,6 +17,7 @@ class ApiTransformer {
     
     let apiBreedMapper: ApiBreedMapper = ApiBreedMapper.shared
     let apiFeedImageMapper: ApiFeedImageMapper = ApiFeedImageMapper()
+    let apiFavoriteMapper: ApiFavoriteMapper = ApiFavoriteMapper()
     
     func transformBreedEntity(entity: BreedEntity) -> Breed {
         apiBreedMapper.mapValues(entity)
@@ -24,6 +25,10 @@ class ApiTransformer {
     
     func transformFeedImageEntity(entity: FeedImageEntity) -> FeedImage {
         apiFeedImageMapper.mapValues(entity)
+    }
+    
+    func transformFavoriteEntity(entity: FavoriteEntity) -> Favorite {
+        apiFavoriteMapper.mapValues(entity)
     }
     
 }

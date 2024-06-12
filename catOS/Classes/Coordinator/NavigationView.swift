@@ -11,6 +11,7 @@ enum NavigationView: String, Identifiable {
     case feed
     case breeds
     case profile
+    case favorites
     
     var id: String {
         self.rawValue

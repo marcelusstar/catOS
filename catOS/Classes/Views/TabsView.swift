@@ -11,7 +11,7 @@ import SwiftUI
 enum Tab: Hashable {
     case feed
     case breeds
-    case profile
+    case favorites
 }
 
 struct TabsView: View {
@@ -30,15 +30,15 @@ struct TabsView: View {
             
             coordinator.buildBreeds()
                 .tabItem {
-                    Label("Breeds", systemImage: "cat")
+                    Label("Breeds", systemImage: "magnifyingglass")
                 }
                 .tag(Tab.breeds)
             
-            coordinator.buildProfile()
+            coordinator.buildFavorites()
                 .tabItem {
-                    Label("Profile", systemImage: "cat")
+                    Label("Favorites", systemImage: "star")
                 }
-                .tag(Tab.profile)
+                .tag(Tab.favorites)
         }
         .onChange(of: selectedTab) { newValue in
             print(newValue)

@@ -24,4 +24,8 @@ class Coordinator: ObservableObject {
         navigator.build(navigationView: .profile)
     }
     
+    func buildFavorites() -> some View {
+        navigator.build(navigationView: .favorites)
+    }
+    
 }

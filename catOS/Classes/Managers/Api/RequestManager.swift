@@ -39,7 +39,7 @@ struct RequestManager {
         if let httpResponse = response as? HTTPURLResponse {
             switch httpResponse.statusCode {
             case 200...299:
-                print("Request was successful. Data received: \(String(data: data, encoding: .utf8) ?? "No data")")
+                print("Request was successful. \(apiRouter.path)")
             case 400...499:
                 print("Client error: \(httpResponse.statusCode)")
                 throw CatError.badRequest
