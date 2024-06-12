@@ -54,6 +54,7 @@ class FeedViewModel: ObservableObject {
         removeLastImageViewed()
     }
     
+    @MainActor
     func addToFavs() {
         self.cardViewModels.last?.addToFavs()
         removeLastImageViewed()

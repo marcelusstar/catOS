@@ -31,7 +31,9 @@ class CardViewModel: ObservableObject {
         shouldDisappearAnimation.toggle()
     }
     
-    func addToFavs() {
+    @MainActor
+    func addToFavs()  {
+        ApiManager.shared.addToFavorites(imageId: feedImageData.id)
         shouldDisappearAnimation.toggle()
     }
     

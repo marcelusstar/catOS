@@ -13,6 +13,11 @@ enum HTTPMethod: String {
     case put = "PUT"
 }
 
+enum ParamsName: String {
+    case subId = "sub_id"
+    case imageId = "image_id"
+}
+
 enum ApiRouter {
         
     case randomImage    // Imagen random
@@ -21,13 +26,14 @@ enum ApiRouter {
     case voteImage(String, String, Int)      // Votar una imagen (like o dislike)
     case feedImages(Int)     // Imagenes random para el feed
     case myFavs(String, Int)         // Obtener imagenes favoritas del usuario
+    case favImage(String, String)       // Favoritear una imagen
     /*
 
     case generalVotes   // Obtener todas las imagenes votadas. Se podría filtrar por mas votadas por fecha y pais
     case uploadImage    // Subir una imagen
     case deleteImage    // Borrar una imagen (propia del usuario)
     case myImages       // Obtener las imagenes que has subido
-    case favImage       // Favoritear una imagen
+    
     case unfavImage     // Desfavoritear una imagen
     
     case breeds         // Obtener los datos de las razas
@@ -35,6 +41,9 @@ enum ApiRouter {
     case searchBreeds   // Buscar una raza por su nombre
                         // Actividad del usuario (imagenes con like y dislike)
      */
+    
+    
+    
     
     
     var baseUrl: String { "https://api.thecatapi.com/v1" }
@@ -55,6 +64,8 @@ enum ApiRouter {
             "images/search?format=json&order=RANDOM&page=\(page)&limit=10"
         case .myFavs(let subId, let page):
             "favourites?limit=20&page=\(page)&order=Desc&sub_id=\(subId)"
+        case .favImage(_, _):
+            "favourites"
         }
         
         return"\(baseUrl)/\(url)"
@@ -65,7 +76,7 @@ enum ApiRouter {
             
         case .randomImage, .getBreeds, .getBreed(_), .feedImages(_), .myFavs(_, _):
             return HTTPMethod.get
-        case .voteImage:
+        case .voteImage, .favImage(_, _):
             return HTTPMethod.post
         }
     }
@@ -83,7 +94,7 @@ enum ApiRouter {
         
         switch self {
             
-        case .voteImage, .feedImages(_), .myFavs(_, _):
+        case .voteImage, .feedImages(_), .myFavs(_, _), .favImage(_, _):
             commonHeaders["x-api-key"] = apiKey
             commonHeaders["Content-type"] = "application/json; charset=utf8"
             
@@ -97,12 +108,17 @@ enum ApiRouter {
     
     var body: Data? {
         
+        
         let data: [String: Any] = switch self {
             
             case .voteImage(let userId, let imageId, let points):
-                    ["sub_id": userId,
-                    "image_id": imageId,
+            [ParamsName.subId.rawValue : userId,
+             ParamsName.imageId.rawValue: imageId,
                     "value": points]
+            
+            case .favImage(let subId, let imageId):
+                    [ParamsName.subId.rawValue: subId,
+                     ParamsName.imageId.rawValue: imageId]
                 
             default:
                 ["": ""]

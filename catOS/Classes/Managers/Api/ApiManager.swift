@@ -39,4 +39,9 @@ struct ApiManager {
         return favoritesEntities.map { ApiTransformer.shared.transformFavoriteEntity(entity: $0) }
     }
     
+    func addToFavorites(imageId: String) {
+        let subId = "soyelctangana"
+        RequestManager.shared.doRequest(apiRouter: .favImage(subId, imageId))
+    }
+    
 }
