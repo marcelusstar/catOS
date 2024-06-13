@@ -21,7 +21,7 @@ class ApiFeedImageMapper: Mapper {
         
         var categories: [Category] = []
         if let categoriesEntities = entity.categories {
-            categories = entity.categories!.map { ApiCategoryMapper().mapValues($0) }
+            categories = categoriesEntities.map { ApiCategoryMapper().mapValues($0) }
         }
         
         return FeedImage(id: entity.id,

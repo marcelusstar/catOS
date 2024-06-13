@@ -13,10 +13,10 @@ enum HTTPMethod: String {
     case put = "PUT"
 }
 
-enum ParamsName: String {
-    case subId = "sub_id"
-    case imageId = "image_id"
-    case value = "value"
+struct ParamsName {
+    static let subId = "sub_id"
+    static let imageId = "image_id"
+    static let value = "value"
 }
 
 enum ApiRouter {
@@ -113,13 +113,13 @@ enum ApiRouter {
         let data: [String: Any] = switch self {
             
             case .voteImage(let subId, let imageId, let vote):
-                [ParamsName.subId.rawValue : subId,
-                 ParamsName.imageId.rawValue: imageId,
-                 ParamsName.value.rawValue: vote]
+                [ParamsName.subId : subId,
+                 ParamsName.imageId: imageId,
+                 ParamsName.value: vote]
             
             case .favImage(let subId, let imageId):
-                [ParamsName.subId.rawValue: subId,
-                ParamsName.imageId.rawValue: imageId]
+                [ParamsName.subId: subId,
+                ParamsName.imageId: imageId]
                 
             default:
                 ["": ""]
