@@ -44,4 +44,13 @@ struct ApiManager {
         RequestManager.shared.doRequest(apiRouter: .favImage(subId, imageId))
     }
     
+    func likeImage(imageId: String) {
+        let subId = "soyelctangana"
+        RequestManager.shared.doRequest(apiRouter: .voteImage(subId, imageId, true))
+    }
+    
+    func dislikeImage(imageId: String) {
+        let subId = "soyelctangana"
+        RequestManager.shared.doRequest(apiRouter: .voteImage(subId, imageId, false))
+    }
 }

@@ -24,10 +24,12 @@ class CardViewModel: ObservableObject {
     }
     
     func like() {
+        ApiManager.shared.likeImage(imageId: feedImageData.id)
         shouldDisappearAnimation.toggle()
     }
     
     func dislike() {
+        ApiManager.shared.dislikeImage(imageId: feedImageData.id)
         shouldDisappearAnimation.toggle()
     }
     

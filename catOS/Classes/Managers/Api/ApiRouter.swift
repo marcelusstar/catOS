@@ -16,6 +16,7 @@ enum HTTPMethod: String {
 enum ParamsName: String {
     case subId = "sub_id"
     case imageId = "image_id"
+    case value = "value"
 }
 
 enum ApiRouter {
@@ -23,7 +24,7 @@ enum ApiRouter {
     case randomImage    // Imagen random
     case getBreeds
     case getBreed(String)
-    case voteImage(String, String, Int)      // Votar una imagen (like o dislike)
+    case voteImage(String, String, Bool)      // Votar una imagen (like o dislike)
     case feedImages(Int)     // Imagenes random para el feed
     case myFavs(String, Int)         // Obtener imagenes favoritas del usuario
     case favImage(String, String)       // Favoritear una imagen
@@ -50,7 +51,7 @@ enum ApiRouter {
     
     var path: String {
         
-        var url = switch self {
+        let url = switch self {
             
         case .randomImage:
             "images/search"
@@ -59,7 +60,7 @@ enum ApiRouter {
         case .getBreed(let id):
             "breeds/\(id)"
         case .voteImage:
-            "votes"
+            "votes/"
         case .feedImages(let page):
             "images/search?format=json&order=RANDOM&page=\(page)&limit=10"
         case .myFavs(let subId, let page):
@@ -111,14 +112,14 @@ enum ApiRouter {
         
         let data: [String: Any] = switch self {
             
-            case .voteImage(let userId, let imageId, let points):
-            [ParamsName.subId.rawValue : userId,
-             ParamsName.imageId.rawValue: imageId,
-                    "value": points]
+            case .voteImage(let subId, let imageId, let vote):
+                [ParamsName.subId.rawValue : subId,
+                 ParamsName.imageId.rawValue: imageId,
+                 ParamsName.value.rawValue: vote]
             
             case .favImage(let subId, let imageId):
-                    [ParamsName.subId.rawValue: subId,
-                     ParamsName.imageId.rawValue: imageId]
+                [ParamsName.subId.rawValue: subId,
+                ParamsName.imageId.rawValue: imageId]
                 
             default:
                 ["": ""]
