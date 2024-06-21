@@ -20,8 +20,16 @@ struct LoadingView: ViewModifier {
                         ProgressView("Loading...")
                             .controlSize(.large)
                             .tint(Color.red)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background{
+                                Color.white.opacity(0.5)
+                            }
+                    
+                        }
+                    
                     }
-                }
+                    
+                    
             )
     }
 }
