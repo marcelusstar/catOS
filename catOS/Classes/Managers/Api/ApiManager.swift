@@ -11,6 +11,12 @@ import Foundation
 struct ApiManager {
     
     static let shared: ApiManager = ApiManager()
+    let userSubId: String
+    
+    init() {
+        
+        self.userSubId = CustomUserDefaults().getUserId()
+    }
     
     func getFeedImages(page: Int) async throws -> [FeedImage] {
 
@@ -33,24 +39,20 @@ struct ApiManager {
     }
     
     func getFavorites(page: Int) async throws -> [Favorite] {
-        let subId = "soyelctangana"
-        let favoritesEntities: [FavoriteEntity] = try await RequestManager.shared.doAsyncAwaitRequest(apiRouter: .myFavs(subId, page))
+        let favoritesEntities: [FavoriteEntity] = try await RequestManager.shared.doAsyncAwaitRequest(apiRouter: .myFavs(userSubId, page))
         
         return favoritesEntities.map { ApiTransformer.shared.transformFavoriteEntity(entity: $0) }
     }
     
     func addToFavorites(imageId: String) {
-        let subId = "soyelctangana"
-        RequestManager.shared.doRequest(apiRouter: .favImage(subId, imageId))
+        RequestManager.shared.doRequest(apiRouter: .favImage(userSubId, imageId))
     }
     
     func likeImage(imageId: String) {
-        let subId = "soyelctangana"
-        RequestManager.shared.doRequest(apiRouter: .voteImage(subId, imageId, true))
+        RequestManager.shared.doRequest(apiRouter: .voteImage(userSubId, imageId, true))
     }
     
     func dislikeImage(imageId: String) {
-        let subId = "soyelctangana"
-        RequestManager.shared.doRequest(apiRouter: .voteImage(subId, imageId, false))
+        RequestManager.shared.doRequest(apiRouter: .voteImage(userSubId, imageId, false))
     }
 }

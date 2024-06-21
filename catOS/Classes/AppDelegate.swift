@@ -12,6 +12,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
+        let customUserDefaults: CustomUserDefaults = CustomUserDefaults()
+        
+        if !customUserDefaults.hasUserId() {
+            customUserDefaults.generateUserId()
+        }
+        
         print("didFinishLaunchingWithOptions")
         
         return true
