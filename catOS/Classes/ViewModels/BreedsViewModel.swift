@@ -14,6 +14,7 @@ class BreedsViewModel: ObservableObject {
     @Published var breeds: [Breed] = []
     @Published var breedsName: [String] = []
     @Published var error: CatError?
+    @Published var loadingData: Bool = false
     
     var filteredBreeds: [String] {
         guard !searchText.isEmpty else { return breedsName }
@@ -27,6 +28,7 @@ class BreedsViewModel: ObservableObject {
         }
         
         do {
+            loadingData = true
             breeds = try await ApiManager.shared.getBreeds()
             breeds.sort{ $0.name < $1.name }
             breedsName.removeAll()
@@ -36,6 +38,7 @@ class BreedsViewModel: ObservableObject {
             self.error = error as? CatError
         }
         
+        loadingData = false        
         
     }
     

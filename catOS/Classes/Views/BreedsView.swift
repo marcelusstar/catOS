@@ -30,6 +30,7 @@ struct BreedsView: View {
             await viewModel.getBreeds()
         }
         .errorAlert($viewModel.error)
+        .loading($viewModel.loadingData)
         
     }
 }

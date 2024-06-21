@@ -29,6 +29,7 @@ struct CardView: View {
                     ProgressView()
                             .scaleEffect(2)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            
                     
                 }
             }

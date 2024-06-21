@@ -21,11 +21,13 @@ struct FavoritesView: View {
                 
                 
             }
+            .navigationTitle("Favorites")
             .errorAlert($viewModel.error)
+            .loading($viewModel.loadingData)
             .task {
                 await viewModel.getFavorites()
             }
-            .navigationTitle("Favorites")
+            
         }
     }
 }

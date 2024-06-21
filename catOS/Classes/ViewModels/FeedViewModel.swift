@@ -11,6 +11,7 @@ class FeedViewModel: ObservableObject {
     private var feedImages: [FeedImage] = []
     @Published var error: CatError? = nil
     @Published var cardViewModels: [CardViewModel] = []
+    @Published var loadingData: Bool = false
     
     init(feedImages: [FeedImage]) {
         self.feedImages = feedImages
@@ -28,6 +29,8 @@ class FeedViewModel: ObservableObject {
                 return
             }
             
+            loadingData = true
+            
             feedImages = try await ApiManager.shared.getFeedImages(page: 1)
             cardViewModels = feedImages.map { CardViewModel($0) }
         }
@@ -35,7 +38,7 @@ class FeedViewModel: ObservableObject {
             self.error = error as? CatError
         }
         
-        
+        loadingData = false
     }
     
     fileprivate func removeLastImageViewed() {

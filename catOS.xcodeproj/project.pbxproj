@@ -40,6 +40,7 @@
 		719A86162BD9AF4F0028C674 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A86152BD9AF4F0028C674 /* FeedView.swift */; };
 		71A16B942C2566E4006646A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A16B932C2566E4006646A2 /* AppDelegate.swift */; };
 		71A16B962C256FAC006646A2 /* CustomUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A16B952C256FAC006646A2 /* CustomUserDefaults.swift */; };
+		71A16B982C2583E0006646A2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A16B972C2583E0006646A2 /* LoadingView.swift */; };
 		71A878362B714BEC003059CD /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A878352B714BEC003059CD /* ApiManager.swift */; };
 		71E2C0ED2C10CCCB008AE21D /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2C0EC2C10CCCB008AE21D /* ErrorAlert.swift */; };
 		71E2C0F02C10CD99008AE21D /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2C0EF2C10CD99008AE21D /* ViewExtension.swift */; };
@@ -92,6 +93,7 @@
 		719A86152BD9AF4F0028C674 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		71A16B932C2566E4006646A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71A16B952C256FAC006646A2 /* CustomUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserDefaults.swift; sourceTree = "<group>"; };
+		71A16B972C2583E0006646A2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		71A878352B714BEC003059CD /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		71E2C0EC2C10CCCB008AE21D /* ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 		71E2C0EF2C10CD99008AE21D /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				71E2C0EC2C10CCCB008AE21D /* ErrorAlert.swift */,
+				71A16B972C2583E0006646A2 /* LoadingView.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -344,7 +347,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					8FD3E57C2B0A1B3F0042C3C5 = {
 						CreatedOnToolsVersion = 15.0;
@@ -431,6 +434,7 @@
 				71E2C0F02C10CD99008AE21D /* ViewExtension.swift in Sources */,
 				718F9DF72B616B300089CB8A /* Weight.swift in Sources */,
 				71E2C0ED2C10CCCB008AE21D /* ErrorAlert.swift in Sources */,
+				71A16B982C2583E0006646A2 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +476,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -534,6 +539,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -561,6 +567,7 @@
 				CODE_SIGN_ENTITLEMENTS = catOS/catOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"catOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -598,6 +605,7 @@
 				CODE_SIGN_ENTITLEMENTS = catOS/catOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"catOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;

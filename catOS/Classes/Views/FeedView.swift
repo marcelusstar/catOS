@@ -19,6 +19,7 @@ struct FeedView: View {
                 
         }
         .errorAlert($viewModel.error)
+        .loading($viewModel.loadingData)
         .task {
             await viewModel.getFeedImages()
         }

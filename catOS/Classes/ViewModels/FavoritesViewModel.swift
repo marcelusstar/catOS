@@ -12,6 +12,7 @@ class FavoritesViewModel: ObservableObject {
     
     @Published var favorites: [Favorite] = []
     @Published var error: CatError?
+    @Published var loadingData: Bool = false
     
     init() {
         
@@ -23,12 +24,17 @@ class FavoritesViewModel: ObservableObject {
     
     @MainActor
     func getFavorites() async {
+        
+        loadingData = true
+        
         do {
             favorites = try await ApiManager.shared.getFavorites(page: 0)
         }
         catch {
             self.error = error as? CatError
         }
+        
+        loadingData = false
     }
     
 }
