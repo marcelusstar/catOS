@@ -12,6 +12,7 @@ class FeedViewModel: ObservableObject {
     @Published var error: CatError? = nil
     @Published var cardViewModels: [CardViewModel] = []
     @Published var loadingData: Bool = false
+    private var paginationFeedImages: Int = 0
     
     init(feedImages: [FeedImage]) {
         self.feedImages = feedImages
@@ -25,13 +26,14 @@ class FeedViewModel: ObservableObject {
     @MainActor
     func getFeedImages() async {
         do {
-            guard feedImages.isEmpty else {
+            guard cardViewModels.isEmpty else {
                 return
             }
             
             loadingData = true
             
-            feedImages = try await ApiManager.shared.getFeedImages(page: 1)
+            feedImages = try await ApiManager.shared.getFeedImages(page: paginationFeedImages)
+            paginationFeedImages += 1
             cardViewModels = feedImages.map { CardViewModel($0) }
         }
         catch {
@@ -44,6 +46,12 @@ class FeedViewModel: ObservableObject {
     fileprivate func removeLastImageViewed() {
         DispatchQueue.main.asyncAfter(deadline: .now() + CardViewModel.disappearanceAnimationTime + 0.1, execute: {
             self.cardViewModels.removeLast()
+            
+            Task { 
+                if (self.cardViewModels.isEmpty) {
+                    await self.getFeedImages()
+                }
+            }
         })
     }
     
