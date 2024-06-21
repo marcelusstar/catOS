@@ -17,7 +17,7 @@ struct LoadingView: ViewModifier {
             .overlay(
                 Group {
                     if loading {
-                        ProgressView("Loading...")
+                        ProgressView(String(localized: "common.loading"))
                             .controlSize(.large)
                             .tint(Color.red)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -23,7 +23,7 @@ struct BreedsView: View {
                     }
                 }
             }
-            .navigationTitle("Breeds")
+            .navigationTitle(String(localized: "tab_title.breeds"))
         }
         .searchable(text: $viewModel.searchText)
         .task {

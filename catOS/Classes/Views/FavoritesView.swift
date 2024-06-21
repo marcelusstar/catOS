@@ -21,7 +21,7 @@ struct FavoritesView: View {
                 
                 
             }
-            .navigationTitle("Favorites")
+            .navigationTitle(String(localized: "tab_title.favs"))
             .errorAlert($viewModel.error)
             .loading($viewModel.loadingData)
             .task {

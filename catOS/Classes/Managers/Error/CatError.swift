@@ -18,15 +18,15 @@ enum CatError: Error, LocalizedError {
         switch self {
             
         case .noInternet:
-            "No internet connection"
+            String(localized: "error.no_internet")
         case .serverError:
-            "Server error connection"
+            String(localized: "error.server_error")
         case .badRequest:
-            "Bad request"
+            String(localized: "error.bad_request")
         case .internetConnection:
-            "Problem with internet connection"
+            String(localized: "error.internet_connection")
         case .genericError:
-            "Unknown error"
+            String(localized: "error.generic_error")
         }
     }
     
@@ -35,15 +35,15 @@ enum CatError: Error, LocalizedError {
         switch self {
             
         case .noInternet:
-            "You are not connected to internet. Check settings."
+            String(localized: "error.no_internet_description")
         case .serverError:
-            "There was some problem connecting to the server. Try again."
+            String(localized: "error.server_error_description")
         case .badRequest:
-            "Wrong or missing parameters for that server request."
+            String(localized: "error.bad_request_description")
         case .internetConnection:
-            "There was a problem with internet connection. Check settings"
+            String(localized: "error.internet_connection_description")
         case .genericError:
-            "Something was wrong, please try again later."
+            String(localized: "error.generic_error_description")
         }
         
     }

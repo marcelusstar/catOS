@@ -24,19 +24,19 @@ struct TabsView: View {
         TabView(selection: $selectedTab) {
             coordinator.buildFeed()
                 .tabItem {
-                    Label("Home", systemImage: "cat")
+                    Label(String(localized: "tab_title.home"), systemImage: "cat")
                 }
                 .tag(Tab.feed)
             
             coordinator.buildBreeds()
                 .tabItem {
-                    Label("Breeds", systemImage: "magnifyingglass")
+                    Label(String(localized: "tab_title.breeds"), systemImage: "magnifyingglass")
                 }
                 .tag(Tab.breeds)
             
             coordinator.buildFavorites()
                 .tabItem {
-                    Label("Favorites", systemImage: "star")
+                    Label(String(localized: "tab_title.favs"), systemImage: "heart.fill")
                 }
                 .tag(Tab.favorites)
         }

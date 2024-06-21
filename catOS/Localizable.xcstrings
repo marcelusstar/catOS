@@ -1,0 +1,187 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Activity " : {
+
+    },
+    "common.loading" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
+          }
+        }
+      }
+    },
+    "error.bad_request" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bad request"
+          }
+        }
+      }
+    },
+    "error.bad_request_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wrong or missing parameters for that server request."
+          }
+        }
+      }
+    },
+    "error.generic_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oops! Something went wrong!"
+          }
+        }
+      }
+    },
+    "error.generic_error_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The application has encountered an unknown error."
+          }
+        }
+      }
+    },
+    "error.internet_connection" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problem with internet connection"
+          }
+        }
+      }
+    },
+    "error.internet_connection_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There was a problem with internet connection. Check your internet connection."
+          }
+        }
+      }
+    },
+    "error.no_internet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No internet connection"
+          }
+        }
+      }
+    },
+    "error.no_internet_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You are not connected to internet. Check settings."
+          }
+        }
+      }
+    },
+    "error.server_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Server error connection"
+          }
+        }
+      }
+    },
+    "error.server_error_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There was some problem connecting to the server. Try again."
+          }
+        }
+      }
+    },
+    "Favorites " : {
+
+    },
+    "Not implemented activity" : {
+
+    },
+    "Not implemented favorites" : {
+
+    },
+    "Not implemented uploads" : {
+
+    },
+    "Profile" : {
+
+    },
+    "Selected: %@" : {
+
+    },
+    "tab_title.breeds" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breeds"
+          }
+        }
+      }
+    },
+    "tab_title.favs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorites"
+          }
+        }
+      }
+    },
+    "tab_title.home" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        }
+      }
+    },
+    "The lord of the cats" : {
+
+    },
+    "Uploads " : {
+
+    }
+  },
+  "version" : "1.0"
+}
