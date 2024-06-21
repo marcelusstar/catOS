@@ -31,6 +31,16 @@ struct FeedView: View {
                 CardView(viewModel: cardViewModel)
                     
             }
+            
+            ButtonGradientOutline(
+                action: {
+                    Task {
+                        await viewModel.getFeedImages()
+                    }
+                },
+                iconName: "arrow.circlepath",
+                colors: [Color.yellow])
+            .opacity(viewModel.visibleReloadButton ? 1.0 : 0.0)
         }
         .padding(20.0)
         .frame(

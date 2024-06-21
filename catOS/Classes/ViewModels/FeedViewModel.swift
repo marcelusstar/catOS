@@ -12,6 +12,7 @@ class FeedViewModel: ObservableObject {
     @Published var error: CatError? = nil
     @Published var cardViewModels: [CardViewModel] = []
     @Published var loadingData: Bool = false
+    var visibleReloadButton: Bool = false
     private var paginationFeedImages: Int = 0
     
     init(feedImages: [FeedImage]) {
@@ -35,9 +36,11 @@ class FeedViewModel: ObservableObject {
             feedImages = try await ApiManager.shared.getFeedImages(page: paginationFeedImages)
             paginationFeedImages += 1
             cardViewModels = feedImages.map { CardViewModel($0) }
+            visibleReloadButton = false
         }
         catch {
             self.error = error as? CatError
+            visibleReloadButton = true
         }
         
         loadingData = false
