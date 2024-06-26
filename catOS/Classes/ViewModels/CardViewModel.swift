@@ -14,6 +14,7 @@ class CardViewModel: ObservableObject {
     var feedImageData: FeedImage
     @Published var imageUrl: String
     @Published var shouldDisappearAnimation: Bool
+    var switchAspectFit: Bool = false
     
     static let disappearanceAnimationTime: Double = 0.3
     

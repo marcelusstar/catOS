@@ -12,17 +12,16 @@ import SwiftUI
 struct CardView: View {
     
     @ObservedObject var viewModel: CardViewModel
-    
-    let cardGradient = Gradient(colors: [Color.black.opacity(0.3), Color.clear])
+    @State var switchAspectFit: Bool = false
     
     var body: some View {
-        ZStack(alignment:  .topLeading, content: {
+        ZStack(alignment: .bottomTrailing, content: {
             
             GeometryReader { geo in
                 AsyncImage(url: URL(string: viewModel.imageUrl)) { image in
                     image
                         .resizable()
-                        .scaledToFill()
+                        .aspectRatio(contentMode: switchAspectFit ? .fit : .fill)
                         .frame(width: geo.size.width, height: geo.size.height)
                         .clipped()
                 } placeholder: {
@@ -33,6 +32,20 @@ struct CardView: View {
                     
                 }
             }
+
+            Button(action: {
+                switchAspectFit.toggle()
+            }, label: {
+                Image(systemName:
+                        switchAspectFit ? "arrow.down.backward.and.arrow.up.forward.circle" : "arrow.up.right.and.arrow.down.left.circle")
+                .foregroundGradient(colors: [.orange])
+            })
+            .font(.system(size: 35, weight: .regular))
+            .padding(10)
+            
+
+            
+              
             
         })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
