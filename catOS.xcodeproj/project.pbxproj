@@ -72,7 +72,6 @@
 		712EF04B2C19B61A0075A29A /* FavoriteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEntity.swift; sourceTree = "<group>"; };
 		712EF04D2C19B91E0075A29A /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		712EF04F2C19B9650075A29A /* ApiFavoriteMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFavoriteMapper.swift; sourceTree = "<group>"; };
-		713466DC2BA8AB09003BB72A /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		713466E02BA8B167003BB72A /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		713466E32BA8BE1F003BB72A /* CatError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatError.swift; sourceTree = "<group>"; };
 		714976142C1712E200D6FE2E /* ButtonGradientOutline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGradientOutline.swift; sourceTree = "<group>"; };
@@ -260,7 +259,6 @@
 		8FD3E5742B0A1B3F0042C3C5 = {
 			isa = PBXGroup;
 			children = (
-				713466DC2BA8AB09003BB72A /* Config.xcconfig */,
 				8FD3E57F2B0A1B3F0042C3C5 /* catOS */,
 				8FD3E57E2B0A1B3F0042C3C5 /* Products */,
 			);
@@ -447,7 +445,6 @@
 /* Begin XCBuildConfiguration section */
 		8FD3E58A2B0A1B400042C3C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 713466DC2BA8AB09003BB72A /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -510,7 +507,6 @@
 		};
 		8FD3E58B2B0A1B400042C3C5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 713466DC2BA8AB09003BB72A /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
