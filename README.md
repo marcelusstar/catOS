@@ -5,17 +5,28 @@
 ## Description
 
 This is a project made using public api https://thecatapi.com/. THIS IS NOT AN OFFICIAL APP from TheCatApi.
-This is my first project using SwiftUI, so please, if you see some sacrilege forgive me.
 
-## HOW TO RUN
+## Structure
 
-You need an api key from https://thecatapi.com/. You can register and get one from it.
-Alternatively you can use the demo app: **DEMO-API-KEY**
+In this project, I utilize the async/await syntax for handling network request, enhancing code readability and maintainability by simplifying asynchronous operations and reducing the need for complex callback handling.
 
-When you download the project one file will be missing, Config.xcconfig, where the sensitive information is stored. This file is excluded from repository, so you can delete it or create one adding
-```API_KEY = example_of_your_api_key"```
+Mainly SwiftUI is used instead of UIKit, leveraging SwiftUI's declarative syntax to create a more intuitive and efficient user interface development experience.
 
-If you have chosen to delete Config.xcconfig, add the api key in ApiRouter.swift, at 
+I have adhered, or at least I tried, to SOLID principles to ensure a robust, maintainable, and scalable codebase by promoting good software design practices.
+
+I have adhered, or at least I tried, to clean code principles to enhance readability, maintainability, and overall code quality. For example, for network requests there are three files: ApiRouter, where is all requests information; RequestManager, where is the code to make the requests; and ApiManager, with the all the api methods with its parameters.
+
+This project is structured using the MVVM (Model-View-ViewModel) architectural pattern to promote a clear separation of concerns, enhance testability, and improve code maintainability.
+
+## How to run
+
+Just download and compile, no dependencies are required.
+
+## Api Key
+
+You need an api key from https://thecatapi.com/. You can register and get one from it. Currently this project is using de demo api key: **DEMO-API-KEY**
+
+You can replace the demo api key by yours at ApiRouter.swift file 
 ```
 let apiKey: String? = (plistData?["API_KEY"] as? String) ?? "YOUR_OWN_API_KEY_IF_NOT_FOUND"
 ```
