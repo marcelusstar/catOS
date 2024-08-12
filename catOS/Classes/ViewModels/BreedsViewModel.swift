@@ -16,6 +16,12 @@ class BreedsViewModel: ObservableObject {
     @Published var error: CatError?
     @Published var loadingData: Bool = false
     
+    let apiManager: ApiManagerProtocol
+    
+    init(apiManager: ApiManagerProtocol = ApiManager.shared) {
+        self.apiManager = apiManager
+    }
+    
     var filteredBreeds: [String] {
         guard !searchText.isEmpty else { return breedsName }
         return breedsName.filter { $0.lowercased().contains(searchText.lowercased()) }
@@ -29,7 +35,7 @@ class BreedsViewModel: ObservableObject {
         
         do {
             loadingData = true
-            breeds = try await ApiManager.shared.getBreeds()
+            breeds = try await apiManager.getBreeds()
             breeds.sort{ $0.name < $1.name }
             breedsName.removeAll()
             breedsName = breeds.map { $0.name }

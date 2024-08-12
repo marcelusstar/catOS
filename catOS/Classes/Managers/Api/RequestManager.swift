@@ -6,9 +6,7 @@
 
 import Foundation
 
-struct RequestManager {
-    
-    static let shared: RequestManager = RequestManager()
+struct RequestManager: RequestManagerProtocol {
     
     var networkReachability: NetworkReachability = NetworkReachability()
     

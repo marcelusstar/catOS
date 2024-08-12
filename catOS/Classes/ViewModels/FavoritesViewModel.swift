@@ -14,12 +14,10 @@ class FavoritesViewModel: ObservableObject {
     @Published var error: CatError?
     @Published var loadingData: Bool = false
     
-    init() {
-        
-    }
+    let apiManager: ApiManagerProtocol
     
-    init(favorites: [Favorite]) {
-        self.favorites = favorites
+    init(apiManager: ApiManagerProtocol = ApiManager.shared) {
+        self.apiManager = apiManager
     }
     
     @MainActor
@@ -28,7 +26,7 @@ class FavoritesViewModel: ObservableObject {
         loadingData = true
         
         do {
-            favorites = try await ApiManager.shared.getFavorites(page: 0)
+            favorites = try await apiManager.getFavorites(page: 0)
         }
         catch {
             self.error = error as? CatError

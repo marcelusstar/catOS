@@ -16,27 +16,31 @@ class CardViewModel: ObservableObject {
     @Published var shouldDisappearAnimation: Bool
     var switchAspectFit: Bool = false
     
+    let apiManager: ApiManagerProtocol
+    
     static let disappearanceAnimationTime: Double = 0.3
     
-    init(_ feedImageData: FeedImage) {
+    init(apiManager: ApiManagerProtocol = ApiManager.shared, _ feedImageData: FeedImage) {
+            
+        self.apiManager = apiManager
         self.feedImageData = feedImageData
         self.imageUrl = feedImageData.url
         shouldDisappearAnimation = false
     }
     
     func like() {
-        ApiManager.shared.likeImage(imageId: feedImageData.id)
+        apiManager.likeImage(imageId: feedImageData.id)
         shouldDisappearAnimation.toggle()
     }
     
     func dislike() {
-        ApiManager.shared.dislikeImage(imageId: feedImageData.id)
+        apiManager.dislikeImage(imageId: feedImageData.id)
         shouldDisappearAnimation.toggle()
     }
     
     @MainActor
     func addToFavs()  {
-        ApiManager.shared.addToFavorites(imageId: feedImageData.id)
+        apiManager.addToFavorites(imageId: feedImageData.id)
         shouldDisappearAnimation.toggle()
     }
     

@@ -14,14 +14,11 @@ class FeedViewModel: ObservableObject {
     @Published var loadingData: Bool = false
     var visibleReloadButton: Bool = false
     private var paginationFeedImages: Int = 0
+    let apiManager: ApiManagerProtocol
     
-    init(feedImages: [FeedImage]) {
-        self.feedImages = feedImages
-        self.cardViewModels = feedImages.map { CardViewModel($0) }
-    }
     
-    init() {
-        
+    init(apiManager: ApiManagerProtocol = ApiManager.shared) {
+        self.apiManager = apiManager
     }
     
     @MainActor
@@ -33,7 +30,7 @@ class FeedViewModel: ObservableObject {
             
             loadingData = true
             
-            feedImages = try await ApiManager.shared.getFeedImages(page: paginationFeedImages)
+            feedImages = try await apiManager.getFeedImages(page: paginationFeedImages)
             paginationFeedImages += 1
             cardViewModels = feedImages.map { CardViewModel($0) }
             visibleReloadButton = false
