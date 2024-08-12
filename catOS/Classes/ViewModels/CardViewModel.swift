@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CardViewModel: ObservableObject {
+class CardViewModel: BaseViewModel {
     
     let id = UUID()
     
@@ -15,17 +15,16 @@ class CardViewModel: ObservableObject {
     @Published var imageUrl: String
     @Published var shouldDisappearAnimation: Bool
     var switchAspectFit: Bool = false
-    
-    let apiManager: ApiManagerProtocol
-    
+        
     static let disappearanceAnimationTime: Double = 0.3
     
     init(apiManager: ApiManagerProtocol = ApiManager.shared, _ feedImageData: FeedImage) {
             
-        self.apiManager = apiManager
         self.feedImageData = feedImageData
         self.imageUrl = feedImageData.url
         shouldDisappearAnimation = false
+        
+        super.init(apiManager: apiManager)
     }
     
     func like() {

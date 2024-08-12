@@ -8,17 +8,11 @@
 import Foundation
 import SwiftUI
 
-class FavoritesViewModel: ObservableObject {
+class FavoritesViewModel: BaseViewModel {
     
     @Published var favorites: [Favorite] = []
     @Published var error: CatError?
     @Published var loadingData: Bool = false
-    
-    let apiManager: ApiManagerProtocol
-    
-    init(apiManager: ApiManagerProtocol = ApiManager.shared) {
-        self.apiManager = apiManager
-    }
     
     @MainActor
     func getFavorites() async {

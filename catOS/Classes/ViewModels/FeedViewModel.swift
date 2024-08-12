@@ -7,19 +7,13 @@
 
 import Foundation
 
-class FeedViewModel: ObservableObject {
+class FeedViewModel: BaseViewModel {
     private var feedImages: [FeedImage] = []
     @Published var error: CatError? = nil
     @Published var cardViewModels: [CardViewModel] = []
     @Published var loadingData: Bool = false
     var visibleReloadButton: Bool = false
     private var paginationFeedImages: Int = 0
-    let apiManager: ApiManagerProtocol
-    
-    
-    init(apiManager: ApiManagerProtocol = ApiManager.shared) {
-        self.apiManager = apiManager
-    }
     
     @MainActor
     func getFeedImages() async {

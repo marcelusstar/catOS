@@ -8,19 +8,13 @@
 import Foundation
 
 
-class BreedsViewModel: ObservableObject {
+class BreedsViewModel: BaseViewModel {
     
     @Published var searchText = ""
     @Published var breeds: [Breed] = []
     @Published var breedsName: [String] = []
     @Published var error: CatError?
     @Published var loadingData: Bool = false
-    
-    let apiManager: ApiManagerProtocol
-    
-    init(apiManager: ApiManagerProtocol = ApiManager.shared) {
-        self.apiManager = apiManager
-    }
     
     var filteredBreeds: [String] {
         guard !searchText.isEmpty else { return breedsName }
