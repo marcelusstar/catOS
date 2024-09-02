@@ -13,8 +13,8 @@ class FeedViewModel: BaseViewModel {
     @Published var cardViewModels: [CardViewModel] = []
     @Published var loadingData: Bool = false
     var visibleReloadButton: Bool = false
-    private var paginationFeedImages: Int = 0
-    
+    private(set) var paginationFeedImages: Int = 0
+
     @MainActor
     func getFeedImages() async {
         do {
