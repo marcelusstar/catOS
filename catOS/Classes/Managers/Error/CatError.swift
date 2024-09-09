@@ -13,6 +13,7 @@ enum CatError: Error, LocalizedError {
     case serverError
     case badRequest
     case genericError
+    case unknown
     
     var errorDescription: String? {
         switch self {
@@ -27,6 +28,8 @@ enum CatError: Error, LocalizedError {
             String(localized: "error.internet_connection")
         case .genericError:
             String(localized: "error.generic_error")
+        case .unknown:
+            String(localized: "error.unknown")
         }
     }
     
@@ -44,6 +47,8 @@ enum CatError: Error, LocalizedError {
             String(localized: "error.internet_connection_description")
         case .genericError:
             String(localized: "error.generic_error_description")
+        case .unknown:
+            String(localized: "error.unknown_description")
         }
         
     }

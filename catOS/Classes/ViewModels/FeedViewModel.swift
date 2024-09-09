@@ -8,7 +8,7 @@
 import Foundation
 
 class FeedViewModel: BaseViewModel {
-    private var feedImages: [FeedImage] = []
+    private(set) var feedImages: [FeedImage] = []
     @Published var error: CatError? = nil
     @Published var cardViewModels: [CardViewModel] = []
     @Published var loadingData: Bool = false
@@ -30,23 +30,36 @@ class FeedViewModel: BaseViewModel {
             visibleReloadButton = false
         }
         catch {
-            self.error = error as? CatError
-            visibleReloadButton = true
+            handleError(error)
         }
         
         loadingData = false
     }
     
+    private func handleError(_ error: Error) {
+        if let catError = error as? CatError {
+            self.error = catError
+        } else {
+            self.error = CatError.unknown
+        }
+        visibleReloadButton = true
+    }
+    
     fileprivate func removeLastImageViewed() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + CardViewModel.disappearanceAnimationTime + 0.1, execute: {
-            self.cardViewModels.removeLast()
+        DispatchQueue.main.asyncAfter(deadline: .now() + CardViewModel.disappearanceAnimationTime + 0.1) { [weak self] in
+            guard let self = self else { return }
             
-            Task { 
-                if (self.cardViewModels.isEmpty) {
+            if !self.cardViewModels.isEmpty {
+                self.cardViewModels.removeLast()
+            }
+            
+            
+            if self.cardViewModels.isEmpty {
+                Task { @MainActor in
                     await self.getFeedImages()
                 }
             }
-        })
+        }
     }
     
     func like() {
