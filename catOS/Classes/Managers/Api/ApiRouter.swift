@@ -49,6 +49,10 @@ enum ApiRouter {
     
     var baseUrl: String { "https://api.thecatapi.com/v1" }
     
+    static var baseCdnUrl: String { "https://cdn2.thecatapi.com" }
+    
+    static var baseCdnUrlImages: String { "\(baseCdnUrl)/images" }
+    
     var path: String {
         
         let url = switch self {

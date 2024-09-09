@@ -56,6 +56,8 @@
 		71E2C0ED2C10CCCB008AE21D /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2C0EC2C10CCCB008AE21D /* ErrorAlert.swift */; };
 		71E2C0F02C10CD99008AE21D /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2C0EF2C10CD99008AE21D /* ViewExtension.swift */; };
 		71F025702BEFDFC700CB7112 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F0256F2BEFDFC700CB7112 /* ProfileView.swift */; };
+		71F39BCE2C8F46510021ECA2 /* BreedListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F39BCD2C8F46510021ECA2 /* BreedListItemView.swift */; };
+		71F39BD02C8F47F10021ECA2 /* BreedListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F39BCF2C8F47F10021ECA2 /* BreedListItemViewModel.swift */; };
 		71FA93A22BFC016500C9B748 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA93A12BFC016500C9B748 /* Coordinator.swift */; };
 		71FA93A42BFC019800C9B748 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA93A32BFC019800C9B748 /* Navigator.swift */; };
 		71FA93A62BFC048800C9B748 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA93A52BFC048800C9B748 /* NavigationView.swift */; };
@@ -130,6 +132,8 @@
 		71E2C0EC2C10CCCB008AE21D /* ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 		71E2C0EF2C10CD99008AE21D /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		71F0256F2BEFDFC700CB7112 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		71F39BCD2C8F46510021ECA2 /* BreedListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListItemView.swift; sourceTree = "<group>"; };
+		71F39BCF2C8F47F10021ECA2 /* BreedListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListItemViewModel.swift; sourceTree = "<group>"; };
 		71FA93A12BFC016500C9B748 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		71FA93A32BFC019800C9B748 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		71FA93A52BFC048800C9B748 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				714D394C2BEAB04700BFF68A /* BreedsViewModel.swift */,
 				712EF0492C19B4B10075A29A /* FavoritesViewModel.swift */,
 				715B00932C6A6B820034E601 /* BaseViewModel.swift */,
+				71F39BCF2C8F47F10021ECA2 /* BreedListItemViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				711D001E2BFE0596007FA5ED /* CoordinatorView.swift */,
 				71249C1B2C063632003C1549 /* TabsView.swift */,
 				712EF0472C19B4710075A29A /* FavoritesView.swift */,
+				71F39BCD2C8F46510021ECA2 /* BreedListItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -512,6 +518,7 @@
 				715B00922C6A64520034E601 /* ApiManagerMock.swift in Sources */,
 				712EF04A2C19B4B10075A29A /* FavoritesViewModel.swift in Sources */,
 				71A878362B714BEC003059CD /* ApiManager.swift in Sources */,
+				71F39BD02C8F47F10021ECA2 /* BreedListItemViewModel.swift in Sources */,
 				71FA93A82BFC049A00C9B748 /* NavigationModalType.swift in Sources */,
 				71FA93A22BFC016500C9B748 /* Coordinator.swift in Sources */,
 				714D394D2BEAB04700BFF68A /* BreedsViewModel.swift in Sources */,
@@ -524,6 +531,7 @@
 				710C6FFB2BCECC9A003851B1 /* CardView.swift in Sources */,
 				715B00942C6A6B820034E601 /* BaseViewModel.swift in Sources */,
 				71A16B962C256FAC006646A2 /* CustomUserDefaults.swift in Sources */,
+				71F39BCE2C8F46510021ECA2 /* BreedListItemView.swift in Sources */,
 				715B008E2C6A5E530034E601 /* RequestManagerProtocol.swift in Sources */,
 				710C6FF82BCECA0E003851B1 /* FeedViewModel.swift in Sources */,
 				8FD3E5922B0A1C630042C3C5 /* RequestManager.swift in Sources */,

@@ -16,9 +16,9 @@ class BreedsViewModel: BaseViewModel {
     @Published var error: CatError?
     @Published var loadingData: Bool = false
     
-    var filteredBreeds: [String] {
-        guard !searchText.isEmpty else { return breedsName }
-        return breedsName.filter { $0.lowercased().contains(searchText.lowercased()) }
+    var filteredBreeds: [Breed] {
+        guard !searchText.isEmpty else { return breeds }
+        return breeds.filter { $0.name.lowercased().contains(searchText.lowercased()) }
     }
     
     @MainActor
@@ -31,8 +31,6 @@ class BreedsViewModel: BaseViewModel {
             loadingData = true
             breeds = try await apiManager.getBreeds()
             breeds.sort{ $0.name < $1.name }
-            breedsName.removeAll()
-            breedsName = breeds.map { $0.name }
         }
         catch {
             self.error = error as? CatError
