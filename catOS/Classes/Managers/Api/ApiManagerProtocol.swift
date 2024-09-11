@@ -9,7 +9,9 @@ import Foundation
 
 protocol ApiManagerProtocol {
 
-    func getFeedImages(page: Int) async throws -> [FeedImage]
+    func getFeedImages(limit: Int) async throws -> [FeedImage]
+    
+    func getBreedImages(limit: Int, breedId: String) async throws -> [FeedImage]
     
     func getBreeds() async throws -> [Breed]
     

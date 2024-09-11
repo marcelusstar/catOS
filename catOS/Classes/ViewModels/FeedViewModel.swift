@@ -13,7 +13,6 @@ class FeedViewModel: BaseViewModel {
     @Published var cardViewModels: [CardViewModel] = []
     @Published var loadingData: Bool = false
     var visibleReloadButton: Bool = false
-    private(set) var paginationFeedImages: Int = 0
 
     @MainActor
     func getFeedImages() async {
@@ -22,10 +21,11 @@ class FeedViewModel: BaseViewModel {
                 return
             }
             
+            let limitImages = 10
+            
             loadingData = true
             
-            feedImages = try await apiManager.getFeedImages(page: paginationFeedImages)
-            paginationFeedImages += 1
+            feedImages = try await apiManager.getFeedImages(limit: limitImages)
             cardViewModels = feedImages.map { CardViewModel($0) }
             visibleReloadButton = false
         }

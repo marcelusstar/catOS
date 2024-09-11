@@ -11,7 +11,11 @@ struct ApiManagerMockFailure: ApiManagerProtocol {
     
     static let shared: ApiManagerProtocol = ApiManagerMockFailure()
     
-    func getFeedImages(page: Int) async throws -> [FeedImage] {
+    func getFeedImages(limit: Int) async throws -> [FeedImage] {
+        throw CatError.genericError
+    }
+    
+    func getBreedImages(limit: Int, breedId: String) async throws -> [FeedImage] {
         throw CatError.genericError
     }
     

@@ -19,11 +19,18 @@ struct ApiManager: ApiManagerProtocol {
         self.userSubId = CustomUserDefaults().getUserId()
     }
     
-    func getFeedImages(page: Int) async throws -> [FeedImage] {
-
-        let feedImagesEntities: [FeedImageEntity] = try await requestManager.doAsyncAwaitRequest(apiRouter: ApiRouter.feedImages(page))
+    private func getImages(limit: Int, breedId: String) async throws -> [FeedImage] {
+        let feedImagesEntities: [FeedImageEntity] = try await requestManager.doAsyncAwaitRequest(apiRouter: ApiRouter.feedImages(limit, breedId))
         
         return feedImagesEntities.map { ApiTransformer.shared.transformFeedImageEntity(entity: $0) }
+    }
+    
+    func getFeedImages(limit: Int) async throws -> [FeedImage] {
+        return try await getImages(limit: limit, breedId: "")
+    }
+    
+    func getBreedImages(limit: Int, breedId: String) async throws -> [FeedImage] {
+        return try await getImages(limit: limit, breedId: breedId)
     }
  
     func getBreeds() async throws -> [Breed] {

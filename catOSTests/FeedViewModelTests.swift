@@ -39,7 +39,7 @@ class FeedViewModelTests: XCTestCase {
         // When
         await viewModel.getFeedImages()
         
-        let feedImagesNumber = try! await apiManagerSuccess.getFeedImages(page: 0).count
+        let feedImagesNumber = try! await apiManagerSuccess.getFeedImages(limit: 10).count
 
         // Then
         XCTAssertEqual(viewModel.cardViewModels.count, feedImagesNumber)
@@ -65,35 +65,6 @@ class FeedViewModelTests: XCTestCase {
         XCTAssertTrue(viewModel.cardViewModels.isEmpty) // No items should be present
         XCTAssertTrue(viewModel.visibleReloadButton) // Reload button should be visible on error
         XCTAssertEqual(viewModel.error, CatError.genericError) // Error should be set
-    }
-    
-    func testPaginationNotIncrementsIfImagesAreNotEmpty() async {
-        
-        viewModel = FeedViewModel(apiManager: apiManagerSuccess)
-        
-        XCTAssertEqual(viewModel.paginationFeedImages, 0)
-        
-        // When
-        await viewModel.getFeedImages()
-        await viewModel.getFeedImages()
-        await viewModel.getFeedImages()
-        XCTAssertEqual(viewModel.paginationFeedImages, 1)
-    }
-    
-    func testPaginationNotIncrementsIfImagesAreEmpty() async {
-        
-        viewModel = FeedViewModel(apiManager: apiManagerSuccess)
-        
-        XCTAssertEqual(viewModel.paginationFeedImages, 0)
-        
-        // When
-        await viewModel.getFeedImages()
-        viewModel.cardViewModels.removeAll()
-        await viewModel.getFeedImages()
-        viewModel.cardViewModels.removeAll()
-        await viewModel.getFeedImages()
-        viewModel.cardViewModels.removeAll()
-        XCTAssertEqual(viewModel.paginationFeedImages, 3)
     }
     
     func testLikeImageAndRemoveItAfter() async {
