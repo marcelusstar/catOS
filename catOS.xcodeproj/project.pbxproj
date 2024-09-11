@@ -29,6 +29,8 @@
 		71502EB92B755418006DF80B /* ApiWeightMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71502EB82B755418006DF80B /* ApiWeightMapper.swift */; };
 		71502EBB2B755493006DF80B /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71502EBA2B755493006DF80B /* Mapper.swift */; };
 		71502EBD2B75566D006DF80B /* ApiBreedMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71502EBC2B75566D006DF80B /* ApiBreedMapper.swift */; };
+		715578EC2C90F6B5006EC255 /* BreedDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715578EB2C90F6B5006EC255 /* BreedDetailedView.swift */; };
+		715578EE2C90F6F0006EC255 /* BreedDetailedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715578ED2C90F6F0006EC255 /* BreedDetailedViewModel.swift */; };
 		715B008E2C6A5E530034E601 /* RequestManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715B008D2C6A5E530034E601 /* RequestManagerProtocol.swift */; };
 		715B00902C6A5F1C0034E601 /* ApiManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715B008F2C6A5F1C0034E601 /* ApiManagerProtocol.swift */; };
 		715B00922C6A64520034E601 /* ApiManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715B00912C6A64520034E601 /* ApiManagerMock.swift */; };
@@ -103,6 +105,8 @@
 		71502EB82B755418006DF80B /* ApiWeightMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiWeightMapper.swift; sourceTree = "<group>"; };
 		71502EBA2B755493006DF80B /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		71502EBC2B75566D006DF80B /* ApiBreedMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiBreedMapper.swift; sourceTree = "<group>"; };
+		715578EB2C90F6B5006EC255 /* BreedDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailedView.swift; sourceTree = "<group>"; };
+		715578ED2C90F6F0006EC255 /* BreedDetailedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailedViewModel.swift; sourceTree = "<group>"; };
 		715B008D2C6A5E530034E601 /* RequestManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerProtocol.swift; sourceTree = "<group>"; };
 		715B008F2C6A5F1C0034E601 /* ApiManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerProtocol.swift; sourceTree = "<group>"; };
 		715B00912C6A64520034E601 /* ApiManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerMock.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				712EF0492C19B4B10075A29A /* FavoritesViewModel.swift */,
 				715B00932C6A6B820034E601 /* BaseViewModel.swift */,
 				71F39BCF2C8F47F10021ECA2 /* BreedListItemViewModel.swift */,
+				715578ED2C90F6F0006EC255 /* BreedDetailedViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				71249C1B2C063632003C1549 /* TabsView.swift */,
 				712EF0472C19B4710075A29A /* FavoritesView.swift */,
 				71F39BCD2C8F46510021ECA2 /* BreedListItemView.swift */,
+				715578EB2C90F6B5006EC255 /* BreedDetailedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -507,6 +513,7 @@
 				712BD9352B7E97B500DCF07B /* Category.swift in Sources */,
 				71FA93A42BFC019800C9B748 /* Navigator.swift in Sources */,
 				712EF04E2C19B91E0075A29A /* Favorite.swift in Sources */,
+				715578EE2C90F6F0006EC255 /* BreedDetailedViewModel.swift in Sources */,
 				713466E42BA8BE1F003BB72A /* CatError.swift in Sources */,
 				8FD3E5832B0A1B3F0042C3C5 /* ContentView.swift in Sources */,
 				717AA9692C85C29B00D13208 /* ApiManagerMockFailure.swift in Sources */,
@@ -529,6 +536,7 @@
 				714D394B2BEAA88400BFF68A /* BreedsView.swift in Sources */,
 				716B1ADA2B680D7E007CC300 /* FeedImage.swift in Sources */,
 				710C6FFB2BCECC9A003851B1 /* CardView.swift in Sources */,
+				715578EC2C90F6B5006EC255 /* BreedDetailedView.swift in Sources */,
 				715B00942C6A6B820034E601 /* BaseViewModel.swift in Sources */,
 				71A16B962C256FAC006646A2 /* CustomUserDefaults.swift in Sources */,
 				71F39BCE2C8F46510021ECA2 /* BreedListItemView.swift in Sources */,

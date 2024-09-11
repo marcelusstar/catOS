@@ -19,7 +19,7 @@ struct BreedsView: View {
                 ForEach(viewModel.filteredBreeds, id: \.id) { breed in
                     
                     NavigationLink {
-                        BreedListItemView(viewModel: BreedListItemViewModel(breed: breed))
+                        BreedDetailedView(viewModel: BreedDetailedViewModel(breed))
                     } label: {
                         BreedListItemView(viewModel: BreedListItemViewModel(breed: breed))
                         .frame(maxHeight: 130)
