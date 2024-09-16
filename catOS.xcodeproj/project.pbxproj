@@ -31,6 +31,8 @@
 		71502EBD2B75566D006DF80B /* ApiBreedMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71502EBC2B75566D006DF80B /* ApiBreedMapper.swift */; };
 		715578EC2C90F6B5006EC255 /* BreedDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715578EB2C90F6B5006EC255 /* BreedDetailedView.swift */; };
 		715578EE2C90F6F0006EC255 /* BreedDetailedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715578ED2C90F6F0006EC255 /* BreedDetailedViewModel.swift */; };
+		7159A71F2C9846EE0094DC9F /* BreedCharacteristicsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7159A71E2C9846EE0094DC9F /* BreedCharacteristicsItemView.swift */; };
+		7159A7212C98476A0094DC9F /* BreedCharacteristicsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7159A7202C98476A0094DC9F /* BreedCharacteristicsItemViewModel.swift */; };
 		715B008E2C6A5E530034E601 /* RequestManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715B008D2C6A5E530034E601 /* RequestManagerProtocol.swift */; };
 		715B00902C6A5F1C0034E601 /* ApiManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715B008F2C6A5F1C0034E601 /* ApiManagerProtocol.swift */; };
 		715B00922C6A64520034E601 /* ApiManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715B00912C6A64520034E601 /* ApiManagerMock.swift */; };
@@ -107,6 +109,8 @@
 		71502EBC2B75566D006DF80B /* ApiBreedMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiBreedMapper.swift; sourceTree = "<group>"; };
 		715578EB2C90F6B5006EC255 /* BreedDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailedView.swift; sourceTree = "<group>"; };
 		715578ED2C90F6F0006EC255 /* BreedDetailedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailedViewModel.swift; sourceTree = "<group>"; };
+		7159A71E2C9846EE0094DC9F /* BreedCharacteristicsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCharacteristicsItemView.swift; sourceTree = "<group>"; };
+		7159A7202C98476A0094DC9F /* BreedCharacteristicsItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCharacteristicsItemViewModel.swift; sourceTree = "<group>"; };
 		715B008D2C6A5E530034E601 /* RequestManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerProtocol.swift; sourceTree = "<group>"; };
 		715B008F2C6A5F1C0034E601 /* ApiManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerProtocol.swift; sourceTree = "<group>"; };
 		715B00912C6A64520034E601 /* ApiManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerMock.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 				715B00932C6A6B820034E601 /* BaseViewModel.swift */,
 				71F39BCF2C8F47F10021ECA2 /* BreedListItemViewModel.swift */,
 				715578ED2C90F6F0006EC255 /* BreedDetailedViewModel.swift */,
+				7159A7202C98476A0094DC9F /* BreedCharacteristicsItemViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				712EF0472C19B4710075A29A /* FavoritesView.swift */,
 				71F39BCD2C8F46510021ECA2 /* BreedListItemView.swift */,
 				715578EB2C90F6B5006EC255 /* BreedDetailedView.swift */,
+				7159A71E2C9846EE0094DC9F /* BreedCharacteristicsItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -540,6 +546,7 @@
 				715B00942C6A6B820034E601 /* BaseViewModel.swift in Sources */,
 				71A16B962C256FAC006646A2 /* CustomUserDefaults.swift in Sources */,
 				71F39BCE2C8F46510021ECA2 /* BreedListItemView.swift in Sources */,
+				7159A71F2C9846EE0094DC9F /* BreedCharacteristicsItemView.swift in Sources */,
 				715B008E2C6A5E530034E601 /* RequestManagerProtocol.swift in Sources */,
 				710C6FF82BCECA0E003851B1 /* FeedViewModel.swift in Sources */,
 				8FD3E5922B0A1C630042C3C5 /* RequestManager.swift in Sources */,
@@ -550,6 +557,7 @@
 				718F9DF52B616B0E0089CB8A /* Breed.swift in Sources */,
 				714976152C1712E200D6FE2E /* ButtonGradientOutline.swift in Sources */,
 				8FD3E5812B0A1B3F0042C3C5 /* catOSApp.swift in Sources */,
+				7159A7212C98476A0094DC9F /* BreedCharacteristicsItemViewModel.swift in Sources */,
 				71502EB92B755418006DF80B /* ApiWeightMapper.swift in Sources */,
 				715B00902C6A5F1C0034E601 /* ApiManagerProtocol.swift in Sources */,
 				712BD9372B7E98BE00DCF07B /* ApiFeedImageMapper.swift in Sources */,
