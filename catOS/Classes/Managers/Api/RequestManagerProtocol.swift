@@ -11,5 +11,5 @@ protocol RequestManagerProtocol {
    
     func doAsyncAwaitRequest<T: Decodable>(apiRouter: ApiRouter) async throws -> T
     
-    func doRequest(apiRouter: ApiRouter)
+    func doAsyncRequest(apiRouter: ApiRouter) throws
 }

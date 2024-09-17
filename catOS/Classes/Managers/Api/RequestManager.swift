@@ -77,25 +77,21 @@ struct RequestManager: RequestManagerProtocol {
         }
     }
 
-    func doRequest(apiRouter: ApiRouter) {
-        do {
-            let session = getURLSession()
+    func doAsyncRequest(apiRouter: ApiRouter) throws {
+        Task(priority: .background) {
+            let session = URLSession.shared
             let request: URLRequest = try getURLRequest(apiRouter: apiRouter)
-        
-            let task = session.dataTask(with: request) { _, response, error in
-                if let error = error {
-                    print("Network request error: \(error)")
+            do {
+                _ = try await session.data(for: request)
+            } catch {
+                if let nsError = error as NSError?,
+                    nsError.domain == NSURLErrorDomain,
+                    nsError.code == NSURLErrorNotConnectedToInternet {
+                        throw CatError.noInternet
                 }
+                
+                throw CatError.genericError
             }
-
-            DispatchQueue.main.async {
-                task.resume()
-            }
-            
-            
-        } catch {
-            return
         }
-        
     }
 }

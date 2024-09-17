@@ -53,14 +53,14 @@ struct ApiManager: ApiManagerProtocol {
     }
     
     func addToFavorites(imageId: String) {
-        requestManager.doRequest(apiRouter: .favImage(userSubId, imageId))
+        try? requestManager.doAsyncRequest(apiRouter: .favImage(userSubId, imageId))
     }
     
     func likeImage(imageId: String) {
-        requestManager.doRequest(apiRouter: .voteImage(userSubId, imageId, true))
+        try? requestManager.doAsyncRequest(apiRouter: .voteImage(userSubId, imageId, true))
     }
     
     func dislikeImage(imageId: String) {
-        requestManager.doRequest(apiRouter: .voteImage(userSubId, imageId, false))
+        try? requestManager.doAsyncRequest(apiRouter: .voteImage(userSubId, imageId, false))
     }
 }
