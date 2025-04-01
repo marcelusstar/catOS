@@ -7,17 +7,19 @@
 
 import Foundation
 
-
-class ApiTransformer {
+struct ApiTransformer {
     
-    static let shared: ApiTransformer = {
-        let instance = ApiTransformer()
-        return instance
-    }()
+    let apiBreedMapper: ApiBreedMapper
+    let apiFeedImageMapper: ApiFeedImageMapper
+    let apiFavoriteMapper: ApiFavoriteMapper
     
-    let apiBreedMapper: ApiBreedMapper = ApiBreedMapper.shared
-    let apiFeedImageMapper: ApiFeedImageMapper = ApiFeedImageMapper()
-    let apiFavoriteMapper: ApiFavoriteMapper = ApiFavoriteMapper()
+    init(apiBreedMapper: ApiBreedMapper = ApiBreedMapper(),
+         apiFeedImageMapper: ApiFeedImageMapper = ApiFeedImageMapper(),
+         apiFavoriteMapper: ApiFavoriteMapper = ApiFavoriteMapper()) {
+        self.apiBreedMapper = apiBreedMapper
+        self.apiFeedImageMapper = apiFeedImageMapper
+        self.apiFavoriteMapper = apiFavoriteMapper
+    }
     
     func transformBreedEntity(entity: BreedEntity) -> Breed {
         apiBreedMapper.mapValues(entity)

@@ -13,16 +13,19 @@ struct ApiManager: ApiManagerProtocol {
     static let shared: ApiManager = ApiManager()
     let userSubId: String
     let requestManager: RequestManagerProtocol
+    let apiTransformer: ApiTransformer
     
-    init(requestManager: RequestManagerProtocol = RequestManager()) {
+    init(requestManager: RequestManagerProtocol = RequestManager(),
+         apiTransformer: ApiTransformer = ApiTransformer()) {
         self.requestManager = requestManager
+        self.apiTransformer = apiTransformer
         self.userSubId = CustomUserDefaults().getUserId()
     }
     
     private func getImages(limit: Int, breedId: String) async throws -> [FeedImage] {
         let feedImagesEntities: [FeedImageEntity] = try await requestManager.doAsyncAwaitRequest(apiRouter: ApiRouter.feedImages(limit, breedId))
         
-        return feedImagesEntities.map { ApiTransformer.shared.transformFeedImageEntity(entity: $0) }
+        return feedImagesEntities.map { apiTransformer.transformFeedImageEntity(entity: $0) }
     }
     
     func getFeedImages(limit: Int) async throws -> [FeedImage] {
@@ -36,20 +39,20 @@ struct ApiManager: ApiManagerProtocol {
     func getBreeds() async throws -> [Breed] {
         let breedsEntities: [BreedEntity] = try await requestManager.doAsyncAwaitRequest(apiRouter: ApiRouter.getBreeds)
             
-        return breedsEntities.map { ApiTransformer.shared.transformBreedEntity(entity: $0) }
+        return breedsEntities.map { apiTransformer.transformBreedEntity(entity: $0) }
     }
     
     func getBreed(id: String) async throws -> Breed {
 
         let breedEntity: BreedEntity = try await requestManager.doAsyncAwaitRequest(apiRouter: ApiRouter.getBreed(id))
 
-        return ApiTransformer.shared.transformBreedEntity(entity: breedEntity)
+        return apiTransformer.transformBreedEntity(entity: breedEntity)
     }
     
     func getFavorites(page: Int) async throws -> [Favorite] {
         let favoritesEntities: [FavoriteEntity] = try await requestManager.doAsyncAwaitRequest(apiRouter: .myFavs(userSubId, page))
         
-        return favoritesEntities.map { ApiTransformer.shared.transformFavoriteEntity(entity: $0) }
+        return favoritesEntities.map { apiTransformer.transformFavoriteEntity(entity: $0) }
     }
     
     func addToFavorites(imageId: String) {

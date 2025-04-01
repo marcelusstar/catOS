@@ -9,9 +9,11 @@ import Foundation
 
 class ApiBreedMapper: Mapper {
     
-    static let shared: ApiBreedMapper = ApiBreedMapper()
-
-    let apiWeightMapper: ApiWeightMapper = ApiWeightMapper()
+    let apiWeightMapper: ApiWeightMapper
+    
+    init(apiWeightMapper: ApiWeightMapper = ApiWeightMapper()) {
+        self.apiWeightMapper = apiWeightMapper
+    }
 
     func mapValues(_ entity: BreedEntity) -> Breed {
         Breed(

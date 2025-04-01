@@ -9,7 +9,11 @@ import Foundation
 
 class ApiFeedImageMapper: Mapper {
     
-    let apiBreedMapper: ApiBreedMapper = ApiBreedMapper.shared
+    let apiBreedMapper: ApiBreedMapper
+    
+    init(apiBreedMapper: ApiBreedMapper = ApiBreedMapper()) {
+        self.apiBreedMapper = apiBreedMapper
+    }
     
     func mapValues(_ entity: FeedImageEntity) -> FeedImage {
         

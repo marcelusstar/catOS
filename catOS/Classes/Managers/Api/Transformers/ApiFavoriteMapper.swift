@@ -9,16 +9,16 @@ import Foundation
 
 class ApiFavoriteMapper: Mapper {
     
+    private static let formatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        df.timeZone = TimeZone(abbreviation: "UTC")
+        return df
+    }()
+    
     func mapValues(_ entity: FavoriteEntity) -> Favorite {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
 
-        var createdAt: Date
-        createdAt = dateFormatter.date(from: entity.createdAt ?? "") ?? Date()
-        
+        let createdAt: Date = Self.formatter.date(from: entity.createdAt ?? "") ?? Date()
         let image = ApiFeedImageMapper().mapValues(entity.image)
         
         return Favorite(id: entity.id,
