@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27A477502D9D3AD60032DD9B /* GetFeedImagesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4774F2D9D3ABE0032DD9B /* GetFeedImagesUseCase.swift */; };
 		710C6FF82BCECA0E003851B1 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C6FF72BCECA0E003851B1 /* FeedViewModel.swift */; };
 		710C6FFB2BCECC9A003851B1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C6FFA2BCECC9A003851B1 /* CardView.swift */; };
 		711D001F2BFE0596007FA5ED /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711D001E2BFE0596007FA5ED /* CoordinatorView.swift */; };
@@ -85,6 +86,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27A4774F2D9D3ABE0032DD9B /* GetFeedImagesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeedImagesUseCase.swift; sourceTree = "<group>"; };
 		710C6FF72BCECA0E003851B1 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		710C6FFA2BCECC9A003851B1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		711D001E2BFE0596007FA5ED /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
@@ -175,6 +177,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27A4774E2D9D3A930032DD9B /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				27A4774F2D9D3ABE0032DD9B /* GetFeedImagesUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		710C6FF62BCEC9F1003851B1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +384,7 @@
 		8FD3E58F2B0A1C400042C3C5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				27A4774E2D9D3A930032DD9B /* UseCases */,
 				71E2C0EE2C10CD7F008AE21D /* Extensions */,
 				71FA939D2BFC012E00C9B748 /* Coordinator */,
 				710C6FF92BCECC51003851B1 /* Views */,
@@ -514,6 +525,7 @@
 				71249C1C2C063632003C1549 /* TabsView.swift in Sources */,
 				71502EBD2B75566D006DF80B /* ApiBreedMapper.swift in Sources */,
 				716B1AD82B680587007CC300 /* FeedImageDTO.swift in Sources */,
+				27A477502D9D3AD60032DD9B /* GetFeedImagesUseCase.swift in Sources */,
 				71FA93A62BFC048800C9B748 /* NavigationView.swift in Sources */,
 				712EF04C2C19B61A0075A29A /* FavoriteDTO.swift in Sources */,
 				712BD9352B7E97B500DCF07B /* Category.swift in Sources */,

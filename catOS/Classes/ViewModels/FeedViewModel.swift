@@ -7,12 +7,17 @@
 
 import Foundation
 
-class FeedViewModel: BaseViewModel {
+class FeedViewModel: ObservableObject {
     private(set) var feedImages: [FeedImage] = []
     @Published var error: CatError? = nil
     @Published var cardViewModels: [CardViewModel] = []
     @Published var loadingData: Bool = false
     var visibleReloadButton: Bool = false
+    let getFeedImagesUseCase: GetFeedImagesUseCase
+    
+    init(getFeedImagesUseCase: GetFeedImagesUseCase = GetFeedImagesUseCaseDefault()) {
+        self.getFeedImagesUseCase = getFeedImagesUseCase
+    }
 
     @MainActor
     func getFeedImages() async {
@@ -25,7 +30,7 @@ class FeedViewModel: BaseViewModel {
             
             loadingData = true
             
-            feedImages = try await apiManager.getFeedImages(limit: limitImages)
+            feedImages = try await getFeedImagesUseCase.execute(limit: limitImages)
             cardViewModels = feedImages.map { CardViewModel($0) }
             visibleReloadButton = false
         }
