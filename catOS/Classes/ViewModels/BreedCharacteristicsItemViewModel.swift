@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BreedCharacteristicsItemViewModel: BaseViewModel {
+class BreedCharacteristicsItemViewModel: ObservableObject {
     
     @Published var name: String
     @Published var score: Int

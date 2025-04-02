@@ -11,26 +11,30 @@ import XCTest
 class FeedViewModelTests: XCTestCase {
     
     var viewModel: FeedViewModel!
-    var apiManagerSuccess: ApiManagerProtocol!
-    var apiManagerFailure: ApiManagerProtocol!
     
     override func setUp() {
         super.setUp()
-        apiManagerSuccess = ApiManagerMock()
-        apiManagerFailure = ApiManagerMockFailure()
-        
     }
     
     override func tearDown() {
-        apiManagerSuccess = nil
-        apiManagerFailure = nil
         super.tearDown()
+    }
+    
+    private func getViewModel(shouldSucceed: Bool) -> FeedViewModel {
+        var repository = ImagesRepositoryMock()
+        repository.shouldSucceed = shouldSucceed
+        let useCase = GetFeedImagesUseCaseDefault(repository: repository)
+        viewModel = FeedViewModel(getFeedImagesUseCase: GetFeedImagesUseCaseDefault(repository: repository))
+        return viewModel
     }
     
     @MainActor
     func testGetFeedImagesSuccess() async {
         
-        viewModel = FeedViewModel(apiManager: apiManagerSuccess)
+        var repository = ImagesRepositoryMock()
+        repository.shouldSucceed = true
+        let useCase = GetFeedImagesUseCaseDefault(repository: repository)
+        viewModel = getViewModel(shouldSucceed: true)
 
         XCTAssertTrue(viewModel.cardViewModels.isEmpty)
         XCTAssertFalse(viewModel.loadingData)
@@ -39,7 +43,7 @@ class FeedViewModelTests: XCTestCase {
         // When
         await viewModel.getFeedImages()
         
-        let feedImagesNumber = try! await apiManagerSuccess.getFeedImages(limit: 10).count
+        let feedImagesNumber = try! await useCase.execute(limit: 10).count
 
         // Then
         XCTAssertEqual(viewModel.cardViewModels.count, feedImagesNumber)
@@ -50,7 +54,10 @@ class FeedViewModelTests: XCTestCase {
     
     func testGetFeedImagesFailure() async {
         // Given
-        let viewModel = FeedViewModel(apiManager: apiManagerFailure)
+        var repository = ImagesRepositoryMock()
+        repository.shouldSucceed = false
+        let useCase = GetFeedImagesUseCaseDefault(repository: repository)
+        viewModel = FeedViewModel(getFeedImagesUseCase: GetFeedImagesUseCaseDefault(repository: repository))
         
         
         XCTAssertTrue(viewModel.cardViewModels.isEmpty)
@@ -68,7 +75,11 @@ class FeedViewModelTests: XCTestCase {
     }
     
     func testLikeImageAndRemoveItAfter() async {
-        viewModel = FeedViewModel(apiManager: apiManagerSuccess)
+        // Given
+        var repository = ImagesRepositoryMock()
+        repository.shouldSucceed = false
+        let useCase = GetFeedImagesUseCaseDefault(repository: repository)
+        viewModel = FeedViewModel(getFeedImagesUseCase: GetFeedImagesUseCaseDefault(repository: repository))
 
         await viewModel.getFeedImages()
         
@@ -90,8 +101,11 @@ class FeedViewModelTests: XCTestCase {
     }
     
     func testLikeImageOnEmptyImages() async {
-        viewModel = FeedViewModel(apiManager: apiManagerSuccess)
-        
+        // TODO: Refactor this to
+        var repository = ImagesRepositoryMock()
+        repository.shouldSucceed = false
+        let useCase = GetFeedImagesUseCaseDefault(repository: repository)
+        viewModel = FeedViewModel(getFeedImagesUseCase: GetFeedImagesUseCaseDefault(repository: repository))
         let numberImagesPreviousLike = viewModel.cardViewModels.count
         
         viewModel.like()

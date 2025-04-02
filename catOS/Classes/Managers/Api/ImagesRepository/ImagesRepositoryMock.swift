@@ -7,6 +7,9 @@
 
 struct ImagesRepositoryMock: ImagesRepository {
     
+    var shouldSucceed: Bool = false
+    var forcedError: Error = CatError.genericError
+    
     let feedImages: [FeedImage] = [
         FeedImage(id: "0", breeds: [], categories: [], height: 10, width: 20, url: "https://cdn2.thecatapi.com/images/MTc1ODk0OQ.jpg"),
         FeedImage(id: "1", breeds: [], categories: [], height: 10, width: 20, url: "https://cdn2.thecatapi.com/images/der.jpg"),
@@ -14,6 +17,11 @@ struct ImagesRepositoryMock: ImagesRepository {
     ]
     
     func getFeedImages(limit: Int) async throws -> [FeedImage] {
+        
+        guard shouldSucceed else {
+            throw forcedError
+        }
+        
         return feedImages
     }
 }

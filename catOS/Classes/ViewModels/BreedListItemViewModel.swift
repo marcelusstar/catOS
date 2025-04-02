@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BreedListItemViewModel: BaseViewModel {
+class BreedListItemViewModel: ObservableObject {
     
     var breed: Breed
     

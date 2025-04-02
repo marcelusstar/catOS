@@ -38,7 +38,7 @@ struct BreedListItemView: View {
 
 struct BreedListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        let breed = ApiManagerMock.getBreedExample()
+        let breed = BreedsRepositoryMock.getBreedExample()
         let viewModel = BreedListItemViewModel(breed: breed)
         BreedListItemView(viewModel: viewModel)
     }
