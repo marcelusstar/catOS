@@ -16,6 +16,11 @@
 		27A4775E2D9D4E8D0032DD9B /* BreedsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4775D2D9D4E870032DD9B /* BreedsRepository.swift */; };
 		27A477602D9D4EC20032DD9B /* BreedsRepositoryDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4775F2D9D4EBF0032DD9B /* BreedsRepositoryDefault.swift */; };
 		27A477622D9D4F520032DD9B /* BreedsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A477612D9D4F520032DD9B /* BreedsRepositoryMock.swift */; };
+		27A477642D9D51300032DD9B /* GetFavoritesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A477632D9D512B0032DD9B /* GetFavoritesUseCase.swift */; };
+		27A477672D9D51630032DD9B /* FavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A477662D9D51620032DD9B /* FavoritesRepository.swift */; };
+		27A477692D9D517C0032DD9B /* FavoritesRepositoryDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A477682D9D517C0032DD9B /* FavoritesRepositoryDefault.swift */; };
+		27A4776B2D9D51C70032DD9B /* FavoritesRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4776A2D9D51C70032DD9B /* FavoritesRepositoryMock.swift */; };
+		27A4776D2D9D53CE0032DD9B /* AddToFavoritesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4776C2D9D53C90032DD9B /* AddToFavoritesUseCase.swift */; };
 		710C6FF82BCECA0E003851B1 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C6FF72BCECA0E003851B1 /* FeedViewModel.swift */; };
 		710C6FFB2BCECC9A003851B1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C6FFA2BCECC9A003851B1 /* CardView.swift */; };
 		711D001F2BFE0596007FA5ED /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711D001E2BFE0596007FA5ED /* CoordinatorView.swift */; };
@@ -103,6 +108,11 @@
 		27A4775D2D9D4E870032DD9B /* BreedsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsRepository.swift; sourceTree = "<group>"; };
 		27A4775F2D9D4EBF0032DD9B /* BreedsRepositoryDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsRepositoryDefault.swift; sourceTree = "<group>"; };
 		27A477612D9D4F520032DD9B /* BreedsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsRepositoryMock.swift; sourceTree = "<group>"; };
+		27A477632D9D512B0032DD9B /* GetFavoritesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavoritesUseCase.swift; sourceTree = "<group>"; };
+		27A477662D9D51620032DD9B /* FavoritesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepository.swift; sourceTree = "<group>"; };
+		27A477682D9D517C0032DD9B /* FavoritesRepositoryDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepositoryDefault.swift; sourceTree = "<group>"; };
+		27A4776A2D9D51C70032DD9B /* FavoritesRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepositoryMock.swift; sourceTree = "<group>"; };
+		27A4776C2D9D53C90032DD9B /* AddToFavoritesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToFavoritesUseCase.swift; sourceTree = "<group>"; };
 		710C6FF72BCECA0E003851B1 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		710C6FFA2BCECC9A003851B1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		711D001E2BFE0596007FA5ED /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
@@ -196,6 +206,8 @@
 		27A4774E2D9D3A930032DD9B /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				27A4776C2D9D53C90032DD9B /* AddToFavoritesUseCase.swift */,
+				27A477632D9D512B0032DD9B /* GetFavoritesUseCase.swift */,
 				27A477512D9D41110032DD9B /* GetBreedUseCase.swift */,
 				27A477532D9D415F0032DD9B /* GetBreedsUseCase.swift */,
 				27A4774F2D9D3ABE0032DD9B /* GetFeedImagesUseCase.swift */,
@@ -221,6 +233,16 @@
 				27A4775D2D9D4E870032DD9B /* BreedsRepository.swift */,
 			);
 			path = BreedsRepository;
+			sourceTree = "<group>";
+		};
+		27A477652D9D51530032DD9B /* FavoritesRepository */ = {
+			isa = PBXGroup;
+			children = (
+				27A477662D9D51620032DD9B /* FavoritesRepository.swift */,
+				27A477682D9D517C0032DD9B /* FavoritesRepositoryDefault.swift */,
+				27A4776A2D9D51C70032DD9B /* FavoritesRepositoryMock.swift */,
+			);
+			path = FavoritesRepository;
 			sourceTree = "<group>";
 		};
 		710C6FF62BCEC9F1003851B1 /* ViewModels */ = {
@@ -300,6 +322,7 @@
 		716B1ADB2B68175E007CC300 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				27A477652D9D51530032DD9B /* FavoritesRepository */,
 				27A4775C2D9D4E790032DD9B /* BreedsRepository */,
 				27A477572D9D4B560032DD9B /* ImagesRepository */,
 				71502EB72B7553CA006DF80B /* Transformers */,
@@ -561,6 +584,7 @@
 			files = (
 				71A16B942C2566E4006646A2 /* AppDelegate.swift in Sources */,
 				71674CB62BA9AD3F002C0027 /* NetworkReachability.swift in Sources */,
+				27A477642D9D51300032DD9B /* GetFavoritesUseCase.swift in Sources */,
 				719A86162BD9AF4F0028C674 /* FeedView.swift in Sources */,
 				71249C1C2C063632003C1549 /* TabsView.swift in Sources */,
 				27A477602D9D4EC20032DD9B /* BreedsRepositoryDefault.swift in Sources */,
@@ -605,12 +629,14 @@
 				71F39BCE2C8F46510021ECA2 /* BreedListItemView.swift in Sources */,
 				7159A71F2C9846EE0094DC9F /* BreedCharacteristicsItemView.swift in Sources */,
 				27A477562D9D4B3A0032DD9B /* ImagesRepository.swift in Sources */,
+				27A477672D9D51630032DD9B /* FavoritesRepository.swift in Sources */,
 				715B008E2C6A5E530034E601 /* RequestManagerProtocol.swift in Sources */,
 				710C6FF82BCECA0E003851B1 /* FeedViewModel.swift in Sources */,
 				8FD3E5922B0A1C630042C3C5 /* RequestManager.swift in Sources */,
 				712BD9332B7E977600DCF07B /* ApiCategoryMapper.swift in Sources */,
 				71F025702BEFDFC700CB7112 /* ProfileView.swift in Sources */,
 				712EF0502C19B9650075A29A /* ApiFavoriteMapper.swift in Sources */,
+				27A4776D2D9D53CE0032DD9B /* AddToFavoritesUseCase.swift in Sources */,
 				712BD9312B7E96F900DCF07B /* CategoryDTO.swift in Sources */,
 				718F9DF52B616B0E0089CB8A /* Breed.swift in Sources */,
 				714976152C1712E200D6FE2E /* ButtonGradientOutline.swift in Sources */,
@@ -620,9 +646,11 @@
 				715B00902C6A5F1C0034E601 /* ApiManagerProtocol.swift in Sources */,
 				712BD9372B7E98BE00DCF07B /* ApiFeedImageMapper.swift in Sources */,
 				71E2C0F02C10CD99008AE21D /* ViewExtension.swift in Sources */,
+				27A4776B2D9D51C70032DD9B /* FavoritesRepositoryMock.swift in Sources */,
 				718F9DF72B616B300089CB8A /* Weight.swift in Sources */,
 				71E2C0ED2C10CCCB008AE21D /* ErrorAlert.swift in Sources */,
 				27A4775B2D9D4DBE0032DD9B /* ImagesRepositoryMock.swift in Sources */,
+				27A477692D9D517C0032DD9B /* FavoritesRepositoryDefault.swift in Sources */,
 				27A477542D9D415F0032DD9B /* GetBreedsUseCase.swift in Sources */,
 				71A16B982C2583E0006646A2 /* LoadingView.swift in Sources */,
 			);
