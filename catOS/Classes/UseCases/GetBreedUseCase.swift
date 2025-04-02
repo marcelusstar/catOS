@@ -10,13 +10,13 @@ protocol GetBreedUseCase {
 }
 
 struct GetBreedUseCaseDefault: GetBreedUseCase {
-    private let apiManager: ApiManagerProtocol
+    private let repository: BreedsRepository
     
-    init(apiManager: ApiManagerProtocol = ApiManager.shared) {
-        self.apiManager = apiManager
+    init(repository: BreedsRepository = BreedsRepositoryDefault()) {
+        self.repository = repository
     }
     
     func execute(id: String) async throws -> Breed {
-        try await apiManager.getBreed(id: id)
+        try await repository.getBreed(id: id)
     }
 }

@@ -21,33 +21,8 @@ struct ApiManager: ApiManagerProtocol {
         self.apiTransformer = apiTransformer
         self.userSubId = CustomUserDefaults().getUserId()
     }
-    
-    private func getImages(limit: Int, breedId: String) async throws -> [FeedImage] {
-        let feedImagesEntities: [FeedImageDTO] = try await requestManager.doAsyncAwaitRequest(apiRouter: ApiRouter.feedImages(limit, breedId))
-        
-        return feedImagesEntities.map { apiTransformer.transformFeedImageEntity(entity: $0) }
-    }
-    
-    func getFeedImages(limit: Int) async throws -> [FeedImage] {
-        return try await getImages(limit: limit, breedId: "")
-    }
-    
-    func getBreedImages(limit: Int, breedId: String) async throws -> [FeedImage] {
-        return try await getImages(limit: limit, breedId: breedId)
-    }
  
-    func getBreeds() async throws -> [Breed] {
-        let breedsEntities: [BreedDTO] = try await requestManager.doAsyncAwaitRequest(apiRouter: ApiRouter.getBreeds)
-            
-        return breedsEntities.map { apiTransformer.transformBreedEntity(entity: $0) }
-    }
     
-    func getBreed(id: String) async throws -> Breed {
-
-        let breedEntity: BreedDTO = try await requestManager.doAsyncAwaitRequest(apiRouter: ApiRouter.getBreed(id))
-
-        return apiTransformer.transformBreedEntity(entity: breedEntity)
-    }
     
     func getFavorites(page: Int) async throws -> [Favorite] {
         let favoritesEntities: [FavoriteDTO] = try await requestManager.doAsyncAwaitRequest(apiRouter: .myFavs(userSubId, page))

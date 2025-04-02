@@ -10,13 +10,13 @@ protocol GetFeedImagesUseCase {
 }
 
 struct GetFeedImagesUseCaseDefault: GetFeedImagesUseCase {
-    private let apiManager: ApiManagerProtocol
+    private let repository: ImagesRepository
     
-    init(apiManager: ApiManagerProtocol = ApiManager.shared) {
-        self.apiManager = apiManager
+    init(repository: ImagesRepository = ImagesRepositoryDefault()) {
+        self.repository = repository
     }
     
     func execute(limit: Int) async throws -> [FeedImage] {
-        try await apiManager.getFeedImages(limit: limit)
+        try await repository.getFeedImages(limit: limit)
     }
 }

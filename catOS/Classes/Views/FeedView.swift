@@ -84,7 +84,7 @@ struct FeedView: View {
 
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        let useCase: GetFeedImagesUseCase = GetFeedImagesUseCaseDefault(apiManager: ApiManagerMock.shared)
+        let useCase: GetFeedImagesUseCase = GetFeedImagesUseCaseDefault(repository: ImagesRepositoryMock())
         let viewModel: FeedViewModel = FeedViewModel(getFeedImagesUseCase: useCase)
         
         FeedView(viewModel: viewModel)

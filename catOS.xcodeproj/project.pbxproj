@@ -10,6 +10,12 @@
 		27A477502D9D3AD60032DD9B /* GetFeedImagesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4774F2D9D3ABE0032DD9B /* GetFeedImagesUseCase.swift */; };
 		27A477522D9D41110032DD9B /* GetBreedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A477512D9D41110032DD9B /* GetBreedUseCase.swift */; };
 		27A477542D9D415F0032DD9B /* GetBreedsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A477532D9D415F0032DD9B /* GetBreedsUseCase.swift */; };
+		27A477562D9D4B3A0032DD9B /* ImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A477552D9D4B250032DD9B /* ImagesRepository.swift */; };
+		27A477592D9D4BCB0032DD9B /* ImagesRepositoryDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A477582D9D4BCB0032DD9B /* ImagesRepositoryDefault.swift */; };
+		27A4775B2D9D4DBE0032DD9B /* ImagesRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4775A2D9D4DBE0032DD9B /* ImagesRepositoryMock.swift */; };
+		27A4775E2D9D4E8D0032DD9B /* BreedsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4775D2D9D4E870032DD9B /* BreedsRepository.swift */; };
+		27A477602D9D4EC20032DD9B /* BreedsRepositoryDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4775F2D9D4EBF0032DD9B /* BreedsRepositoryDefault.swift */; };
+		27A477622D9D4F520032DD9B /* BreedsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A477612D9D4F520032DD9B /* BreedsRepositoryMock.swift */; };
 		710C6FF82BCECA0E003851B1 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C6FF72BCECA0E003851B1 /* FeedViewModel.swift */; };
 		710C6FFB2BCECC9A003851B1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C6FFA2BCECC9A003851B1 /* CardView.swift */; };
 		711D001F2BFE0596007FA5ED /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711D001E2BFE0596007FA5ED /* CoordinatorView.swift */; };
@@ -91,6 +97,12 @@
 		27A4774F2D9D3ABE0032DD9B /* GetFeedImagesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeedImagesUseCase.swift; sourceTree = "<group>"; };
 		27A477512D9D41110032DD9B /* GetBreedUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBreedUseCase.swift; sourceTree = "<group>"; };
 		27A477532D9D415F0032DD9B /* GetBreedsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBreedsUseCase.swift; sourceTree = "<group>"; };
+		27A477552D9D4B250032DD9B /* ImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRepository.swift; sourceTree = "<group>"; };
+		27A477582D9D4BCB0032DD9B /* ImagesRepositoryDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRepositoryDefault.swift; sourceTree = "<group>"; };
+		27A4775A2D9D4DBE0032DD9B /* ImagesRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRepositoryMock.swift; sourceTree = "<group>"; };
+		27A4775D2D9D4E870032DD9B /* BreedsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsRepository.swift; sourceTree = "<group>"; };
+		27A4775F2D9D4EBF0032DD9B /* BreedsRepositoryDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsRepositoryDefault.swift; sourceTree = "<group>"; };
+		27A477612D9D4F520032DD9B /* BreedsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsRepositoryMock.swift; sourceTree = "<group>"; };
 		710C6FF72BCECA0E003851B1 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		710C6FFA2BCECC9A003851B1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		711D001E2BFE0596007FA5ED /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
@@ -191,6 +203,26 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		27A477572D9D4B560032DD9B /* ImagesRepository */ = {
+			isa = PBXGroup;
+			children = (
+				27A477552D9D4B250032DD9B /* ImagesRepository.swift */,
+				27A477582D9D4BCB0032DD9B /* ImagesRepositoryDefault.swift */,
+				27A4775A2D9D4DBE0032DD9B /* ImagesRepositoryMock.swift */,
+			);
+			path = ImagesRepository;
+			sourceTree = "<group>";
+		};
+		27A4775C2D9D4E790032DD9B /* BreedsRepository */ = {
+			isa = PBXGroup;
+			children = (
+				27A4775F2D9D4EBF0032DD9B /* BreedsRepositoryDefault.swift */,
+				27A477612D9D4F520032DD9B /* BreedsRepositoryMock.swift */,
+				27A4775D2D9D4E870032DD9B /* BreedsRepository.swift */,
+			);
+			path = BreedsRepository;
+			sourceTree = "<group>";
+		};
 		710C6FF62BCEC9F1003851B1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +300,8 @@
 		716B1ADB2B68175E007CC300 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				27A4775C2D9D4E790032DD9B /* BreedsRepository */,
+				27A477572D9D4B560032DD9B /* ImagesRepository */,
 				71502EB72B7553CA006DF80B /* Transformers */,
 				8FD3E5912B0A1C630042C3C5 /* RequestManager.swift */,
 				8FD3E5932B0A1E920042C3C5 /* ApiRouter.swift */,
@@ -529,10 +563,13 @@
 				71674CB62BA9AD3F002C0027 /* NetworkReachability.swift in Sources */,
 				719A86162BD9AF4F0028C674 /* FeedView.swift in Sources */,
 				71249C1C2C063632003C1549 /* TabsView.swift in Sources */,
+				27A477602D9D4EC20032DD9B /* BreedsRepositoryDefault.swift in Sources */,
 				71502EBD2B75566D006DF80B /* ApiBreedMapper.swift in Sources */,
 				716B1AD82B680587007CC300 /* FeedImageDTO.swift in Sources */,
+				27A4775E2D9D4E8D0032DD9B /* BreedsRepository.swift in Sources */,
 				27A477502D9D3AD60032DD9B /* GetFeedImagesUseCase.swift in Sources */,
 				71FA93A62BFC048800C9B748 /* NavigationView.swift in Sources */,
+				27A477622D9D4F520032DD9B /* BreedsRepositoryMock.swift in Sources */,
 				712EF04C2C19B61A0075A29A /* FavoriteDTO.swift in Sources */,
 				712BD9352B7E97B500DCF07B /* Category.swift in Sources */,
 				71FA93A42BFC019800C9B748 /* Navigator.swift in Sources */,
@@ -546,6 +583,7 @@
 				719A86142BD97B970028C674 /* CardViewModel.swift in Sources */,
 				71502EBB2B755493006DF80B /* Mapper.swift in Sources */,
 				716B1AD62B68049A007CC300 /* WeightDTO.swift in Sources */,
+				27A477592D9D4BCB0032DD9B /* ImagesRepositoryDefault.swift in Sources */,
 				715B00922C6A64520034E601 /* ApiManagerMock.swift in Sources */,
 				712EF04A2C19B4B10075A29A /* FavoritesViewModel.swift in Sources */,
 				71A878362B714BEC003059CD /* ApiManager.swift in Sources */,
@@ -566,6 +604,7 @@
 				71A16B962C256FAC006646A2 /* CustomUserDefaults.swift in Sources */,
 				71F39BCE2C8F46510021ECA2 /* BreedListItemView.swift in Sources */,
 				7159A71F2C9846EE0094DC9F /* BreedCharacteristicsItemView.swift in Sources */,
+				27A477562D9D4B3A0032DD9B /* ImagesRepository.swift in Sources */,
 				715B008E2C6A5E530034E601 /* RequestManagerProtocol.swift in Sources */,
 				710C6FF82BCECA0E003851B1 /* FeedViewModel.swift in Sources */,
 				8FD3E5922B0A1C630042C3C5 /* RequestManager.swift in Sources */,
@@ -583,6 +622,7 @@
 				71E2C0F02C10CD99008AE21D /* ViewExtension.swift in Sources */,
 				718F9DF72B616B300089CB8A /* Weight.swift in Sources */,
 				71E2C0ED2C10CCCB008AE21D /* ErrorAlert.swift in Sources */,
+				27A4775B2D9D4DBE0032DD9B /* ImagesRepositoryMock.swift in Sources */,
 				27A477542D9D415F0032DD9B /* GetBreedsUseCase.swift in Sources */,
 				71A16B982C2583E0006646A2 /* LoadingView.swift in Sources */,
 			);

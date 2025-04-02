@@ -8,14 +8,6 @@
 import Foundation
 
 protocol ApiManagerProtocol {
-
-    func getFeedImages(limit: Int) async throws -> [FeedImage]
-    
-    func getBreedImages(limit: Int, breedId: String) async throws -> [FeedImage]
-    
-    func getBreeds() async throws -> [Breed]
-    
-    func getBreed(id: String) async throws -> Breed
     
     func getFavorites(page: Int) async throws -> [Favorite]
     
