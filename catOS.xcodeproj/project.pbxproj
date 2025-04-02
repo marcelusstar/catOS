@@ -263,6 +263,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		270A2DA42D9D7C7F003E3EB9 /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+				714976142C1712E200D6FE2E /* ButtonGradientOutline.swift */,
+			);
+			path = Molecules;
+			sourceTree = "<group>";
+		};
 		27A4774E2D9D3A930032DD9B /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,8 +337,6 @@
 		710C6FF92BCECC51003851B1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				714976132C1711B800D6FE2E /* Custom */,
-				71E2C0EB2C10CCB6008AE21D /* ViewModifiers */,
 				710C6FFA2BCECC9A003851B1 /* CardView.swift */,
 				719A86152BD9AF4F0028C674 /* FeedView.swift */,
 				714D394A2BEAA88400BFF68A /* BreedsView.swift */,
@@ -351,14 +357,6 @@
 				713466E02BA8B167003BB72A /* ErrorManager.swift */,
 			);
 			path = Error;
-			sourceTree = "<group>";
-		};
-		714976132C1711B800D6FE2E /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				714976142C1712E200D6FE2E /* ButtonGradientOutline.swift */,
-			);
-			path = Custom;
 			sourceTree = "<group>";
 		};
 		71502EB72B7553CA006DF80B /* Mappers */ = {
@@ -489,11 +487,13 @@
 		8FD3E58F2B0A1C400042C3C5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				270A2DA42D9D7C7F003E3EB9 /* Molecules */,
 				71E2C0EE2C10CD7F008AE21D /* Extensions */,
 				71FA939D2BFC012E00C9B748 /* Coordinator */,
 				710C6FF92BCECC51003851B1 /* Views */,
 				710C6FF62BCEC9F1003851B1 /* ViewModels */,
 				8FD3E5902B0A1C4C0042C3C5 /* Managers */,
+				71E2C0EB2C10CCB6008AE21D /* ViewModifiers */,
 			);
 			path = UI;
 			sourceTree = "<group>";
