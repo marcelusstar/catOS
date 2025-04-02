@@ -15,7 +15,7 @@ class ApiFeedImageMapper: Mapper {
         self.apiBreedMapper = apiBreedMapper
     }
     
-    func mapValues(_ entity: FeedImageEntity) -> FeedImage {
+    func mapValues(_ entity: FeedImageDTO) -> FeedImage {
         
         var breeds: [Breed] = []
         

@@ -9,7 +9,7 @@ import Foundation
 
 class ApiWeightMapper: Mapper {
     
-    func mapValues(_ entity: WeightEntity) -> Weight {
+    func mapValues(_ entity: WeightDTO) -> Weight {
         return Weight(
             imperial: entity.imperial ?? "",
             metric: entity.metric ?? "")

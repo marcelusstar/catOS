@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct FeedImageEntity: Codable {
+struct FeedImageDTO: Codable {
     
     let id: String
-    let breeds: [BreedEntity]?
-    let categories: [CategoryEntity]?
+    let breeds: [BreedDTO]?
+    let categories: [CategoryDTO]?
     let height: Int?
     let width: Int?
     let url: String?

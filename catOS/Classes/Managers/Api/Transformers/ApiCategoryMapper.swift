@@ -11,7 +11,7 @@ import Foundation
 
 class ApiCategoryMapper: Mapper {
     
-    func mapValues(_ entity: CategoryEntity) -> Category {
+    func mapValues(_ entity: CategoryDTO) -> Category {
         return Category(
             id: entity.id ?? -1,
             name: entity.name ?? "")

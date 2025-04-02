@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct FavoriteEntity: Codable {
+struct FavoriteDTO: Codable {
     let id: Int
     let userId: String
     let imageId: String
     let subId: String
     let createdAt: String?
-    let image: FeedImageEntity
+    let image: FeedImageDTO
 
     enum CodingKeys: String, CodingKey {
         case id

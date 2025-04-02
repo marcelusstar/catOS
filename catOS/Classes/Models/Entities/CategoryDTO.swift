@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CategoryEntity: Codable {
+struct CategoryDTO: Codable {
     
     let id: Int?
     let name: String?

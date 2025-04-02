@@ -26,8 +26,8 @@ class ApiBreedMapperTests: XCTestCase {
     
     func testBreedEntityMappingToBreed() {
         // Given
-        let weightEntity = WeightEntity(imperial: "7 - 15", metric: "3 - 7")
-        let breedEntity = BreedEntity(
+        let weightEntity = WeightDTO(imperial: "7 - 15", metric: "3 - 7")
+        let breedEntity = BreedDTO(
             id: "abys",
             name: "Abyssinian",
             weight: weightEntity,
@@ -107,7 +107,7 @@ class ApiBreedMapperTests: XCTestCase {
     
     func testBreedEntityMappingWithNilValues() {
         // Given
-        let breedEntity = BreedEntity(
+        let breedEntity = BreedDTO(
             id: "abys",
             name: nil,
             weight: nil,

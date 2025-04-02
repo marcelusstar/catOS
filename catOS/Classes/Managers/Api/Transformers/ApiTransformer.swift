@@ -21,15 +21,15 @@ struct ApiTransformer {
         self.apiFavoriteMapper = apiFavoriteMapper
     }
     
-    func transformBreedEntity(entity: BreedEntity) -> Breed {
+    func transformBreedEntity(entity: BreedDTO) -> Breed {
         apiBreedMapper.mapValues(entity)
     }
     
-    func transformFeedImageEntity(entity: FeedImageEntity) -> FeedImage {
+    func transformFeedImageEntity(entity: FeedImageDTO) -> FeedImage {
         apiFeedImageMapper.mapValues(entity)
     }
     
-    func transformFavoriteEntity(entity: FavoriteEntity) -> Favorite {
+    func transformFavoriteEntity(entity: FavoriteDTO) -> Favorite {
         apiFavoriteMapper.mapValues(entity)
     }
     

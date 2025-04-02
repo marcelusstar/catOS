@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WeightEntity: Codable {
+struct WeightDTO: Codable {
     let imperial: String?
     let metric: String?
 }

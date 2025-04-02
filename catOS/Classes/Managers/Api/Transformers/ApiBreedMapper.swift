@@ -15,9 +15,9 @@ class ApiBreedMapper: Mapper {
         self.apiWeightMapper = apiWeightMapper
     }
 
-    func mapValues(_ entity: BreedEntity) -> Breed {
+    func mapValues(_ entity: BreedDTO) -> Breed {
         Breed(
-            weight: apiWeightMapper.mapValues(entity.weight ?? WeightEntity(imperial: "", metric: "")),
+            weight: apiWeightMapper.mapValues(entity.weight ?? WeightDTO(imperial: "", metric: "")),
             id: entity.id,
             name: entity.name ?? "",
             temperament: entity.temperament ?? "",

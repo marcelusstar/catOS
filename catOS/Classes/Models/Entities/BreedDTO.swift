@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct BreedEntity: Codable {
+struct BreedDTO: Codable {
 
     let id: String
     let name: String?
-    let weight: WeightEntity?
+    let weight: WeightDTO?
     let temperament: String?
     let origin: String?
     let countryCodes: String?

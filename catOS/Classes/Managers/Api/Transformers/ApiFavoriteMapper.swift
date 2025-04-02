@@ -16,7 +16,7 @@ class ApiFavoriteMapper: Mapper {
         return df
     }()
     
-    func mapValues(_ entity: FavoriteEntity) -> Favorite {
+    func mapValues(_ entity: FavoriteDTO) -> Favorite {
 
         let createdAt: Date = Self.formatter.date(from: entity.createdAt ?? "") ?? Date()
         let image = ApiFeedImageMapper().mapValues(entity.image)

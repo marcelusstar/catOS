@@ -13,10 +13,10 @@ class BreedEntityTests: XCTestCase {
     
     func testBreedEntityInitialization() {
         // Given
-        let weight = WeightEntity(imperial: "7 - 15", metric: "3 - 7")
+        let weight = WeightDTO(imperial: "7 - 15", metric: "3 - 7")
         
         // When
-        let breedEntity = BreedEntity(
+        let breedEntity = BreedDTO(
             id: "abys",
             name: "Abyssinian",
             weight: weight,
@@ -93,8 +93,8 @@ class BreedEntityTests: XCTestCase {
     
     func testBreedEntityEncoding() throws {
         // Given
-        let weight = WeightEntity(imperial: "7 - 15", metric: "3 - 7")
-        let breedEntity = BreedEntity(
+        let weight = WeightDTO(imperial: "7 - 15", metric: "3 - 7")
+        let breedEntity = BreedDTO(
             id: "abys",
             name: "Abyssinian",
             weight: weight,
@@ -189,7 +189,7 @@ class BreedEntityTests: XCTestCase {
         let jsonData = jsonString.data(using: .utf8)!
         
         // When
-        let decodedEntity = try JSONDecoder().decode(BreedEntity.self, from: jsonData)
+        let decodedEntity = try JSONDecoder().decode(BreedDTO.self, from: jsonData)
         
         // Then
         XCTAssertEqual(decodedEntity.id, "abys")
@@ -210,7 +210,7 @@ class BreedEntityTests: XCTestCase {
         let jsonData = jsonString.data(using: .utf8)!
         
         // When
-        let decodedEntity = try JSONDecoder().decode(BreedEntity.self, from: jsonData)
+        let decodedEntity = try JSONDecoder().decode(BreedDTO.self, from: jsonData)
         
         // Then
         XCTAssertEqual(decodedEntity.id, "abys")
