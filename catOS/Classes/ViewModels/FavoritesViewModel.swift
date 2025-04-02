@@ -8,11 +8,17 @@
 import Foundation
 import SwiftUI
 
-class FavoritesViewModel: BaseViewModel {
+class FavoritesViewModel: ObservableObject {
     
     @Published var favorites: [Favorite] = []
     @Published var error: CatError?
     @Published var loadingData: Bool = false
+    
+    let getFavoritesUseCase: GetFavoritesUseCase
+
+    init(getFavoritesUseCase: GetFavoritesUseCase = GetFavoritesUseCaseDefault()) {
+        self.getFavoritesUseCase = getFavoritesUseCase
+    }
     
     @MainActor
     func getFavorites() async {
@@ -20,7 +26,7 @@ class FavoritesViewModel: BaseViewModel {
         loadingData = true
         
         do {
-            favorites = try await apiManager.getFavorites(page: 0)
+            favorites = try await getFavoritesUseCase.execute(page: 0)
         }
         catch {
             self.error = error as? CatError

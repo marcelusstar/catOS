@@ -34,7 +34,9 @@ struct FavoritesView: View {
 
 struct FavoritesView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        FavoritesView(viewModel: FavoritesViewModel(apiManager:  ApiManagerMock.shared))
+        let repository = FavoritesRepositoryMock()
+        let useCase = GetFavoritesUseCaseDefault(repository: repository)
+        let viewModel = FavoritesViewModel(getFavoritesUseCase: useCase)
+        FavoritesView(viewModel:  viewModel)
     }
 }

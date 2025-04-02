@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CardViewModel: BaseViewModel {
+class CardViewModel: ObservableObject {
     
     let id = UUID()
     
@@ -18,28 +18,34 @@ class CardViewModel: BaseViewModel {
         
     static let disappearanceAnimationTime: Double = 0.3
     
-    init(apiManager: ApiManagerProtocol = ApiManager.shared, _ feedImageData: FeedImage) {
+    let addToFavoritesUseCase: AddToFavoritesUseCase
+    let voteImageUseCase: VoteImageUseCase
+    
+    init(addToFavoritesUseCase: AddToFavoritesUseCase = AddToFavoritesUseCaseDefault(),
+         voteImageUseCase: VoteImageUseCase = VoteImageUseCaseDefault(),
+         _ feedImageData: FeedImage) {
             
+        self.addToFavoritesUseCase = addToFavoritesUseCase
+        self.voteImageUseCase = voteImageUseCase
+        
         self.feedImageData = feedImageData
         self.imageUrl = feedImageData.url
         shouldDisappearAnimation = false
-        
-        super.init(apiManager: apiManager)
     }
     
     func like() {
-        apiManager.likeImage(imageId: feedImageData.id)
+        voteImageUseCase.execute(imageId: feedImageData.id, like: true)
         shouldDisappearAnimation.toggle()
     }
     
     func dislike() {
-        apiManager.dislikeImage(imageId: feedImageData.id)
+        voteImageUseCase.execute(imageId: feedImageData.id, like: false)
         shouldDisappearAnimation.toggle()
     }
     
     @MainActor
     func addToFavs()  {
-        apiManager.addToFavorites(imageId: feedImageData.id)
+        addToFavoritesUseCase.execute(imageId: feedImageData.id)
         shouldDisappearAnimation.toggle()
     }
     
