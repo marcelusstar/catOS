@@ -7,16 +7,18 @@
 
 import Foundation
 
-class BreedDetailedViewModel: BaseViewModel {
+class BreedDetailedViewModel: ObservableObject {
     
     var breed: Breed
     @Published var urlImages: [URL?] = []
     @Published var images: [FeedImage] = []
     var characteristicsViewModels: [BreedCharacteristicsItemViewModel]
     var characteristicsTitle: String = String(localized: "breed:characteristics_title")
+    let getFeedImagesUseCase: GetFeedImagesUseCase
     
-    init(_ breed: Breed, apiManager: ApiManagerProtocol? = nil) {
+    init(_ breed: Breed, getFeedImagesUseCase: GetFeedImagesUseCase = GetFeedImagesUseCaseDefault()) {
         self.breed = breed
+        self.getFeedImagesUseCase = getFeedImagesUseCase
 
         characteristicsViewModels = [
             BreedCharacteristicsItemViewModel(name: String(localized: "breed:characteristics_adaptability"), score: breed.adaptability),
@@ -31,19 +33,12 @@ class BreedDetailedViewModel: BaseViewModel {
             BreedCharacteristicsItemViewModel(name: String(localized: "breed:characteristics_dog_friendly"), score: breed.dogFriendly),
             BreedCharacteristicsItemViewModel(name: String(localized: "breed:characteristics_intelligence"), score: breed.intelligence)
         ]
-        
-        if let apiManager = apiManager {
-            super.init(apiManager: apiManager)
-        }
-        else {
-            super.init()
-        }
     }
     
     @MainActor
     func getImages() async {
         do {
-            self.images = try await apiManager.getFeedImages(limit: 5)
+            self.images = try await getFeedImagesUseCase.execute(limit: 5)
         }
         catch {
             

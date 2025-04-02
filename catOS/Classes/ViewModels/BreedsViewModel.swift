@@ -8,7 +8,7 @@
 import Foundation
 
 
-class BreedsViewModel: BaseViewModel {
+class BreedsViewModel: ObservableObject {
     
     @Published var searchText = ""
     @Published var breeds: [Breed] = []
@@ -21,6 +21,12 @@ class BreedsViewModel: BaseViewModel {
         return breeds.filter { $0.name.lowercased().contains(searchText.lowercased()) }
     }
     
+    let getBreedsUseCase: GetBreedsUseCase
+
+    init(getBreedsUseCase: GetBreedsUseCase = GetBreedsUseCaseDefault()) {
+        self.getBreedsUseCase = getBreedsUseCase
+    }
+    
     @MainActor
     func getBreeds() async {
         guard breeds.isEmpty else {
@@ -29,7 +35,7 @@ class BreedsViewModel: BaseViewModel {
         
         do {
             loadingData = true
-            breeds = try await apiManager.getBreeds()
+            breeds = try await getBreedsUseCase.execute()
             breeds.sort{ $0.name < $1.name }
         }
         catch {
