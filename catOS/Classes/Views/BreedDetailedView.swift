@@ -95,7 +95,8 @@ struct BreedDetailedView: View {
 
 struct BreedDetailedView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel: BreedDetailedViewModel = BreedDetailedViewModel(ApiManagerMock.getBreedExample(), apiManager: ApiManagerMock.shared)
+        let useCase: GetFeedImagesUseCase = GetFeedImagesUseCaseDefault(apiManager: ApiManagerMock.shared)
+        let viewModel: BreedDetailedViewModel = BreedDetailedViewModel(ApiManagerMock.getBreedExample(), getFeedImagesUseCase: useCase)
         BreedDetailedView(viewModel: viewModel)
     }
 }
