@@ -26,7 +26,7 @@ struct TabsView: View {
                 }
                 .tag(Tab.feed)
             
-            CatScreens.breeds.view()
+            navigationContainer { CatScreens.breeds.view() }
                 .tabItem {
                     Label(String(localized: "tab_title.breeds"), systemImage: "magnifyingglass")
                 }
@@ -42,6 +42,20 @@ struct TabsView: View {
             print(newValue)
         }
     }
+    
+    @ViewBuilder
+    private func navigationContainer<Content: View>(
+        @ViewBuilder content: () -> Content) -> some View {
+            
+            NavigationStack(path: $navigator.path) {
+                content()
+                    .navigationDestination(for: CatScreens.self) { destination in
+                        destination.view()
+                    }
+            }
+    }
+    
+    
 }
 
 #Preview {

@@ -17,10 +17,12 @@ class Navigator: ObservableObject {
     }
     
     func pop() {
+        guard !path.isEmpty else { return }
         path.removeLast()
     }
     
     func popToRoot() {
+        guard !path.isEmpty else { return }
         path.removeLast(path.count)
     }
 }

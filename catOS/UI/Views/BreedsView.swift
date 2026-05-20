@@ -14,23 +14,17 @@ struct BreedsView: View {
     @Environment(\.dismissSearch) var dismissSearch
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(viewModel.filteredBreeds, id: \.id) { breed in
-                    NavigationLink {
-                        CatScreens.breedDetails(breed).view()
-                    } label: {
-                        BreedListItemView(breed: breed)
-                        .frame(maxHeight: 130)
-                    }
-                    .listRowInsets(EdgeInsets(top: 10,
-                                              leading: 10,
-                                              bottom: 10,
-                                              trailing: 15))
-                }
+        List {
+            ForEach(viewModel.filteredBreeds, id: \.id) { breed in
+                BreedListItemView(breed: breed)
+                .frame(maxHeight: 130)
+                .listRowInsets(EdgeInsets(top: 10,
+                                          leading: 10,
+                                          bottom: 10,
+                                          trailing: 15))
             }
-            .navigationTitle(String(localized: "tab_title.breeds"))
         }
+        .navigationTitle(String(localized: "tab_title.breeds"))
         .searchable(text: $viewModel.searchText)
         .task {
             await viewModel.getBreeds()
