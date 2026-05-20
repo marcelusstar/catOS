@@ -19,7 +19,8 @@ struct FavoritesRepositoryDefault: FavoritesRepository {
     }
     
     func getFavorites(page: Int) async throws -> [Favorite] {
-        let favoritesEntities: [FavoriteDTO] = try await requestManager.doAsyncAwaitRequest(apiRouter: .myFavs(userSubId, page))
+        let endpoint = MyFavoritesAPIEndpoint(subId: userSubId, page: page)
+        let favoritesEntities: [FavoriteDTO] = try await requestManager.doAsyncAwaitRequest(apiInfo: endpoint)
         return favoritesEntities.map { apiTransformer.transformFavoriteEntity(entity: $0) }
     }
     
