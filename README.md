@@ -6,24 +6,42 @@
 [![Platform](https://img.shields.io/badge/iOS-16%2B-blue.svg)](https://developer.apple.com/ios/)
 
 A modern iOS app for cat enthusiasts, built with SwiftUI and Clean Architecture.
+This project is intended for educational and portfolio purposes. All cat-related content and data belong to [TheCatAPI](https://thecatapi.com/) and this app is not officially affiliated with or endorsed by them.
+
+## 📸 Screenshots
+
+| Home | 
+|------|
+| ![Home](./Screenshots/Home.png) |
+
+| Details | 
+|------|
+| ![Details](./Screenshots/BreedDetails1.png) |
+| ![Details](./Screenshots/BreedDetails2.png) |
+
+| Favorites |
+|------|
+| ![Favorites](./Screenshots/Favorites.png) |
 
 ## 🏗️ Architecture
 
 ### Clean Architecture Layers
+```text
 catOS/
 ├── App configuration
-├── UI/ # SwiftUI Views + ViewModels
+├── UI/ # SwiftUI Views
+├── Presentation/ # ViewModels & UI state
 ├── Domain/ # Business logic
-│ ├── Models/ # Core models
-│ ├── UseCases/ # Business rules
-│ └── Repositories/ # Protocol definitions
+│   ├── Models/ # Core models
+│   ├── UseCases/ # Business rules
+│   └── Repositories/ # Protocol definitions
 ├── Data/ # Data layer
-│ ├── DTOs/ # API data models
-│ ├── Mappers/ # DTO ↔ Model conversion
-│ └── Repositories/ # Concrete implementations
+│   ├── DTOs/ # API data models
+│   ├── Mappers/ # DTO ↔ Model conversion
+│   └── Repositories/ # Concrete implementations
 └── Infrastructure/ # Technical services
-│ ├── Network/ # Network requests
-└──
+    └── Network/ # Network requests
+```
 
 ### Key Patterns
 - **MVVM** for UI separation
@@ -56,12 +74,9 @@ catOS/
 1. Clone the repo
 2. Build with Xcode 15+
 3. Run CatOS target
-4. (Optional)
-You need an api key from https://thecatapi.com/. You can register and get one from it. Currently this project is using de demo api key: **DEMO-API-KEY**
+4. Configure your API key (recommended)
 
-You can replace the demo api key by yours at ApiRouter.swift file 
-```
-        // Replace the default value
-        let apiKey: String? = "DEMO-API-KEY"
-```
+This project currently includes a demo API key for testing purposes.  
+For better reliability and to avoid rate limits, it is recommended to use your own API key from https://thecatapi.com/.
 
+After creating your key, replace the `API_KEY` value in the project's `.plist` configuration file with your own key.
