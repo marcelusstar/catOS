@@ -320,7 +320,7 @@
 			path = VoteRepository;
 			sourceTree = "<group>";
 		};
-		710C6FF62BCEC9F1003851B1 /* ViewModels */ = {
+		710C6FF62BCEC9F1003851B1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				710C6FF72BCECA0E003851B1 /* FeedViewModel.swift */,
@@ -331,7 +331,7 @@
 				715578ED2C90F6F0006EC255 /* BreedDetailedViewModel.swift */,
 				7159A7202C98476A0094DC9F /* BreedCharacteristicsItemViewModel.swift */,
 			);
-			path = ViewModels;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		710C6FF92BCECC51003851B1 /* Views */ = {
@@ -462,6 +462,7 @@
 				270A2DA22D9D797E003E3EB9 /* Infraestructure */,
 				270A2DA02D9D790A003E3EB9 /* Data */,
 				270A2D9D2D9D7875003E3EB9 /* Domain */,
+				710C6FF62BCEC9F1003851B1 /* Presentation */,
 				8FD3E58F2B0A1C400042C3C5 /* UI */,
 				8FD3E5802B0A1B3F0042C3C5 /* catOSApp.swift */,
 				71A16B932C2566E4006646A2 /* AppDelegate.swift */,
@@ -491,7 +492,6 @@
 				71E2C0EE2C10CD7F008AE21D /* Extensions */,
 				71FA939D2BFC012E00C9B748 /* Coordinator */,
 				710C6FF92BCECC51003851B1 /* Views */,
-				710C6FF62BCEC9F1003851B1 /* ViewModels */,
 				8FD3E5902B0A1C4C0042C3C5 /* Managers */,
 				71E2C0EB2C10CCB6008AE21D /* ViewModifiers */,
 			);
