@@ -17,11 +17,10 @@ struct BreedsView: View {
         NavigationStack {
             List {
                 ForEach(viewModel.filteredBreeds, id: \.id) { breed in
-                    
                     NavigationLink {
-                        BreedDetailedView(breed: breed)
+                        CatScreens.breedDetails(breed).view()
                     } label: {
-                        BreedListItemView(viewModel: BreedListItemViewModel(breed: breed))
+                        BreedListItemView(breed: breed)
                         .frame(maxHeight: 130)
                     }
                     .listRowInsets(EdgeInsets(top: 10,

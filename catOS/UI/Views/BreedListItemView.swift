@@ -10,7 +10,15 @@ import SwiftUI
 
 struct BreedListItemView: View {
     
-    var viewModel: BreedListItemViewModel
+    @StateObject var viewModel: BreedListItemViewModel
+    
+    init(breed: Breed) {
+        self._viewModel = StateObject(wrappedValue: BreedListItemViewModel(breed: breed))
+    }
+    
+    init(viewModel: BreedListItemViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         HStack {
