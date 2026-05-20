@@ -19,6 +19,7 @@ struct VoteRepositoryDefault: VoteRepository {
     }
     
     func voteImage(imageId: String, like: Bool) {
-        try? requestManager.doAsyncRequest(apiRouter: .voteImage(userSubId, imageId, like))
+        let endpoint = VoteImageAPIEndpoint(subId: userSubId, imageId: imageId, vote: like)
+        try? requestManager.doAsyncRequest(apiInfo: endpoint)
     }
 }

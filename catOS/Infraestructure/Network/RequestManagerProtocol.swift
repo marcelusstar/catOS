@@ -8,8 +8,8 @@
 import Foundation
 
 protocol RequestManagerProtocol {
-   
-    func doAsyncAwaitRequest<T: Decodable>(apiRouter: ApiRouter) async throws -> T
     
-    func doAsyncRequest(apiRouter: ApiRouter) throws
+    func doAsyncAwaitRequest<T: Decodable>(apiInfo: APIRequestDefinition) async throws -> T
+    
+    func doAsyncRequest(apiInfo: APIRequestDefinition) throws
 }

@@ -8,25 +8,8 @@ import Foundation
 
 struct RequestManager: RequestManagerProtocol {
     
-    var networkReachability: NetworkReachability = NetworkReachability()
-    
     private func getURLSession() -> URLSession {
         return URLSession.shared
-    }
-    
-    private func getURLRequest(apiRouter: ApiRouter) throws -> URLRequest {
-        guard let url = URL(string: apiRouter.path) else {
-            //throw NSError(domain: "Invalid URL", code: -1, userInfo: nil)
-            throw CatError.genericError
-        }
-        var request: URLRequest = URLRequest(url: url)
-        request.httpMethod = apiRouter.method.rawValue
-        request.allHTTPHeaderFields = apiRouter.headers
-        if apiRouter.method == .post {
-            request.httpBody = apiRouter.body
-        }
-        
-        return request
     }
     
     private func checkErrorFromCodeResponse(statusCode: Int) throws{
@@ -45,15 +28,40 @@ struct RequestManager: RequestManagerProtocol {
         }
     }
     
-    func doAsyncAwaitRequest<T: Decodable>(apiRouter: ApiRouter) async throws -> T {
+    private func getURLRequest(apiInfo: APIRequestDefinition) throws -> URLRequest {
+        var urlComponents = URLComponents(string: apiInfo.path)
+        
+        if let queryParameters = apiInfo.queryParameters, !queryParameters.isEmpty {
+            urlComponents?.queryItems = queryParameters.map {
+                URLQueryItem(name: $0.key, value: $0.value)
+            }
+        }
+        
+        guard let url = urlComponents?.url else {
+            throw CatError.genericError
+        }
+        
+        var request: URLRequest = URLRequest(url: url)
+        request.httpMethod = apiInfo.method.rawValue
+        request.allHTTPHeaderFields = apiInfo.headers
+        
+        request.httpBody = apiInfo.body
+        
+        return request
+    }
+    
+    func doAsyncAwaitRequest<T: Decodable>(apiInfo: APIRequestDefinition) async throws -> T {
         
         let session = URLSession.shared
-        let request: URLRequest = try getURLRequest(apiRouter: apiRouter)
+        let request: URLRequest = try getURLRequest(apiInfo: apiInfo)
+        
+        print("RequestManager: \(request.url?.absoluteString ?? "")")
+        
         var (data, response) = (Data(), URLResponse())
         do {
             (data, response) = try await session.data(for: request)
         } catch {
-            if let nsError = error as NSError?, 
+            if let nsError = error as NSError?,
                 nsError.domain == NSURLErrorDomain,
                 nsError.code == NSURLErrorNotConnectedToInternet {
                     throw CatError.noInternet
@@ -76,11 +84,11 @@ struct RequestManager: RequestManagerProtocol {
             throw CatError.genericError
         }
     }
-
-    func doAsyncRequest(apiRouter: ApiRouter) throws {
+    
+    func doAsyncRequest(apiInfo: APIRequestDefinition) throws {
         Task(priority: .background) {
             let session = URLSession.shared
-            let request: URLRequest = try getURLRequest(apiRouter: apiRouter)
+            let request: URLRequest = try getURLRequest(apiInfo: apiInfo)
             do {
                 _ = try await session.data(for: request)
             } catch {

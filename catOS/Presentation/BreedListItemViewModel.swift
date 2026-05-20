@@ -12,7 +12,7 @@ class BreedListItemViewModel: ObservableObject {
     var breed: Breed
     
     var imageURL: URL? {
-        let urlString = "\(ApiRouter.baseCdnUrlImages)/\(breed.referenceImageID).jpg"
+        let urlString = "\(EnvironmentConfiguration.apiBaseCdnUrlImages)/\(breed.referenceImageID).jpg"
         
         return URL(string: urlString)
     }
