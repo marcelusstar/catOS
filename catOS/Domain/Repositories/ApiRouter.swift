@@ -6,19 +6,6 @@
 
 import Foundation
 
-enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
-    case delete = "DELETE"
-    case put = "PUT"
-}
-
-struct ParamsName {
-    static let subId = "sub_id"
-    static let imageId = "image_id"
-    static let value = "value"
-}
-
 enum ApiRouter {
         
     case randomImage    // Imagen random
@@ -42,10 +29,6 @@ enum ApiRouter {
     case searchBreeds   // Buscar una raza por su nombre
                         // Actividad del usuario (imagenes con like y dislike)
      */
-    
-    
-    
-    
     
     var baseUrl: String { "https://api.thecatapi.com/v1" }
     
