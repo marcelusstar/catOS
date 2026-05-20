@@ -13,18 +13,18 @@ struct FavoritesView: View {
     @StateObject var viewModel: FavoritesViewModel = FavoritesViewModel()
     
     var body: some View {
-        NavigationStack {
-            List(viewModel.favorites, id:\.id) { favorite in
-                CardView(viewModel: CardViewModel(favorite.image))
-                    .aspectRatio(0.7, contentMode: .fit)
-            }
-            .navigationTitle(String(localized: "tab_title.favs"))
-            .errorAlert($viewModel.error)
-            .loading($viewModel.loadingData)
-            .task {
-                await viewModel.getFavorites()
-            }
-            
+        List(viewModel.favorites, id:\.id) { favorite in
+            CardView(viewModel: CardViewModel(favorite.image))
+                .aspectRatio(0.7, contentMode: .fit)
+        }
+        .navigationTitle(String(localized: "tab_title.favs"))
+        .refreshable {
+            await viewModel.getFavorites(forceRefresh: true)
+        }
+        .errorAlert($viewModel.error)
+        .loading($viewModel.loadingData)
+        .task {
+            await viewModel.getFavorites()
         }
     }
 }

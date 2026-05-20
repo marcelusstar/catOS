@@ -21,7 +21,11 @@ class FavoritesViewModel: ObservableObject {
     }
     
     @MainActor
-    func getFavorites() async {
+    func getFavorites(forceRefresh: Bool = false) async {
+        
+        guard favorites.isEmpty || forceRefresh else {
+            return
+        }
         
         loadingData = true
         
