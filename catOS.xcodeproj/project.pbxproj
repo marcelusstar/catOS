@@ -358,6 +358,8 @@
 				71F39BCD2C8F46510021ECA2 /* BreedListItemView.swift */,
 				715578EB2C90F6B5006EC255 /* BreedDetailedView.swift */,
 				7159A71E2C9846EE0094DC9F /* BreedCharacteristicsItemView.swift */,
+				8FD3E5802B0A1B3F0042C3C5 /* catOSApp.swift */,
+				8FD3E5822B0A1B3F0042C3C5 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -530,9 +532,7 @@
 				270A2D9D2D9D7875003E3EB9 /* Domain */,
 				710C6FF62BCEC9F1003851B1 /* Presentation */,
 				8FD3E58F2B0A1C400042C3C5 /* UI */,
-				8FD3E5802B0A1B3F0042C3C5 /* catOSApp.swift */,
 				71A16B932C2566E4006646A2 /* AppDelegate.swift */,
-				8FD3E5822B0A1B3F0042C3C5 /* ContentView.swift */,
 				8FD3E5842B0A1B400042C3C5 /* Assets.xcassets */,
 				8FD3E5862B0A1B400042C3C5 /* catOS.entitlements */,
 				8FD3E5872B0A1B400042C3C5 /* Preview Content */,
