@@ -14,5 +14,8 @@ protocol RequestManagerProtocol {
     
     func doAsyncAwaitRequest<T: Decodable>(apiInfo: APIRequestDefinition) async throws -> T
     
+    // TODO: Remove this method once refactoring from ApiRouter to APIRequestDefinition was done
     func doAsyncRequest(apiRouter: ApiRouter) throws
+    
+    func doAsyncRequest(apiInfo: APIRequestDefinition) throws
 }

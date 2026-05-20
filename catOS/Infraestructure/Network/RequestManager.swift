@@ -135,10 +135,29 @@ struct RequestManager: RequestManagerProtocol {
         }
     }
 
+    // TODO: Remove this method once refactoring from ApiRouter to APIRequestDefinition was done
     func doAsyncRequest(apiRouter: ApiRouter) throws {
         Task(priority: .background) {
             let session = URLSession.shared
             let request: URLRequest = try getURLRequest(apiRouter: apiRouter)
+            do {
+                _ = try await session.data(for: request)
+            } catch {
+                if let nsError = error as NSError?,
+                    nsError.domain == NSURLErrorDomain,
+                    nsError.code == NSURLErrorNotConnectedToInternet {
+                        throw CatError.noInternet
+                }
+                
+                throw CatError.genericError
+            }
+        }
+    }
+    
+    func doAsyncRequest(apiInfo: APIRequestDefinition) throws {
+        Task(priority: .background) {
+            let session = URLSession.shared
+            let request: URLRequest = try getURLRequest(apiInfo: apiInfo)
             do {
                 _ = try await session.data(for: request)
             } catch {
