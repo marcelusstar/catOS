@@ -412,7 +412,7 @@
 		719DE3C62FBD903000779264 /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				719DE3D22FBD93C900779264 /* FeedImagesAPIEndpoint.swift */,
+				719DE3DF2FBD9CDF00779264 /* Images */,
 				719DE3CB2FBD90B800779264 /* ParamsName.swift */,
 				719DE3C92FBD90AA00779264 /* HTTPMethod.swift */,
 				719DE3C72FBD904200779264 /* APIRequestDefinition.swift */,
@@ -426,6 +426,14 @@
 				719DE3CE2FBD911200779264 /* EnvironmentConfiguration.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		719DE3DF2FBD9CDF00779264 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				719DE3D22FBD93C900779264 /* FeedImagesAPIEndpoint.swift */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		71A106B42C84F59B00AA5651 /* catOSTests */ = {
