@@ -2,7 +2,7 @@
 
 ## APP UNDER CONSTRUCTION, NOT FINISHED YET
 
-[![Swift](https://img.shields.io/badge/Swift-5.9-orange.svg)](https://swift.org)
+[![Swift](https://img.shields.io/badge/Swift-5%2B-orange.svg)](https://swift.org)
 [![Platform](https://img.shields.io/badge/iOS-16%2B-blue.svg)](https://developer.apple.com/ios/)
 
 A modern iOS app for cat enthusiasts, built with SwiftUI and Clean Architecture.
