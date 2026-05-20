@@ -5,7 +5,7 @@
 	<key>API_BASE_URL</key>
 	<string>https://api.thecatapi.com/v1</string>
 	<key>API_BASE_CDN_URL</key>
-	<string>https://api.thecatapi.com/v1</string>
+	<string>https://cdn2.thecatapi.com</string>
 	<key>API_KEY</key>
 	<string>DEMO-API-KEY</string>
 	<key>CFBundleShortVersionString</key>

@@ -16,8 +16,4 @@ struct EnvironmentConfiguration {
     static let apiBaseCdnUrl: String = value(for: "API_BASE_CDN_URL")
     static let apiBaseCdnUrlImages: String = "\(value(for: "API_BASE_CDN_URL"))/images"
     static let apiKey: String = value(for: "API_KEY")
-    
-    static var baseUrl: String { "https://api.thecatapi.com/v1" }
-    static var baseCdnUrl: String { "https://cdn2.thecatapi.com" }
-    static var baseCdnUrlImages: String { "\(baseCdnUrl)/images" }
 }
