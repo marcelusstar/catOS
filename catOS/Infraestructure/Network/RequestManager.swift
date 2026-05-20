@@ -8,8 +8,6 @@ import Foundation
 
 struct RequestManager: RequestManagerProtocol {
     
-    var networkReachability: NetworkReachability = NetworkReachability()
-    
     private func getURLSession() -> URLSession {
         return URLSession.shared
     }
