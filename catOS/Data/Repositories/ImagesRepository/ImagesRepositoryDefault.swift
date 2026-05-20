@@ -17,7 +17,8 @@ struct ImagesRepositoryDefault: ImagesRepository {
     }
     
     private func getImages(limit: Int, breedId: String) async throws -> [FeedImage] {
-        let feedImagesEntities: [FeedImageDTO] = try await requestManager.doAsyncAwaitRequest(apiRouter: ApiRouter.feedImages(limit, breedId))
+        let endpoint = FeedImagesAPIEndpoint(limit: limit, breedId: breedId)
+        let feedImagesEntities: [FeedImageDTO] = try await requestManager.doAsyncAwaitRequest(apiInfo: endpoint)
         
         return feedImagesEntities.map { apiTransformer.transformFeedImageEntity(entity: $0) }
     }
