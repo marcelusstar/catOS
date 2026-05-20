@@ -28,8 +28,8 @@ class BreedsViewModel: ObservableObject {
     }
     
     @MainActor
-    func getBreeds() async {
-        guard breeds.isEmpty else {
+    func getBreeds(forceRefresh: Bool = false) async {
+        guard breeds.isEmpty || forceRefresh else {
             return
         }
         

@@ -29,15 +29,15 @@ struct BreedsView: View {
         .task {
             await viewModel.getBreeds()
         }
+        .refreshable {
+            dismissSearch()
+            await viewModel.getBreeds(forceRefresh: true)
+        }
         .errorAlert($viewModel.error)
         .loading($viewModel.loadingData)
-        
     }
 }
 
-
-
-
 #Preview {
-    BreedsView(viewModel: BreedsViewModel())
+    BreedsView(viewModel: BreedsViewModel(getBreedsUseCase: GetBreedsUseCaseDefault(repository: BreedsRepositoryMock())))
 }
