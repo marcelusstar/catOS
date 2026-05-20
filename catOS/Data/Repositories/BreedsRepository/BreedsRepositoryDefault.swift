@@ -22,7 +22,8 @@ struct BreedsRepositoryDefault: BreedsRepository {
     }
     
     func getBreed(id: String) async throws -> Breed {
-        let breedEntity: BreedDTO = try await requestManager.doAsyncAwaitRequest(apiRouter: ApiRouter.getBreed(id))
+        let endpoint = BreedAPIEndpoint(id: id)
+        let breedEntity: BreedDTO = try await requestManager.doAsyncAwaitRequest(apiInfo: endpoint)
         return apiTransformer.transformBreedEntity(entity: breedEntity)
     }
 }
