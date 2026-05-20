@@ -25,6 +25,7 @@ struct FavoritesRepositoryDefault: FavoritesRepository {
     }
     
     func addToFavorites(imageId: String) {
-        try? requestManager.doAsyncRequest(apiRouter: .favImage(userSubId, imageId))
+        let endpoint = FavoriteImageAPIEndpoint(subId: userSubId, imageId: imageId)
+        try? requestManager.doAsyncRequest(apiInfo: endpoint)
     }
 }
