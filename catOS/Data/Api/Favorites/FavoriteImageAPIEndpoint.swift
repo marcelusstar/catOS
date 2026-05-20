@@ -28,8 +28,8 @@ struct FavoriteImageAPIEndpoint: APIRequestDefinition {
     }
     
     var body: Data? {
-        let data: [String: Any] = [ParamsName.subId: subId,
-                                   ParamsName.imageId: imageId]
+        let data: [String: Any] = [ApiParamsName.subId: subId,
+                                   ApiParamsName.imageId: imageId]
         
         return try? JSONSerialization.data(
             withJSONObject: data,

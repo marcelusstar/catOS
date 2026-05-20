@@ -32,10 +32,10 @@ struct MyFavoritesAPIEndpoint: APIRequestDefinition {
     
     var queryParameters: [String : String]? {
         [
-            ParamsName.page: "\(page)",
-            ParamsName.order: "Desc",
-            ParamsName.limit: "\(limit)",
-            ParamsName.subId : "\(subId)"
+            ApiParamsName.page: "\(page)",
+            ApiParamsName.order: "Desc",
+            ApiParamsName.limit: "\(limit)",
+            ApiParamsName.subId : "\(subId)"
         ]
     }
 }

@@ -29,10 +29,10 @@ struct FeedImagesAPIEndpoint: APIRequestDefinition {
     
     var queryParameters: [String : String]? {
         [
-            ParamsName.format: "json",
-            ParamsName.order: "RANDOM",
-            ParamsName.limit: "\(limit)",
-            ParamsName.breedId : "\(breedId)"
+            ApiParamsName.format: "json",
+            ApiParamsName.order: "RANDOM",
+            ApiParamsName.limit: "\(limit)",
+            ApiParamsName.breedId : "\(breedId)"
         ]
     }
 }

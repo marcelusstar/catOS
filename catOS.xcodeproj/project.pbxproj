@@ -63,7 +63,7 @@
 		719A86162BD9AF4F0028C674 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A86152BD9AF4F0028C674 /* FeedView.swift */; };
 		719DE3C82FBD904900779264 /* APIRequestDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DE3C72FBD904200779264 /* APIRequestDefinition.swift */; };
 		719DE3CA2FBD90AA00779264 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DE3C92FBD90AA00779264 /* HTTPMethod.swift */; };
-		719DE3CC2FBD90B800779264 /* ParamsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DE3CB2FBD90B800779264 /* ParamsName.swift */; };
+		719DE3CC2FBD90B800779264 /* ApiParamsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DE3CB2FBD90B800779264 /* ApiParamsName.swift */; };
 		719DE3CF2FBD911700779264 /* EnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DE3CE2FBD911200779264 /* EnvironmentConfiguration.swift */; };
 		719DE3D32FBD93C900779264 /* FeedImagesAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DE3D22FBD93C900779264 /* FeedImagesAPIEndpoint.swift */; };
 		719DE3E22FBD9D4000779264 /* VoteImageAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DE3E12FBD9D4000779264 /* VoteImageAPIEndpoint.swift */; };
@@ -164,7 +164,7 @@
 		719A86152BD9AF4F0028C674 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		719DE3C72FBD904200779264 /* APIRequestDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestDefinition.swift; sourceTree = "<group>"; };
 		719DE3C92FBD90AA00779264 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		719DE3CB2FBD90B800779264 /* ParamsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsName.swift; sourceTree = "<group>"; };
+		719DE3CB2FBD90B800779264 /* ApiParamsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiParamsName.swift; sourceTree = "<group>"; };
 		719DE3CE2FBD911200779264 /* EnvironmentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentConfiguration.swift; sourceTree = "<group>"; };
 		719DE3D22FBD93C900779264 /* FeedImagesAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImagesAPIEndpoint.swift; sourceTree = "<group>"; };
 		719DE3E12FBD9D4000779264 /* VoteImageAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteImageAPIEndpoint.swift; sourceTree = "<group>"; };
@@ -423,7 +423,7 @@
 				719DE3E32FBDA14500779264 /* Favorites */,
 				719DE3E02FBD9D3A00779264 /* Vote */,
 				719DE3DF2FBD9CDF00779264 /* Images */,
-				719DE3CB2FBD90B800779264 /* ParamsName.swift */,
+				719DE3CB2FBD90B800779264 /* ApiParamsName.swift */,
 				719DE3C92FBD90AA00779264 /* HTTPMethod.swift */,
 				719DE3C72FBD904200779264 /* APIRequestDefinition.swift */,
 			);
@@ -712,7 +712,7 @@
 				27A477622D9D4F520032DD9B /* BreedsRepositoryMock.swift in Sources */,
 				712EF04C2C19B61A0075A29A /* FavoriteDTO.swift in Sources */,
 				712BD9352B7E97B500DCF07B /* Category.swift in Sources */,
-				719DE3CC2FBD90B800779264 /* ParamsName.swift in Sources */,
+				719DE3CC2FBD90B800779264 /* ApiParamsName.swift in Sources */,
 				71FA93A42BFC019800C9B748 /* Navigator.swift in Sources */,
 				712EF04E2C19B91E0075A29A /* Favorite.swift in Sources */,
 				715578EE2C90F6F0006EC255 /* BreedDetailedViewModel.swift in Sources */,

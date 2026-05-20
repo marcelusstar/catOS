@@ -29,9 +29,9 @@ struct VoteImageAPIEndpoint: APIRequestDefinition {
     }
     
     var body: Data? {
-        let data: [String: Any] = [ParamsName.subId : subId,
-                                   ParamsName.imageId: imageId,
-                                   ParamsName.value: vote]
+        let data: [String: Any] = [ApiParamsName.subId : subId,
+                                   ApiParamsName.imageId: imageId,
+                                   ApiParamsName.value: vote]
         
         return try? JSONSerialization.data(
             withJSONObject: data,

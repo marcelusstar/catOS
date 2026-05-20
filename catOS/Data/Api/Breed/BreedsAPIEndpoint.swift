@@ -28,7 +28,7 @@ struct BreedsAPIEndpoint: APIRequestDefinition {
     
     var queryParameters: [String : String]? {
         [
-            ParamsName.limit: "\(limit)"
+            ApiParamsName.limit: "\(limit)"
         ]
     }
 }
