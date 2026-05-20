@@ -66,6 +66,7 @@
 		719DE3CC2FBD90B800779264 /* ParamsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DE3CB2FBD90B800779264 /* ParamsName.swift */; };
 		719DE3CF2FBD911700779264 /* EnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DE3CE2FBD911200779264 /* EnvironmentConfiguration.swift */; };
 		719DE3D32FBD93C900779264 /* FeedImagesAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DE3D22FBD93C900779264 /* FeedImagesAPIEndpoint.swift */; };
+		719DE3E22FBD9D4000779264 /* VoteImageAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DE3E12FBD9D4000779264 /* VoteImageAPIEndpoint.swift */; };
 		71A106B62C84F59B00AA5651 /* CatOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A106B52C84F59B00AA5651 /* CatOSTests.swift */; };
 		71A106BD2C84F81900AA5651 /* BreedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A106BC2C84F81900AA5651 /* BreedTests.swift */; };
 		71A106BF2C84F8E400AA5651 /* BreedEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A106BE2C84F8E400AA5651 /* BreedEntityTests.swift */; };
@@ -163,6 +164,7 @@
 		719DE3CB2FBD90B800779264 /* ParamsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsName.swift; sourceTree = "<group>"; };
 		719DE3CE2FBD911200779264 /* EnvironmentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentConfiguration.swift; sourceTree = "<group>"; };
 		719DE3D22FBD93C900779264 /* FeedImagesAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImagesAPIEndpoint.swift; sourceTree = "<group>"; };
+		719DE3E12FBD9D4000779264 /* VoteImageAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteImageAPIEndpoint.swift; sourceTree = "<group>"; };
 		71A106B32C84F59B00AA5651 /* catOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = catOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A106B52C84F59B00AA5651 /* CatOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatOSTests.swift; sourceTree = "<group>"; };
 		71A106BC2C84F81900AA5651 /* BreedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedTests.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 		719DE3C62FBD903000779264 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				719DE3E02FBD9D3A00779264 /* Vote */,
 				719DE3DF2FBD9CDF00779264 /* Images */,
 				719DE3CB2FBD90B800779264 /* ParamsName.swift */,
 				719DE3C92FBD90AA00779264 /* HTTPMethod.swift */,
@@ -434,6 +437,14 @@
 				719DE3D22FBD93C900779264 /* FeedImagesAPIEndpoint.swift */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		719DE3E02FBD9D3A00779264 /* Vote */ = {
+			isa = PBXGroup;
+			children = (
+				719DE3E12FBD9D4000779264 /* VoteImageAPIEndpoint.swift */,
+			);
+			path = Vote;
 			sourceTree = "<group>";
 		};
 		71A106B42C84F59B00AA5651 /* catOSTests */ = {
@@ -685,6 +696,7 @@
 				718F9DFA2B6183050089CB8A /* BreedDTO.swift in Sources */,
 				71502EB62B7553B9006DF80B /* ApiTransformer.swift in Sources */,
 				719A86142BD97B970028C674 /* CardViewModel.swift in Sources */,
+				719DE3E22FBD9D4000779264 /* VoteImageAPIEndpoint.swift in Sources */,
 				71502EBB2B755493006DF80B /* Mapper.swift in Sources */,
 				716B1AD62B68049A007CC300 /* WeightDTO.swift in Sources */,
 				27A477592D9D4BCB0032DD9B /* ImagesRepositoryDefault.swift in Sources */,
