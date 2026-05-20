@@ -10,7 +10,7 @@ import SwiftUI
 
 struct BreedsView: View {
 
-    @StateObject var viewModel: BreedsViewModel
+    @StateObject var viewModel: BreedsViewModel = BreedsViewModel()
     @Environment(\.dismissSearch) var dismissSearch
     
     var body: some View {
@@ -19,7 +19,7 @@ struct BreedsView: View {
                 ForEach(viewModel.filteredBreeds, id: \.id) { breed in
                     
                     NavigationLink {
-                        BreedDetailedView(viewModel: BreedDetailedViewModel(breed))
+                        BreedDetailedView(breed: breed)
                     } label: {
                         BreedListItemView(viewModel: BreedListItemViewModel(breed: breed))
                         .frame(maxHeight: 130)
