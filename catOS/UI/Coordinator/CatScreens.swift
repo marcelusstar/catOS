@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum CatScreens {
+enum CatScreens: Hashable {
     case feed
     case breeds
     case favorites
@@ -25,5 +25,13 @@ enum CatScreens {
         case .breedDetails(let breed):
             BreedDetailedView(breed: breed)
         }
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine("\(self)")
+    }
+    
+    static func == (lhs: CatScreens, rhs: CatScreens) -> Bool {
+        lhs.hashValue == rhs.hashValue
     }
 }

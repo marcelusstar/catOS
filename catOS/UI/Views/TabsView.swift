@@ -17,24 +17,22 @@ enum Tab: Hashable {
 struct TabsView: View {
     
     @State var selectedTab: Tab = .feed
-    @StateObject private var coordinator: Coordinator = Coordinator()
-
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            coordinator.buildFeed()
+            CatScreens.feed.view()
                 .tabItem {
                     Label(String(localized: "tab_title.home"), systemImage: "cat")
                 }
                 .tag(Tab.feed)
             
-            coordinator.buildBreeds()
+            CatScreens.breeds.view()
                 .tabItem {
                     Label(String(localized: "tab_title.breeds"), systemImage: "magnifyingglass")
                 }
                 .tag(Tab.breeds)
             
-            coordinator.buildFavorites()
+            CatScreens.favorites.view()
                 .tabItem {
                     Label(String(localized: "tab_title.favs"), systemImage: "heart.fill")
                 }
