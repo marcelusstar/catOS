@@ -16,34 +16,46 @@ enum Tab: Hashable {
 
 struct TabsView: View {
     
-    @State var selectedTab: Tab = .feed
-    @StateObject private var coordinator: Coordinator = Coordinator()
-
+    @EnvironmentObject var navigator: Navigator
     
     var body: some View {
-        TabView(selection: $selectedTab) {
-            coordinator.buildFeed()
+        TabView(selection: $navigator.selectedTab) {
+            CatScreens.feed.view()
                 .tabItem {
                     Label(String(localized: "tab_title.home"), systemImage: "cat")
                 }
                 .tag(Tab.feed)
             
-            coordinator.buildBreeds()
+            navigationContainer { CatScreens.breeds.view() }
                 .tabItem {
                     Label(String(localized: "tab_title.breeds"), systemImage: "magnifyingglass")
                 }
                 .tag(Tab.breeds)
             
-            coordinator.buildFavorites()
+            CatScreens.favorites.view()
                 .tabItem {
                     Label(String(localized: "tab_title.favs"), systemImage: "heart.fill")
                 }
                 .tag(Tab.favorites)
         }
-        .onChange(of: selectedTab) { newValue in
+        .onChange(of: navigator.selectedTab) { newValue in
             print(newValue)
         }
     }
+    
+    @ViewBuilder
+    private func navigationContainer<Content: View>(
+        @ViewBuilder content: () -> Content) -> some View {
+            
+            NavigationStack(path: $navigator.path) {
+                content()
+                    .navigationDestination(for: CatScreens.self) { destination in
+                        destination.view()
+                    }
+            }
+    }
+    
+    
 }
 
 #Preview {

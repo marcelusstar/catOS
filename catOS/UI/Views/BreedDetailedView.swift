@@ -13,7 +13,15 @@ struct BreedDetailedView: View {
     //public let timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
     @State private var selection = ""
     
-    @ObservedObject var viewModel: BreedDetailedViewModel
+    @StateObject var viewModel: BreedDetailedViewModel
+    
+    init(breed: Breed) {
+        self._viewModel = StateObject(wrappedValue: BreedDetailedViewModel(breed))
+    }
+    
+    init(viewModel: BreedDetailedViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         ScrollView {

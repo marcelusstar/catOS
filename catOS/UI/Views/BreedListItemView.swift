@@ -10,29 +10,49 @@ import SwiftUI
 
 struct BreedListItemView: View {
     
-    var viewModel: BreedListItemViewModel
+    @EnvironmentObject var navigator: Navigator
+    
+    @StateObject var viewModel: BreedListItemViewModel
+    
+    init(breed: Breed) {
+        self._viewModel = StateObject(wrappedValue: BreedListItemViewModel(breed: breed))
+    }
+    
+    init(viewModel: BreedListItemViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         HStack {
-            AsyncImage(url: viewModel.imageURL) { image in
-                image
-                    .image?
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                
-            }
-            .frame(width: 100)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-            VStack(alignment: .leading, content: {
-                Text(viewModel.breed.name).font(.title3).bold()
-                Text(viewModel.breed.description).font(.body)
-            })
-            
-                
-                
+            image
+            description
+            Spacer()
+            Image(systemName: "chevron.right")
+                .foregroundStyle(.secondary)
         }
-        
-        
+        .contentShape(Rectangle())
+        .onTapGesture {
+            navigator.push(CatScreens.breedDetails(viewModel.breed))
+        }
+    }
+    
+    var image: some View {
+        AsyncImage(url: viewModel.imageURL) { image in
+            image
+                .image?
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            
+        }
+        .frame(width: 100)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+    
+    var description: some View {
+        VStack(alignment: .leading, content: {
+            Text(viewModel.breed.name).font(.title3).bold()
+            Text(viewModel.breed.description).font(.body)
+        })
     }
 }
 

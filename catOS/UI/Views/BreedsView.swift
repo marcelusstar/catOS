@@ -10,28 +10,21 @@ import SwiftUI
 
 struct BreedsView: View {
 
-    @StateObject var viewModel: BreedsViewModel
+    @StateObject var viewModel: BreedsViewModel = BreedsViewModel()
     @Environment(\.dismissSearch) var dismissSearch
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(viewModel.filteredBreeds, id: \.id) { breed in
-                    
-                    NavigationLink {
-                        BreedDetailedView(viewModel: BreedDetailedViewModel(breed))
-                    } label: {
-                        BreedListItemView(viewModel: BreedListItemViewModel(breed: breed))
-                        .frame(maxHeight: 130)
-                    }
-                    .listRowInsets(EdgeInsets(top: 10,
-                                              leading: 10,
-                                              bottom: 10,
-                                              trailing: 15))
-                }
+        List {
+            ForEach(viewModel.filteredBreeds, id: \.id) { breed in
+                BreedListItemView(breed: breed)
+                .frame(maxHeight: 130)
+                .listRowInsets(EdgeInsets(top: 10,
+                                          leading: 10,
+                                          bottom: 10,
+                                          trailing: 15))
             }
-            .navigationTitle(String(localized: "tab_title.breeds"))
         }
+        .navigationTitle(String(localized: "tab_title.breeds"))
         .searchable(text: $viewModel.searchText)
         .task {
             await viewModel.getBreeds()

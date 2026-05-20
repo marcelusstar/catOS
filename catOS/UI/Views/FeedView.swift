@@ -10,7 +10,7 @@ import SwiftUI
 
 struct FeedView: View {
     
-    @StateObject var viewModel: FeedViewModel
+    @StateObject var viewModel: FeedViewModel = FeedViewModel()
     
     var body: some View {
         VStack {

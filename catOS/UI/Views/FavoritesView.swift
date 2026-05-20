@@ -10,16 +10,13 @@ import SwiftUI
 
 struct FavoritesView: View {
     
-    @StateObject var viewModel: FavoritesViewModel
+    @StateObject var viewModel: FavoritesViewModel = FavoritesViewModel()
     
     var body: some View {
         NavigationStack {
-            
             List(viewModel.favorites, id:\.id) { favorite in
                 CardView(viewModel: CardViewModel(favorite.image))
                     .aspectRatio(0.7, contentMode: .fit)
-                
-                
             }
             .navigationTitle(String(localized: "tab_title.favs"))
             .errorAlert($viewModel.error)

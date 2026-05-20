@@ -10,56 +10,19 @@ import SwiftUI
 class Navigator: ObservableObject {
     
     @Published var path = NavigationPath()
-    @Published var sheet: NavigationView?
-    @Published var fullScreenCover: NavigationView?
+    @Published var selectedTab: Tab = .feed
     
-    func push(_ navigationView: NavigationView) {
+    func push(_ navigationView: CatScreens) {
         path.append(navigationView)
     }
     
     func pop() {
+        guard !path.isEmpty else { return }
         path.removeLast()
     }
     
     func popToRoot() {
+        guard !path.isEmpty else { return }
         path.removeLast(path.count)
-    }
-    
-    
-    func presentSheet(_ navigationView: NavigationView) {
-        self.sheet = navigationView
-    }
-    
-    func dismissSheet() {
-        self.sheet = nil
-    }
-    
-    
-    func presentFullScreen(_ navigationView: NavigationView) {
-        self.fullScreenCover = navigationView
-    }
-    
-    func dismissFullScreen() {
-        self.fullScreenCover = nil
-    }
-    
-    
-    @ViewBuilder
-    func build(navigationView: NavigationView, _ customParameters: Any...) -> some View {
-                    
-        switch navigationView {
-                
-            case .feed:
-                let feedViewModel: FeedViewModel = FeedViewModel()
-                FeedView(viewModel: feedViewModel)
-            case .breeds:
-                let breedsViewModel: BreedsViewModel = BreedsViewModel()
-                BreedsView(viewModel: breedsViewModel)
-            case .profile:
-                ProfileView()
-            case .favorites:
-                FavoritesView(viewModel: FavoritesViewModel())
-        }
-        
     }
 }
