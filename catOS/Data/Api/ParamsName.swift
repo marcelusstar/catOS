@@ -11,4 +11,8 @@ struct ParamsName {
     static let imageId = "image_id"
     static let value = "value"
     static let breedId = "breed_id"
+    static let limit = "limit"
+    static let page = "page"
+    static let format = "format"
+    static let order = "order"
 }

@@ -29,9 +29,9 @@ struct FeedImagesAPIEndpoint: APIRequestDefinition {
     
     var queryParameters: [String : String]? {
         [
-            "format": "json",
-            "order": "RANDOM",
-            "limit": "\(limit)",
+            ParamsName.format: "json",
+            ParamsName.order: "RANDOM",
+            ParamsName.limit: "\(limit)",
             ParamsName.breedId : "\(breedId)"
         ]
     }
