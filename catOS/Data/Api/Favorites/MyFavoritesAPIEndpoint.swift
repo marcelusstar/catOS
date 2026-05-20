@@ -18,11 +18,13 @@ struct MyFavoritesAPIEndpoint: APIRequestDefinition {
         return endpoint
     }
 
-    var method: HTTPMethod { HTTPMethod.post }
+    var method: HTTPMethod { HTTPMethod.get }
         
     var headers: [String: String]? {
         var commonHeaders: [String: String] = [:]
         commonHeaders["cache-control"] = "no-cache"
+        commonHeaders["x-api-key"] = EnvironmentConfiguration.apiKey
+        commonHeaders["Content-type"] = "application/json; charset=utf8"
         return commonHeaders
     }
     
