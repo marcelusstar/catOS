@@ -35,9 +35,6 @@ struct BreedListItemView: View {
                 Text(viewModel.breed.name).font(.title3).bold()
                 Text(viewModel.breed.description).font(.body)
             })
-            
-                
-                
         }
         
         

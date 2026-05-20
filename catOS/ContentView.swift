@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var navigator: Navigator = Navigator()
+    
     var body: some View {
         TabsView()
+            .environmentObject(navigator)
     }
 }
 

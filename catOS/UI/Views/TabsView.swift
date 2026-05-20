@@ -16,10 +16,10 @@ enum Tab: Hashable {
 
 struct TabsView: View {
     
-    @State var selectedTab: Tab = .feed
+    @EnvironmentObject var navigator: Navigator
     
     var body: some View {
-        TabView(selection: $selectedTab) {
+        TabView(selection: $navigator.selectedTab) {
             CatScreens.feed.view()
                 .tabItem {
                     Label(String(localized: "tab_title.home"), systemImage: "cat")
@@ -38,7 +38,7 @@ struct TabsView: View {
                 }
                 .tag(Tab.favorites)
         }
-        .onChange(of: selectedTab) { newValue in
+        .onChange(of: navigator.selectedTab) { newValue in
             print(newValue)
         }
     }

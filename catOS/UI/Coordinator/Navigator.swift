@@ -12,6 +12,7 @@ class Navigator: ObservableObject {
     @Published var path = NavigationPath()
     @Published var sheet: CatScreens?
     @Published var fullScreenCover: CatScreens?
+    @Published var selectedTab: Tab = .feed
     
     func push(_ navigationView: CatScreens) {
         path.append(navigationView)
