@@ -76,10 +76,7 @@ class FeedViewModelTests: XCTestCase {
     
     func testLikeImageAndRemoveItAfter() async {
         // Given
-        var repository = ImagesRepositoryMock()
-        repository.shouldSucceed = false
-        let useCase = GetFeedImagesUseCaseDefault(repository: repository)
-        viewModel = FeedViewModel(getFeedImagesUseCase: GetFeedImagesUseCaseDefault(repository: repository))
+        viewModel = getViewModel(shouldSucceed: true)
 
         await viewModel.getFeedImages()
         
@@ -101,12 +98,7 @@ class FeedViewModelTests: XCTestCase {
     }
     
     func testLikeImageOnEmptyImages() async {
-        // TODO: Refactor this to
-        var repository = ImagesRepositoryMock()
-        repository.shouldSucceed = false
-        let useCase = GetFeedImagesUseCaseDefault(repository: repository)
-        viewModel = FeedViewModel(getFeedImagesUseCase: GetFeedImagesUseCaseDefault(repository: repository))
-        let numberImagesPreviousLike = viewModel.cardViewModels.count
+        viewModel = getViewModel(shouldSucceed: true)
         
         viewModel.like()
         
