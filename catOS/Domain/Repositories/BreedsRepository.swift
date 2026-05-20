@@ -6,6 +6,6 @@
 //
 
 protocol BreedsRepository {
-    func getBreeds() async throws -> [Breed]
+    func getBreeds(limit: Int) async throws -> [Breed]
     func getBreed(id: String) async throws -> Breed
 }

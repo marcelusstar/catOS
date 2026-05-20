@@ -6,8 +6,7 @@
 //
 
 struct BreedsRepositoryMock: BreedsRepository {
-    func getBreeds() async throws -> [Breed] {
-        
+    func getBreeds(limit: Int) async throws -> [Breed] {
         let breed1 = Breed(
             weight: Weight(imperial: "7 - 10", metric: "3 - 5"),
             id: "abys",

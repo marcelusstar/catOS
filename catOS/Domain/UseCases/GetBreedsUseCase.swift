@@ -17,6 +17,6 @@ struct GetBreedsUseCaseDefault: GetBreedsUseCase {
     }
     
     func execute() async throws -> [Breed] {
-        try await repository.getBreeds()
+        try await repository.getBreeds(limit: 100)
     }
 }

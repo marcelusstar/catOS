@@ -15,8 +15,9 @@ struct BreedsRepositoryDefault: BreedsRepository {
         self.apiTransformer = apiTransformer
     }
     
-    func getBreeds() async throws -> [Breed] {
-        let breedsEntities: [BreedDTO] = try await requestManager.doAsyncAwaitRequest(apiRouter: ApiRouter.getBreeds)
+    func getBreeds(limit: Int = 100) async throws -> [Breed] {
+        let endpoint = BreedsAPIEndpoint(limit: limit)
+        let breedsEntities: [BreedDTO] = try await requestManager.doAsyncAwaitRequest(apiInfo: endpoint)
         return breedsEntities.map { apiTransformer.transformBreedEntity(entity: $0) }
     }
     
