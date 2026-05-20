@@ -13,20 +13,3 @@ class CatData: Codable {
         self.height = 0
     }
 }
-
-
-var apiRoute: ApiRouter = .randomImage
-
-ApiManager.shared.doRequest(apiRouter: apiRoute)
-
-Task {
-    do {
-        let result: RandomImage = try await ApiManager.shared.doAsyncAwaitRequest(apiRouter: apiRoute)
-        print(result)
-    }
-    catch {
-        print("Exception")
-    }
-    
-    
-}

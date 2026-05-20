@@ -14,21 +14,6 @@ struct RequestManager: RequestManagerProtocol {
         return URLSession.shared
     }
     
-    private func getURLRequest(apiRouter: ApiRouter) throws -> URLRequest {
-        guard let url = URL(string: apiRouter.path) else {
-            //throw NSError(domain: "Invalid URL", code: -1, userInfo: nil)
-            throw CatError.genericError
-        }
-        var request: URLRequest = URLRequest(url: url)
-        request.httpMethod = apiRouter.method.rawValue
-        request.allHTTPHeaderFields = apiRouter.headers
-        if apiRouter.method == .post {
-            request.httpBody = apiRouter.body
-        }
-        
-        return request
-    }
-    
     private func checkErrorFromCodeResponse(statusCode: Int) throws{
         switch statusCode {
         case 200...299:
@@ -41,39 +26,6 @@ struct RequestManager: RequestManagerProtocol {
             throw CatError.serverError
         default:
             print("Unexpected status code: \(statusCode)")
-            throw CatError.genericError
-        }
-    }
-    
-    // TODO: Remove this method once refactoring from ApiRouter to APIRequestDefinition was done
-    func doAsyncAwaitRequest<T: Decodable>(apiRouter: ApiRouter) async throws -> T {
-        
-        let session = URLSession.shared
-        let request: URLRequest = try getURLRequest(apiRouter: apiRouter)
-        var (data, response) = (Data(), URLResponse())
-        do {
-            (data, response) = try await session.data(for: request)
-        } catch {
-            if let nsError = error as NSError?, 
-                nsError.domain == NSURLErrorDomain,
-                nsError.code == NSURLErrorNotConnectedToInternet {
-                    throw CatError.noInternet
-            }
-            
-            throw CatError.internetConnection
-        }
-        
-        if let httpResponse = response as? HTTPURLResponse {
-            try checkErrorFromCodeResponse(statusCode: httpResponse.statusCode)
-        } else {
-            throw CatError.genericError
-        }
-        
-        do {
-            let result = try JSONDecoder().decode(T.self, from: data)
-            return result
-        }
-        catch {
             throw CatError.genericError
         }
     }
@@ -132,25 +84,6 @@ struct RequestManager: RequestManagerProtocol {
         }
         catch {
             throw CatError.genericError
-        }
-    }
-
-    // TODO: Remove this method once refactoring from ApiRouter to APIRequestDefinition was done
-    func doAsyncRequest(apiRouter: ApiRouter) throws {
-        Task(priority: .background) {
-            let session = URLSession.shared
-            let request: URLRequest = try getURLRequest(apiRouter: apiRouter)
-            do {
-                _ = try await session.data(for: request)
-            } catch {
-                if let nsError = error as NSError?,
-                    nsError.domain == NSURLErrorDomain,
-                    nsError.code == NSURLErrorNotConnectedToInternet {
-                        throw CatError.noInternet
-                }
-                
-                throw CatError.genericError
-            }
         }
     }
     

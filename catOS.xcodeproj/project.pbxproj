@@ -94,7 +94,6 @@
 		8FD3E5852B0A1B400042C3C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD3E5842B0A1B400042C3C5 /* Assets.xcassets */; };
 		8FD3E5892B0A1B400042C3C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD3E5882B0A1B400042C3C5 /* Preview Assets.xcassets */; };
 		8FD3E5922B0A1C630042C3C5 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3E5912B0A1C630042C3C5 /* RequestManager.swift */; };
-		8FD3E5942B0A1E920042C3C5 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3E5932B0A1E920042C3C5 /* ApiRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,7 +199,6 @@
 		8FD3E5862B0A1B400042C3C5 /* catOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = catOS.entitlements; sourceTree = "<group>"; };
 		8FD3E5882B0A1B400042C3C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8FD3E5912B0A1C630042C3C5 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
-		8FD3E5932B0A1E920042C3C5 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,7 +236,6 @@
 				27A477662D9D51620032DD9B /* FavoritesRepository.swift */,
 				27A4775D2D9D4E870032DD9B /* BreedsRepository.swift */,
 				27A477552D9D4B250032DD9B /* ImagesRepository.swift */,
-				8FD3E5932B0A1E920042C3C5 /* ApiRouter.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -738,7 +735,6 @@
 				719DE3F22FBDAA5000779264 /* BreedAPIEndpoint.swift in Sources */,
 				712EF0482C19B4710075A29A /* FavoritesView.swift in Sources */,
 				711D001F2BFE0596007FA5ED /* CoordinatorView.swift in Sources */,
-				8FD3E5942B0A1E920042C3C5 /* ApiRouter.swift in Sources */,
 				714D394B2BEAA88400BFF68A /* BreedsView.swift in Sources */,
 				716B1ADA2B680D7E007CC300 /* FeedImage.swift in Sources */,
 				710C6FFB2BCECC9A003851B1 /* CardView.swift in Sources */,
